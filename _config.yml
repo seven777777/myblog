@@ -1,1 +1,21 @@
 baseurl: /myblog
+name: "Blog of Min Zhang"
+description: "Web Front-End Blog by Min Zhang"
+
+url: "https://seven777777.github.io/myblog/"
+loadingImg: "https://github.com/seven777777/myblog/images/loading.gif"
+filePath: "https://github.com/seven777777/myblog"
+
+
+paginate: 16
+paginate_path: "/page:num"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: rouge
+
+permalink: pretty
+
+gems:
+- jekyll-paginate
