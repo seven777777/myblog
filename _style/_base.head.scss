@@ -1,0 +1,56 @@
+/*------------------------------------*\
+    #HEAD
+\*------------------------------------*/
+
+.head-wrap {
+  box-sizing: border-box;
+  width: 1000px;
+  height: 300px;
+  background: $clr-primary;
+  margin: 0 auto;
+  padding: 30px;
+
+  .head-logo{
+    width: 218px;
+    height: 35px;
+    background: url(../images/logo-1.png) 0 0 no-repeat;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .head-aboutme--tilte{
+    font: $ft-sz-h2;
+    text-align: center;
+    color: $clr-def-lightest;
+  }
+
+  .head-aboutme--con{
+    border: 2px solid $clr-def-lightest;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .head--icon{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 10px;
+    background: url(../images/icon.png) no-repeat $clr-def-lightest;
+    transition: all .3s linear;
+
+    &.zh{ background-position: 14px 12px;}
+    &.js{ background-position: -60px 12px;}
+    &.wb{ background-position: -133px 12px;}
+    &.github{ background-position: -208px 12px;}
+    &.db{ background-position: -282px 12px;}
+
+    &:hover{
+      border-radius: 0;
+    }
+
+  }
+
+
+}
