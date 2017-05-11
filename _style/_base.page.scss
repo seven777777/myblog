@@ -1,13 +1,14 @@
 /*------------------------------------*\
-    #FOOTER
+    #PAGE
 \*------------------------------------*/
 
-.footer{
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content-wrap{
   width: 1000px;
-  height: 100px;
   margin: 0 auto;
-  background: #000000;
-  color: #fff;
-  text-align: center;
-  padding: 30px 0;
 }
