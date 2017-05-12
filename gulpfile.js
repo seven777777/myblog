@@ -29,7 +29,23 @@ gulp.task('sass',() => {
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(rename('default.min.css'))
         .pipe(gulp.dest('css'))
+        // .pipe(gulp.dest('_site/css'))
 });
+
+
+
+
+/**
+ * Build with Jekyll
+ */
+// gulp.task('jekyll', () => {
+//     return gulp.src(['.'])
+//         .pipe(jekyll({
+//             source: '.',
+//             destination: '_site'
+//         }))
+//         .pipe(gulp.dest('_site'));
+// });
 
 
 
