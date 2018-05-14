@@ -17,5 +17,5 @@ highlighter: rouge
 
 permalink: pretty
 
-gems:
+plugins:
 - jekyll-paginate
