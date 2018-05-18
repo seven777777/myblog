@@ -1,9 +1,9 @@
 /*
-* 处理css脚本
-* author：seven
-* date:2017/5/9
-*
-*/
+ * @Author: seven.zhang 
+ * @Date: 2018-05-18 14:19:29 
+ * @Last Modified by: seven.zhang
+ * @Last Modified time: 2018-05-18 15:42:01
+ */
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
@@ -32,7 +32,15 @@ gulp.task('sass',() => {
         // .pipe(gulp.dest('_site/css'))
 });
 
-
+/**
+ * Minify js
+ */
+// gulp.task('compress', function() {
+//     return gulp.src('js/common.js')
+//         .pipe(uglify())
+//         .pipe(rename('common.min.js'))
+//         .pipe(gulp.dest('js'));
+// });
 
 
 /**
@@ -56,11 +64,13 @@ gulp.task('sass',() => {
  */
 gulp.task('watch',() => {
     gulp.watch('_style/*.scss',[sass]);
+    gulp.watch('js/common.js', ['compress']);
 });
 
 
 
 
 
+// gulp.task('default',['compress','sass','watch']);
 gulp.task('default',['sass','watch']);
 

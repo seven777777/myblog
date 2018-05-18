@@ -1,8 +1,8 @@
 /*
  * @Author: seven.zhang 
  * @Date: 2018-05-15 09:31:32 
- * @Last Modified by:   seven.zhang 
- * @Last Modified time: 2018-05-15 09:31:32 
+ * @Last Modified by: seven.zhang
+ * @Last Modified time: 2018-05-18 15:23:34
  */
 
 /*------------------------------------*\
@@ -14,10 +14,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,code,em,img,q,small,strong,dd,dl,dt,li,ol,ul,fieldset,form,label,table,tbody,tr,th,td,input{margin:0;padding:0;border:0}
 body{
-  background: #22C3AA;
+  background: $clr-page-back;
 }
-
+a{
+  text-decoration: none;
+}
 .content-wrap{
   width: 1000px;
   margin: 0 auto;
