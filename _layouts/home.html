@@ -1,0 +1,19 @@
+{% include header.html %}
+
+<title>seven's blog</title>
+
+<div class="content-wrap">
+    {% include aboutMe.html %}
+    <div class="module_wrap">
+        <p>最新文章-66666</p>
+
+        <ul>
+            {% for post in site.posts %}
+            <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+</div>
+
+{% include footer.html %}

@@ -19,6 +19,7 @@
  * Quotes...............Blockquotes and code styles.／引用和代码风格
  * Paragraph............Paragraph styles.／段落样式
  * Text.................Links, lists and other styles.／链接列表和其他风格
+ * common...............页面公共样式
  *
  * COMPONENTS／组件
  * Tao..................Tao element styles in Home page.
@@ -67,6 +68,7 @@
 //@import "base.links";
 @import "base.page";
 @import "base.head";
+@import "base.common";
 //@import "base.quotes";
 //@import "base.paragraph";
 //@import "base.text";

@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #common
+\*------------------------------------*/
+
+.module_wrap{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
+  margin-bottom: 20px;
+  .m_title{
+    font-size: 36px;
+    font-weight: bold;
+    color: $clr-h1;
+  }
+}
