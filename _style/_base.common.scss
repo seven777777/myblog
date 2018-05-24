@@ -35,3 +35,27 @@
     }
   }
 }
+
+code {
+  border: dashed 1px #22C3AA;
+  color: #157A6B;
+  padding: 2px 8px;
+  margin: 5px 0;
+  font-size: 14px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  // font-family: Consolas,"Courier New",Courier;
+  text-shadow: none;
+  background-color: #EEF3F0;
+  word-wrap: break-word;
+  white-space: pre;
+}
+pre>code {
+  display: block;
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: #EEF3F0;
+  overflow-x: auto;
+  word-wrap: normal;
+  white-space: inherit;
+}
