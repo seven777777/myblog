@@ -6,12 +6,12 @@
     {% include aboutMe.html %}
     <div class="module_wrap">
         <h1 class="m_title">最新博文</h1>
-
-        <ul>
-            {% for post in site.posts %}
-            <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-            {% endfor %}
-        </ul>
+        {% for post in site.posts %}
+        <div class="artical_wrap">
+            <a class="artical_title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            <p class="artical_excerpt">{{ post.excerpt }}</p>
+        </div>
+        {% endfor %}
     </div>
     
 </div>
