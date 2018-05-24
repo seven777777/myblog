@@ -1,5 +1,12 @@
-# myblog
+# seven'blog
 [https://seven777777.github.io/myblog/](https://seven777777.github.io/myblog/)
+
+### 更新日志
+- 2017/3/2 首次创建（之后一直搁置）
+- 2018/5/11 再次启动
+- 2018/5/18 头部样式重写
+- 2018/5/22 整理逻辑重新梳理
+- 2018/5/24 首次上传之前写过发表在CSDN的博客
 
 ### 项目结构
 - _config.yml //保存配置数据
