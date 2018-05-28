@@ -3,6 +3,7 @@
 \*------------------------------------*/
 
 .module_wrap{
+  font-family: $ft-fm-def;
   width: 100%;
   box-sizing: border-box;
   padding: 20px 30px;
@@ -58,4 +59,5 @@ pre>code {
   overflow-x: auto;
   word-wrap: normal;
   white-space: inherit;
+  font-family: $ft-fm-code;
 }

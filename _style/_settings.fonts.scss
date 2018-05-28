@@ -1,12 +1,24 @@
 /*
  * @Author: seven.zhang 
  * @Date: 2018-05-18 13:45:32 
- * @Last Modified by:   seven.zhang 
- * @Last Modified time: 2018-05-18 13:45:32 
+ * @Last Modified by: seven.zhang
+ * @Last Modified time: 2018-05-28 15:34:18
  */
+@font-face {
+    font-family: 'MONACO';
+    src: url('../font/MONACO.TTF') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'inziu';
+    src: url('../font/inziu-J-regular.ttc') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+}
 
 // Families
-$ft-fm--en: arial;
+$ft-fm--en: inziu;
 $ft-fm--cn: "Microsoft YaHei";
 $ft-fm--cn-quote: FangSong, SimSun, STSong;
 $ft-fm--local: sans-serif;
