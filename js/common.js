@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-05-22 10:40:51
+ * @Last Modified time: 2018-05-30 16:55:37
  */
 
 // 页面滚动事件
@@ -21,6 +21,7 @@ $(window).scroll(()=>{
             }else{//下滚
                 console.log('下滚')
                 // $('#nav-top').slideUp();
+                $('#nav-top').removeClass('nav-top-show');
                 $('#nav-top').css("top","-100%");
             }
         }
@@ -32,8 +33,9 @@ $(window).scroll(()=>{
 
 // 尾部显示公众号二维码
 $('#gzh').mouseover(function(){
-    $(".gzh_ewm").fadeIn(300);
+    $(".gzh_ewm").fadeIn(100);
 });
 $('#gzh').mouseleave(function(){
-    $(".gzh_ewm").fadeOut(300);
+    $(".gzh_ewm").fadeOut(100);
 });
+
