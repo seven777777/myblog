@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-05-31 16:55:26
+ * @Last Modified time: 2018-05-31 17:14:49
  */
 /*------------------------------------*\
     #common
@@ -57,6 +57,7 @@ code {
   background-color: $clr-contrast-lighter;
   word-wrap: break-word;
   white-space: pre;
+  font-family: $ft-fm-code;
 }
 pre>code {
   display: block;
