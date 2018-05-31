@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-15 09:31:32 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-05-31 10:46:43
+ * @Last Modified time: 2018-05-31 15:30:21
  */
 
 /*------------------------------------*\
@@ -22,8 +22,21 @@ body{
   font-family: $ft-fm-def;
   font-weight: $ft-wt-def;
   font-size: $ft-sz-def;
+  line-height: 50px;
 }
 .content-wrap{
   width: 1000px;
   margin: 0 auto;
+  &.p50{
+    padding: 0 50px;
+  }
+  &.mt30{
+    margin-top: 30px;
+  }
+}
+
+//link
+a{
+  text-decoration: none;
+  color: $clr-def-darker;
 }

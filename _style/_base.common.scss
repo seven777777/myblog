@@ -1,52 +1,43 @@
 /*
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
- * @Last Modified by:   seven.zhang 
- * @Last Modified time: 2018-05-31 10:33:36 
+ * @Last Modified by: seven.zhang
+ * @Last Modified time: 2018-05-31 16:03:40
  */
 /*------------------------------------*\
     #common
 \*------------------------------------*/
 
 
-.module_wrap{
-  font-family: $ft-fm-def;
-  width: 100%;
+.m_title{
+  font-size: 36px;
+  font-weight: bold;
+  color: $clr-h1;
+  margin-bottom: 15px;
+}
+.artical_wrap{
+  margin: 10px 0;
   box-sizing: border-box;
-  padding: 20px 30px;
-  background: white;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
-  margin-bottom: 20px;
-  .m_title{
-    font-size: 36px;
+  padding: 10px 0;
+  border-bottom: 1px dashed $clr-dark;
+  .artical_title{
+    display: block;
+    font-size: 30px;
+    color: $clr-contrast;
     font-weight: bold;
-    color: $clr-h1;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
-  .artical_wrap{
-    margin: 10px 0;
-    box-sizing: border-box;
-    padding: 10px 0;
-    border-bottom: 1px dashed $clr-dark;
-    .artical_title{
-      display: block;
-      font-size: 30px;
-      color: $clr-contrast;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .artical_excerpt{
-      text-indent: 2em;
-      font-size: 16px;
-      line-height: 36px;
-      color: #333;
-    }
+  .artical_excerpt{
+    text-indent: 2em;
+    font-size: 16px;
+    line-height: 36px;
+    color: #333;
   }
 }
 
 code {
-  border: dashed 1px #22C3AA;
-  color: #157A6B;
+  border: dashed 1px $clr-contrast;
+  color: $clr-contrast-dark;
   padding: 2px 8px;
   margin: 5px 0;
   font-size: 14px;
@@ -54,7 +45,7 @@ code {
   border-radius: 5px;
   // font-family: Consolas,"Courier New",Courier;
   text-shadow: none;
-  background-color: #EEF3F0;
+  background-color: $clr-contrast-lighter;
   word-wrap: break-word;
   white-space: pre;
 }
@@ -62,9 +53,10 @@ pre>code {
   display: block;
   padding: 10px 15px;
   margin: 10px 0;
-  background-color: #EEF3F0;
+  background-color: $clr-contrast-lighter;
   overflow-x: auto;
   word-wrap: normal;
   white-space: inherit;
   font-family: $ft-fm-code;
+  line-height: 24px;
 }

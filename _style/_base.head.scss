@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:45:01 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-05-31 10:46:01
+ * @Last Modified time: 2018-05-31 15:58:15
  */
 /*------------------------------------*\
     #HEAD
@@ -13,4 +13,12 @@ h1,h2,h2,h4,h5,h6{
   font-weight: $ft-wt-bold;
   margin: 0.5em 0;
   color: $clr-def-dark;
+  line-height: 50px;
+}
+.postlist-title{
+  font-size: 36px;
+}
+.postlist-time{
+  color:$clr-def-light;
+  font-size: 20px;
 }

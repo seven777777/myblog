@@ -4,11 +4,12 @@
 
 <div class="content-wrap">
     {% include aboutMe.html %}
-    <div class="module_wrap">
-        <h1 class="m_title">最新博文</h1>
+    <div class="content-wrap mt30">
+        <h1 class="m_title">Blogs</h1>
         {% for post in site.posts %}
         <div class="artical_wrap">
-            <a class="artical_title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            <p class="postlist-time">{{ post.date | date_to_string }}</p>
+            <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             <p class="artical_excerpt">{{ post.excerpt }}</p>
         </div>
         {% endfor %}
