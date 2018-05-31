@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 13:45:32 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-05-28 15:34:18
+ * @Last Modified time: 2018-05-31 09:57:35
  */
 @font-face {
     font-family: 'MONACO';
@@ -11,14 +11,20 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'inziu';
-    src: url('../font/inziu-J-regular.ttc') format('ttf');
+    font-family: 'Oswald';
+    src: url('../font/Oswald-Regular-unhinted.ttc') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('../font/Roboto-Regular.ttc') format('ttf');
     font-weight: 600;
     font-style: normal;
 }
 
 // Families
-$ft-fm--en: inziu;
+$ft-fm--en: 'Oswald';
 $ft-fm--cn: "Microsoft YaHei";
 $ft-fm--cn-quote: FangSong, SimSun, STSong;
 $ft-fm--local: sans-serif;
@@ -26,7 +32,7 @@ $ft-fm--local: sans-serif;
 $ft-fm-def: $ft-fm--en, $ft-fm--cn, $ft-fm--local;
 $ft-fm-quote: $ft-fm--en, $ft-fm--cn-quote, $ft-fm--local;
 
-$ft-fm-code: Consolas, "Courier New", Courier;
+$ft-fm-code: 'MONACO', "Courier New", Courier;
 
 
 

@@ -1,59 +1,16 @@
+/*
+ * @Author: seven.zhang 
+ * @Date: 2018-05-31 10:45:01 
+ * @Last Modified by: seven.zhang
+ * @Last Modified time: 2018-05-31 10:46:01
+ */
 /*------------------------------------*\
     #HEAD
 \*------------------------------------*/
 
-.head-wrap {
-  box-sizing: border-box;
-  width: 100%;
-  height: 400px;
-  background: $clr-primary;
-  display: flex;
-  h1{
-    text-align: center;
-    color: $clr-def-lightest;
-    margin: auto;
-  }
-}
-#nav-top{
-  width: 100%;
-  height: 60px;
-  background: rgba($color: white, $alpha: 0);
-  position: fixed;
-  top: 0;
-  padding: 0 30px;
-  box-sizing: border-box;
-  transition: all ease-in-out .5s;
-  &.nav-top-show{
-    background: rgba($color: white, $alpha: .9);
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
-    .logo{
-      color:$clr-def;
-    }
-    .tab{
-      .tab-box{
-        color:$clr-def;
-      }
-    }
-  }
-  .logo{
-    font-family: 'arial';
-    font-size: 20px;
-    line-height: 60px;
-    color:$clr-lighter;
-  }
-  .tab{
-    float:right;
-    .tab-box{
-      display: inline-block;
-      padding: 0 10px;
-      color:$clr-lighter;
-      font-size: 16px;
-      height: 60px;
-      line-height: 60px;
-      box-sizing: border-box;
-      &.active{
-        border-bottom: 2px solid white;
-      }
-    }
-  }
+h1,h2,h2,h4,h5,h6{
+  font-family: $ft-fm-def;
+  font-weight: $ft-wt-bold;
+  margin: 0.5em 0;
+  color: $clr-def-dark;
 }

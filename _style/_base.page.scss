@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-15 09:31:32 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-05-24 17:19:52
+ * @Last Modified time: 2018-05-31 10:46:43
  */
 
 /*------------------------------------*\
@@ -17,20 +17,13 @@
 body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,code,em,img,q,small,strong,dd,dl,dt,li,ol,ul,fieldset,form,label,table,tbody,tr,th,td,input{margin:0;padding:0;border:0}
 body{
   background: $clr-page-back;
+  color: $clr-def-darker;
+  overflow-x: hidden;
+  font-family: $ft-fm-def;
+  font-weight: $ft-wt-def;
+  font-size: $ft-sz-def;
 }
-a{
-  text-decoration: none;
-}
-// p{
-//   font-family: Lato,"Microsoft YaHei",sans-serif;
-//   font-size: 14px;
-//   line-height: 36px;
-//   margin: 10px 0;
-//   color: #333;
-// }
 .content-wrap{
   width: 1000px;
   margin: 0 auto;
-  padding: 30px;
-  min-height: 1000px;
 }
