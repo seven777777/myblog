@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-15 09:31:32 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-05-31 15:30:21
+ * @Last Modified time: 2018-06-01 09:08:21
  */
 
 /*------------------------------------*\
@@ -13,6 +13,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,code,em,img,q,small,strong,dd,dl,dt,li,ol,ul,fieldset,form,label,table,tbody,tr,th,td,input{margin:0;padding:0;border:0}
 body{
