@@ -34,78 +34,78 @@ HTML部分：
 
 ```
 <div>
-			<!--tab头部-->
-			<div class="tab_head">
-	            <a class="tab1" style="width: 23.5%; height: 100%; left: 3%; top: 0;"></a>
-	            <a class="tab2" style="width: 23.5%; height: 100%; left: 26.5%; top: 0;"></a>
-	            <a class="tab3" style="width: 23.5%; height: 100%; left: 50%; top: 0;"></a>
-	            <a class="tab4" style="width: 23.5%; height: 100%; left: 73.5%; top: 0;"></a>
-	            <div class="tab_head_bg"><img class="imgclass" src="bg_09.jpg"></div>
-	        </div>
-	        <!--tab内容部分-->
-	        <div class="bg1" style="display: block;">
-	        	<div style="width: 100%; height: 400px; background-color: #5588AA;">
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
-	        	</div>
-	        </div>
-	        <div class="bg2" style="display: none;">
-	        	<div style="width: 100%; height: 400px; background-color: #5588AA;">
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
-	        	</div>
-	        </div>
-	        <div class="bg3" style="display: none;">
-	        	<div style="width: 100%; height: 400px; background-color: #5588AA;">
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
-	        	</div>
-	        </div>
-	        <div class="bg4" style="display: none;">
-	        	<div style="width: 100%; height: 400px; background-color: #5588AA;">
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
-	        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
-	        	</div>
-	        </div>
+	<!--tab头部-->
+	<div class="tab_head">
+		<a class="tab1" style="width: 23.5%; height: 100%; left: 3%; top: 0;"></a>
+		<a class="tab2" style="width: 23.5%; height: 100%; left: 26.5%; top: 0;"></a>
+		<a class="tab3" style="width: 23.5%; height: 100%; left: 50%; top: 0;"></a>
+		<a class="tab4" style="width: 23.5%; height: 100%; left: 73.5%; top: 0;"></a>
+		<div class="tab_head_bg"><img class="imgclass" src="bg_09.jpg"></div>
+	</div>
+	<!--tab内容部分-->
+	<div class="bg1" style="display: block;">
+		<div style="width: 100%; height: 400px; background-color: #5588AA;">
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
 		</div>
+	</div>
+	<div class="bg2" style="display: none;">
+		<div style="width: 100%; height: 400px; background-color: #5588AA;">
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
+		</div>
+	</div>
+	<div class="bg3" style="display: none;">
+		<div style="width: 100%; height: 400px; background-color: #5588AA;">
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
+		</div>
+	</div>
+	<div class="bg4" style="display: none;">
+		<div style="width: 100%; height: 400px; background-color: #5588AA;">
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
+			<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
+		</div>
+	</div>
+</div>
 ```
 JS部分
 
 ```
 $(function(){
-				$('.tab1').click(function () {
-			        $('.imgclass').attr('src','bg_09.jpg')
-			        $('.bg1').css('display','block');
-			        $('.bg2').css('display','none');
-			        $('.bg3').css('display','none');
-			        $('.bg4').css('display','none');
-			    });
-			    $('.tab2').click(function () {
-			        $('.imgclass').attr('src','bg2_09.jpg')
-			        $('.bg1').css('display','none');
-			        $('.bg2').css('display','block');
-			        $('.bg3').css('display','none');
-			        $('.bg4').css('display','none');
-			    })
-			    $('.tab3').click(function () {
-			        $('.imgclass').attr('src','bg3_09.jpg')
-			        $('.bg1').css('display','none');
-			        $('.bg2').css('display','none');
-			        $('.bg3').css('display','block');
-			        $('.bg4').css('display','none');
-			    })
-			    $('.tab4').click(function () {
-			        $('.imgclass').attr('src','bg4_09.jpg')
-			        $('.bg1').css('display','none');
-			        $('.bg2').css('display','none');
-			        $('.bg3').css('display','none');
-			        $('.bg4').css('display','block');
-			    })
-			})
+	$('.tab1').click(function () {
+		$('.imgclass').attr('src','bg_09.jpg')
+		$('.bg1').css('display','block');
+		$('.bg2').css('display','none');
+		$('.bg3').css('display','none');
+		$('.bg4').css('display','none');
+	});
+	$('.tab2').click(function () {
+		$('.imgclass').attr('src','bg2_09.jpg')
+		$('.bg1').css('display','none');
+		$('.bg2').css('display','block');
+		$('.bg3').css('display','none');
+		$('.bg4').css('display','none');
+	})
+	$('.tab3').click(function () {
+		$('.imgclass').attr('src','bg3_09.jpg')
+		$('.bg1').css('display','none');
+		$('.bg2').css('display','none');
+		$('.bg3').css('display','block');
+		$('.bg4').css('display','none');
+	})
+	$('.tab4').click(function () {
+		$('.imgclass').attr('src','bg4_09.jpg')
+		$('.bg1').css('display','none');
+		$('.bg2').css('display','none');
+		$('.bg3').css('display','none');
+		$('.bg4').css('display','block');
+	})
+})
 ```
 效果是实现了，但是一股浓浓的小学生流水账的味道。因为写的是app页面，所以tab切部分就是一个背景图，上面写的几个绝对定位的a标签。
 下面是改良版：
@@ -137,46 +137,46 @@ HTML部分：
 
 ```
 <div>
-			<!--tab头部-->
-			<div class="tab_head">
-	            <a class="tab1" style="width: 23.5%; height: 100%; left: 3%; top: 0;"onClick="return false;"></a>
-	            <a class="tab2" style="width: 23.5%; height: 100%; left: 26.5%; top: 0;"onClick="return false;"></a>
-	            <a class="tab3" style="width: 23.5%; height: 100%; left: 50%; top: 0;"onClick="return false;"></a>
-	            <a class="tab4" style="width: 23.5%; height: 100%; left: 73.5%; top: 0;"onClick="return false;"></a>
-	            <div class="tab_head_bg"><img class="imgclass" src="bg0_09.jpg"></div>
-	        </div>
-	        <!--tab内容部分-->
-	        <div class="tab_box">
-	        	<div>
-		        	<div style="width: 100%; height: 400px; background-color: #5588AA;">
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
-		        	</div>
-		        </div>
-		        <div class="hide">
-		        	<div style="width: 100%; height: 400px; background-color: #5588AA;">
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
-		        	</div>
-		        </div>
-		        <div class="hide">
-		        	<div style="width: 100%; height: 400px; background-color: #5588AA;">
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
-		        	</div>
-		        </div>
-		        <div class="hide">
-		        	<div style="width: 100%; height: 400px; background-color: #5588AA;">
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
-		        		<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
-		        	</div>
-		        </div>
-	        </div>
+	<!--tab头部-->
+	<div class="tab_head">
+		<a class="tab1" style="width: 23.5%; height: 100%; left: 3%; top: 0;"onClick="return false;"></a>
+		<a class="tab2" style="width: 23.5%; height: 100%; left: 26.5%; top: 0;"onClick="return false;"></a>
+		<a class="tab3" style="width: 23.5%; height: 100%; left: 50%; top: 0;"onClick="return false;"></a>
+		<a class="tab4" style="width: 23.5%; height: 100%; left: 73.5%; top: 0;"onClick="return false;"></a>
+		<div class="tab_head_bg"><img class="imgclass" src="bg0_09.jpg"></div>
+	</div>
+	<!--tab内容部分-->
+	<div class="tab_box">
+		<div>
+			<div style="width: 100%; height: 400px; background-color: #5588AA;">
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab1</p>
+			</div>
 		</div>
+		<div class="hide">
+			<div style="width: 100%; height: 400px; background-color: #5588AA;">
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab2</p>
+			</div>
+		</div>
+		<div class="hide">
+			<div style="width: 100%; height: 400px; background-color: #5588AA;">
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab3</p>
+			</div>
+		</div>
+		<div class="hide">
+			<div style="width: 100%; height: 400px; background-color: #5588AA;">
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
+				<p style=" font: bold 16px/24px '微软雅黑'; color: #FFFF00; text-align: center;">tab4</p>
+			</div>
+		</div>
+	</div>
+</div>
 ```
 JS部分：
 
