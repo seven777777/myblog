@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 纯干货~常用布局汇总（持续更新）
-tags: 布局 css
+tags: layout css
 excerpt : 整理一些使用频率较高的布局样式，方便日常开发时参考，增加开发效率。
 ---
 
