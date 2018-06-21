@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 纯干货~常用布局汇总（持续更新）
-tags: layout css
+tags: layout css 文本溢出 flex布局
 excerpt : 整理一些使用频率较高的布局样式，方便日常开发时参考，增加开发效率。
 ---
 
@@ -140,20 +140,42 @@ tip:
   background:gray;
   height:100px;
 }
-.chindrenBox:first-child{
+.chindrenBox{
   display: -webkit-box;
   -webkit-box-flex: 1;
+  width:1px;
+  background:green;
+}
+.chindrenBox:first-child{
   background: orange;
 }
 .chindrenBox:last-child{
-  display: -webkit-box;
-  -webkit-box-flex: 1;
   background: pink;
 }
 ```
 但若两者内容长度不同时，会出现bug，如下图：
 ![image](https://seven777777.github.io/myblog/images/flex-img4.png)
 此时需要对两个都加上相同的任意宽度，如`width:1px;`
-
+```
+//css
+.fatherBox{
+  display: -webkit-box;
+/*   -webkit-box-orient:horizontal; *///默认就是水平排列，可以不加此属性
+  background:gray;
+  height:100px;
+}
+.chindrenBox{
+  display: -webkit-box;
+  -webkit-box-flex: 1;
+  width:1px;
+  background:green;
+}
+.chindrenBox:first-child{
+  background: orange;
+}
+.chindrenBox:last-child{
+  background: pink;
+}
+```
 
 <p>{{ page.date | date_to_string }}</p>
