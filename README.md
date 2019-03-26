@@ -31,5 +31,9 @@
 - index.html //首页
 - package.json 
 
-
+### 项目启动
+- 预览：
+`jekyll serve`
+- 修改：
+`gulp`
 	
