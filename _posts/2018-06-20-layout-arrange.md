@@ -57,7 +57,7 @@ excerpt : 整理一些使用频率较高的布局样式，方便日常开发时�
 }
 ```
 #### 垂直一侧定宽一侧自适应布局
-![image](https://seven777777.github.io/myblog/images/flex-img.png)
+![image](https://seven777777.github.io/myblog/images/post/flex-img.png)
 
 ```
 //html
