@@ -92,7 +92,7 @@ tip:
 - [x] 父级盒子高度固定
 
 #### 水平一侧定宽一侧自适应布局
-![image](https://seven777777.github.io/myblog/images/flex-img2.png)
+![image](https://seven777777.github.io/myblog/images/post/flex-img2.png)
 
 ```
 //html
@@ -122,7 +122,7 @@ tip:
 }
 ```
 #### 水平等比分配
-![image](https://seven777777.github.io/myblog/images/flex-img3.png)
+![image](https://seven777777.github.io/myblog/images/post/flex-img3.png)
 
 ```
 //html
@@ -154,7 +154,7 @@ tip:
 }
 ```
 但若两者内容长度不同时，会出现bug，如下图：
-![image](https://seven777777.github.io/myblog/images/flex-img4.png)
+![image](https://seven777777.github.io/myblog/images/post/flex-img4.png)
 此时需要对两个都加上相同的任意宽度，如`width:1px;`
 ```
 //css

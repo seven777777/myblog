@@ -10,7 +10,7 @@ excerpt : 如果是平时的pc或H5的项目，要实现这个效果，可能选
 
 近期做的一个类似头脑王者小程序项目，其中需要实现一个倒计时圆环的效果，如下图：
 
-![image](https://seven777777.github.io/myblog/images/xcx.gif)
+![image](https://seven777777.github.io/myblog/images/post/xcx.gif)
 
 如果是平时的pc或H5的项目，要实现这个效果，可能选择性还会再多一些，包括使用SVG,transform等来实现。考虑到小程序的一些局限性，所以选择用canvas+js来实现。
 

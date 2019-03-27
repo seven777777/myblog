@@ -31,9 +31,9 @@ excerpt : 情景一，如何设置小程序的入口页面。情景二，日常�
 可以在微信开发工具中进行设置
 
 步骤如下：
-![image](https://seven777777.github.io/myblog/images/xcx01.png)
-![image](https://seven777777.github.io/myblog/images/xcx02.png)
-![image](https://seven777777.github.io/myblog/images/xcx03.png)
+![image](https://seven777777.github.io/myblog/images/post/xcx01.png)
+![image](https://seven777777.github.io/myblog/images/post/xcx02.png)
+![image](https://seven777777.github.io/myblog/images/post/xcx03.png)
 
 > tip:此处的可视化修改都可以对应到项目的`project.config.json`文件内的设置，该编译设置对应的就是如下：
 

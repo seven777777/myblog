@@ -14,7 +14,7 @@ excerpt : 在小程序里，map、canvas、video、textarea等 组件是由客�
 最近在做一个小程序的项目，就这个现象遇到了以下问题：
 #### 问题一：浮动问题联动的页面滑动问题
 
-![image](https://seven777777.github.io/myblog/images/xcx01.jpg)
+![image](https://seven777777.github.io/myblog/images/post/xcx01.jpg)
 
 如上图，页面只有一屏，在开发工具中都可以正常展示，但在真机环境下，用手指滑动页面时，canvas元素会随着手指的滑动而出现位置偏移。
 
@@ -31,7 +31,7 @@ excerpt : 在小程序里，map、canvas、video、textarea等 组件是由客�
 
 #### 问题二：canvas层级过高，当他的外层盒子透明度为0时，并不能隐藏canvas
 
-![image](https://seven777777.github.io/myblog/images/xcx04.jpg)
+![image](https://seven777777.github.io/myblog/images/post/xcx04.jpg)
 
 其实我遇到这个问题的场景还算是比较容易解决，如上图所示，无法隐藏的倒计时canvas空间所在的盒子其实此时透明度为0，为什么要将其设置为透明度为0而不是display为none，是因为我这边的需求是一个隐藏前一个盒子，显示后一个盒子的动画，所以解决方法就是==将控制动画的参数绑定到canvas的盒子上，控制canvas的show==
 ```
