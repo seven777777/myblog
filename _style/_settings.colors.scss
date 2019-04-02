@@ -2,23 +2,23 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 13:45:48 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-03-27 13:52:46
+ * @Last Modified time: 2019-03-29 17:19:59
  */
 /*------------------------------------*\
     #COLORS
 \*------------------------------------*/
 
-$clr-primary:          #495a80;  
+$clr-primary:          #495a80; //主色调 
 $clr-light:            #fda47e;  
 $clr-lighter:          #fde4d9;  
 $clr-dark:             #cb5a29;  
-$clr-contrast:         #b3cad2;  
-$clr-contrast-dark:    #90bece;   
+$clr-contrast:         #b3cad2; //对比色调
+$clr-contrast-dark:    #cb5a29;   
 $clr-contrast-lighter: #f0f6f8;   
-$clr-def:              #999;
-$clr-def-light:        #bbbbbb;
-$clr-def-lighter:      #EFEFEF;
 $clr-def-lightest:     #FFF;
+$clr-def-lighter:      #EFEFEF;
+$clr-def-light:        #bbbbbb;
+$clr-def:              #999;
 $clr-def-dark:         #676972;
 $clr-def-darker:       #333;
 $clr-def-darkest:      #000;

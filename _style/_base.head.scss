@@ -2,23 +2,23 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:45:01 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-05-31 15:58:15
+ * @Last Modified time: 2019-04-02 14:39:54
  */
 /*------------------------------------*\
     #HEAD
 \*------------------------------------*/
 
-h1,h2,h2,h4,h5,h6{
-  font-family: $ft-fm-def;
-  font-weight: $ft-wt-bold;
-  margin: 0.5em 0;
-  color: $clr-def-dark;
-  line-height: 50px;
+h1,h2,h3,h4,h5,h6{
+    font-family: $ft-fm-def;
+    font-weight: $ft-wt-bold;
+    margin: 0.5em 0;
+    color: $clr-def-dark;
+    line-height: 50px;
 }
 .postlist-title{
-  font-size: 36px;
+    font-size: 24px;
 }
 .postlist-time{
-  color:$clr-def-light;
-  font-size: 20px;
+    color:$clr-def-light;
+    font-size: 20px;
 }

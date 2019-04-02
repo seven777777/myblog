@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-06-20 14:25:25
+ * @Last Modified time: 2019-04-02 14:28:26
  */
 /*------------------------------------*\
     #common
@@ -69,6 +69,10 @@ pre>code {
   white-space: inherit;
   font-family: $ft-fm-code;
   line-height: 24px;
+}
+
+blockquote{
+    font-family: $ft-fm-quote;
 }
 
 //followme

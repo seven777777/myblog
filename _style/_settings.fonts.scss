@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 13:45:32 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-05-31 09:57:35
+ * @Last Modified time: 2019-04-02 14:24:00
  */
 @font-face {
     font-family: 'MONACO';
@@ -24,14 +24,13 @@
 }
 
 // Families
-$ft-fm--en: 'Oswald';
+$ft-fm--en: 'roboto';
 $ft-fm--cn: "Microsoft YaHei";
 $ft-fm--cn-quote: FangSong, SimSun, STSong;
 $ft-fm--local: sans-serif;
 
 $ft-fm-def: $ft-fm--en, $ft-fm--cn, $ft-fm--local;
 $ft-fm-quote: $ft-fm--en, $ft-fm--cn-quote, $ft-fm--local;
-
 $ft-fm-code: 'MONACO', "Courier New", Courier;
 
 
