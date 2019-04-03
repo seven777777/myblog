@@ -1,7 +1,9 @@
 ---
 layout: default
 title: 纯干货~常用布局汇总（持续更新）
-tags: layout css 文本溢出 flex布局
+time: 2018.6.20 14:11:00
+tags: css 干货
+category: 工作
 excerpt : 整理一些使用频率较高的布局样式，方便日常开发时参考，增加开发效率。
 ---
 

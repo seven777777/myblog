@@ -1,6 +1,9 @@
 ---
 layout: default
 title: ECharts 使用小计
+time: 2018.5.11 13:07:00
+tags: ECharts
+category: 工作
 excerpt: 这里只写一些我在实际开发过程中用到过的属性，因为全部属性实在太多，就不一一列出来了，后续会持续更新新用到的属性。另外，之所以写这个文档，是因为ECharts官网的配置文档看起来实在是太费劲了。。。
 ---
 

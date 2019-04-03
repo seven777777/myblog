@@ -1,7 +1,9 @@
 ---
 layout: default
 title: 小程序初涉——倒计时效果
-tags: 微信小程序 倒计时 canvas
+time: 2018.8.14 12:45:00
+tags: 微信小程序
+category: 工作
 excerpt : 如果是平时的pc或H5的项目，要实现这个效果，可能选择性还会再多一些，包括使用SVG,transform等来实现。考虑到小程序的一些局限性，所以选择用canvas+js来实现。
 ---
 

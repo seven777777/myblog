@@ -1,6 +1,9 @@
 ---
 layout: default
 title: webpack之watch
+time: 2018.5.25 20:11:00
+tags: webpack
+category: 工作
 excerpt : webpack在手动配置开发环境时，需要实时在网页中看到代码的更改，又不想要每次修改代码都手动`npm run build`一下，webpack提供三种解决方案，在此记录一下。
 ---
 

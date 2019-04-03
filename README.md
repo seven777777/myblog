@@ -46,6 +46,8 @@ layout: //布局模板（_layouts 文件夹中设置）
 time: //文章创建时间
 title: //页面title
 tags: //主题标签（实用空格分开 ep:平滑滚动 css js）
+category: //大分类（eg：生活/工作）
+series: //系列博文
 permalink: //路由标签
 excerpt : //文章摘要
 ---

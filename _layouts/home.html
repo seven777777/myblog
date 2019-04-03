@@ -9,7 +9,7 @@
         <h1 class="m_title">Blogs</h1>
         {% for post in paginator.posts %}
         <div class="artical_wrap">
-            <p class="postlist-time">{{ post.date | date_to_string }}</p>
+            <p class="postlist-time">{{ post.date | date: "%Y年%m月%d日" }}</p>
             <h3>
                 <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </h3>
