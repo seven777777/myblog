@@ -38,3 +38,15 @@
 - 修改：
 `gulp`
 	
+### 页面变量
+
+```
+---
+layout: //布局模板（_layouts 文件夹中设置）
+time: //文章创建时间
+title: //页面title
+tags: //主题标签（实用空格分开 ep:平滑滚动 css js）
+permalink: //路由标签
+excerpt : //文章摘要
+---
+```
