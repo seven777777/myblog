@@ -2,15 +2,15 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:19:29 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2018-05-18 15:42:01
+ * @Last Modified time: 2019-04-24 17:27:33
  */
 
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const prefix = require('gulp-autoprefixer');//CSS3自动补全插件
-const uglify = require('gulp-uglify');//压缩javascript文件
-const rename =require('gulp-rename');//改变管道中的文件名
-const jekyll =require('gulp-jekyll');
+const gulp    = require('gulp');
+const sass    = require('gulp-sass');
+const prefix  = require('gulp-autoprefixer');//CSS3自动补全插件
+const uglify  = require('gulp-uglify');//压缩javascript文件
+const rename  = require('gulp-rename');//改变管道中的文件名
+const jekyll  = require('gulp-jekyll');
 
 
 
@@ -41,21 +41,6 @@ gulp.task('sass',() => {
 //         .pipe(rename('common.min.js'))
 //         .pipe(gulp.dest('js'));
 // });
-
-
-/**
- * Build with Jekyll
- */
-// gulp.task('jekyll', () => {
-//     return gulp.src(['.'])
-//         .pipe(jekyll({
-//             source: '.',
-//             destination: '_site'
-//         }))
-//         .pipe(gulp.dest('_site'));
-// });
-
-
 
 
 
