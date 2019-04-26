@@ -3,7 +3,7 @@ layout: default
 title: 小程序初涉——页面滑动以及canvas层级问题
 time: 2018.8.13 10:21:00
 tags: 微信小程序
-category: 工作
+category: work
 excerpt : 在小程序里，map、canvas、video、textarea等 组件是由客户端创建的原生组件，它们的层级是最高的，不能通过 z-index 控制层级，因此在实际开发过程中就会遇到很多由此产生的问题。
 ---
 
