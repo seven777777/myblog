@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-04-02 14:28:26
+ * @Last Modified time: 2019-04-28 09:56:00
  */
 /*------------------------------------*\
     #common
@@ -44,36 +44,32 @@
   }
 }
 
-code {
-  border: dashed 1px $clr-contrast;
-  color: $clr-contrast-dark;
-  padding: 2px 8px;
-  margin: 5px;
-  font-size: 14px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  // font-family: Consolas,"Courier New",Courier;
-  text-shadow: none;
-  background-color: $clr-contrast-lighter;
-  word-wrap: break-word;
-  white-space: pre;
-  font-family: $ft-fm-code;
-}
-pre>code {
-  display: block;
-  padding: 10px 15px;
-  margin: 10px 0;
-  background-color: $clr-contrast-lighter;
-  overflow-x: auto;
-  word-wrap: normal;
-  white-space: inherit;
-  font-family: $ft-fm-code;
-  line-height: 24px;
-}
-
-blockquote{
-    font-family: $ft-fm-quote;
-}
+// code {
+//   border: dashed 1px $clr-contrast;
+//   color: $clr-contrast-dark;
+//   padding: 2px 8px;
+//   margin: 5px;
+//   font-size: 14px;
+//   -webkit-border-radius: 5px;
+//   border-radius: 5px;
+//   // font-family: Consolas,"Courier New",Courier;
+//   text-shadow: none;
+//   background-color: $clr-contrast-lighter;
+//   word-wrap: break-word;
+//   white-space: pre;
+//   font-family: $ft-fm-code;
+// }
+// pre>code {
+//   display: block;
+//   padding: 10px 15px;
+//   margin: 10px 0;
+//   background-color: $clr-contrast-lighter;
+//   overflow-x: auto;
+//   word-wrap: normal;
+//   white-space: inherit;
+//   font-family: $ft-fm-code;
+//   line-height: 24px;
+// }
 
 //followme
 .followMe{
