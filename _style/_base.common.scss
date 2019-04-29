@@ -2,74 +2,78 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-04-28 16:46:36
+ * @Last Modified time: 2019-04-29 14:58:55
  */
 /*------------------------------------*\
     #common
 \*------------------------------------*/
 
-.tag-btn{
-  display: inline-block;
-  height: 30px;
-  padding: 0 15px;
-  margin: 0 10px;
-  border-radius: 4px;
-  background: $clr-contrast;
-  color: white;
-  line-height: 30px;
+// flex布局相关
+.flex{
+    display: flex;
 }
-.m_title{
-  font-size: 36px;
-  font-weight: bold;
-  color: $clr-h1;
-  margin-bottom: 15px;
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.artical_wrap{
-  margin: 10px 0;
-  box-sizing: border-box;
-  padding: 10px 0;
-  border-bottom: 1px dashed $clr-dark;
-  .artical_title{
-    display: block;
-    font-size: 30px;
-    color: $clr-contrast;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  .artical_excerpt{
-    text-indent: 2em;
-    font-size: 16px;
-    line-height: 36px;
-    color: #333;
-  }
+.flex_align {
+    display: flex;
+    align-items: center;
+}
+.flex_justify {
+    display: flex;
+    justify-content: center;
+}
+.flex_justify_between{
+    display: flex;
+    justify-content: space-between;
+}
+.flex_justify_around {
+    display: flex;
+    justify-content: space-around;
+}
+.flex_full {
+    flex: 1;
 }
 
-// code {
-//   border: dashed 1px $clr-contrast;
-//   color: $clr-contrast-dark;
-//   padding: 2px 8px;
-//   margin: 5px;
-//   font-size: 14px;
-//   -webkit-border-radius: 5px;
-//   border-radius: 5px;
-//   // font-family: Consolas,"Courier New",Courier;
-//   text-shadow: none;
-//   background-color: $clr-contrast-lighter;
-//   word-wrap: break-word;
-//   white-space: pre;
-//   font-family: $ft-fm-code;
+
+// .tag-btn{
+//   display: inline-block;
+//   height: 30px;
+//   padding: 0 15px;
+//   margin: 0 10px;
+//   border-radius: 4px;
+//   background: $clr-contrast;
+//   color: white;
+//   line-height: 30px;
 // }
-// pre>code {
-//   display: block;
-//   padding: 10px 15px;
+// .m_title{
+//   font-size: 36px;
+//   font-weight: bold;
+//   color: $clr-h1;
+//   margin-bottom: 15px;
+// }
+// .artical_wrap{
 //   margin: 10px 0;
-//   background-color: $clr-contrast-lighter;
-//   overflow-x: auto;
-//   word-wrap: normal;
-//   white-space: inherit;
-//   font-family: $ft-fm-code;
-//   line-height: 24px;
+//   box-sizing: border-box;
+//   padding: 10px 0;
+//   border-bottom: 1px dashed $clr-dark;
+//   .artical_title{
+//     display: block;
+//     font-size: $ft-sz-h1;
+//     color: $clr-contrast;
+//     font-weight: bold;
+//     margin-bottom: 20px;
+//   }
+//   .artical_excerpt{
+//     text-indent: 2em;
+//     font-size: 16px;
+//     line-height: 36px;
+//     color: #333;
+//   }
 // }
+
 
 //followme
 .followMe{
