@@ -2,6 +2,7 @@
     #MIXINS
 \*------------------------------------*/
 
+// 波浪线
 @mixin svg-wave($color) {
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23"+$color+"' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E") repeat-x 0 100%; 
     background-size: 20px auto;
@@ -12,38 +13,17 @@
     to   { background-position: -20px 100%; }
 }
 
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
+//单行文本溢出
+@mixin text_ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-@mixin box-shadow($radius, $color) {
-  -webkit-box-shadow: $radius $color;
-  box-shadow: $radius $color;
-}
-
-@mixin transition-duration($duration) {
-  -webkit-transition-duration: $duration;
-  -moz-transition-duration: $duration;
-  -ms-transition-duration: $duration;
-  -o-transition-duration: $duration;
-  transition-duration: $duration;
-}
-
-@mixin rotate($angular) {
-  -webkit-transform: rotate($angular);
-  -moz-transform: rotate($angular);
-  -ms-transform: rotate($angular);
-  -o-transform: rotate($angular);
-  transform: rotate($angular);
-}
-
-@mixin rotateY($angular) {
-  -webkit-transform: rotate3d(0, 1, 0, $angular);
-  -moz-transform: rotate3d(0, 1, 0, $angular);
-  -ms-transform: rotate3d(0, 1, 0, $angular);
-  -o-transform: rotate3d(0, 1, 0, $angular);
-  transform: rotate3d(0, 1, 0, $angular);
+//多行文本溢出,$line 行数
+@mixin text_clamp($line) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

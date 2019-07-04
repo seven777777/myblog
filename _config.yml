@@ -4,7 +4,7 @@ description: "Web Front-End Blog by Min Zhang"
 
 url: "https://seven777777.github.io"
 loadingImg: "https://seven777777.github.io/myblog/images/loading.gif"
-filePath: "https://seven777777.github.io/myblog/images"
+imgPath: "https://seven777777.github.io/myblog/images"
 
 
 paginate: 4
