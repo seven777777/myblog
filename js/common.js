@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-07-12 14:34:53
+ * @Last Modified time: 2019-08-13 14:47:59
  */
 
 // 页面滚动事件
@@ -37,6 +37,24 @@ $('#gzh').mouseleave(function(){
 // 天气设置
 const ipCityName = returnCitySN["cname"]
 const ipCityId = returnCitySN["cid"]
+// 获取用户位置信息
+// function Mlocation(ip='101.231.183.227') {
+//     $.ajax({
+//         type: "post",
+//         url: "https://bird.ioliu.cn/ip",
+//         dataType: "json",
+//         data:{
+//             ip:ip?ip:''
+//         },
+//         success:function (data) {
+//             console.log(data)
+//         },
+//         error:function () {
+//             console.log("error!");
+//         }
+//     })
+// }
+// Mlocation()
 // 根据ip所在城市 请求天气
 $.get('https://www.tianqiapi.com/api/?version=v1&cityid='+ipCityId,function(res){
     console.log(res)
