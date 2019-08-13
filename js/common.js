@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-08-13 14:47:59
+ * @Last Modified time: 2019-08-13 15:10:49
  */
 
 // 页面滚动事件
@@ -55,6 +55,7 @@ const ipCityId = returnCitySN["cid"]
 //     })
 // }
 // Mlocation()
+// https://api.asilu.com/weather_v2/ 
 // 根据ip所在城市 请求天气
 $.get('https://www.tianqiapi.com/api/?version=v1&cityid='+ipCityId,function(res){
     console.log(res)
