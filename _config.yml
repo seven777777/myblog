@@ -2,12 +2,12 @@ baseurl: /myblog
 name: "Blog of Min Zhang"
 description: "Web Front-End Blog by Min Zhang"
 
-url: "https://seven777777.github.io/myblog/"
+url: "https://seven777777.github.io"
 loadingImg: "https://seven777777.github.io/myblog/images/loading.gif"
-filePath: "https://github.com/seven777777/myblog"
+imgPath: "https://seven777777.github.io/myblog/images"
 
 
-paginate: 2
+paginate: 4
 paginate_path: "/page:num"
 
 markdown: kramdown
@@ -19,3 +19,4 @@ permalink: pretty
 
 plugins:
 - jekyll-paginate
+port: 4001

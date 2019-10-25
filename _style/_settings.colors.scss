@@ -1,18 +1,25 @@
+/*
+ * @Author: seven.zhang 
+ * @Date: 2018-05-18 13:45:48 
+ * @Last Modified by: seven.zhang
+ * @Last Modified time: 2019-04-29 14:39:35
+ */
 /*------------------------------------*\
     #COLORS
 \*------------------------------------*/
 
-$clr-primary:          #22C3AA;  // green
-$clr-light:            #AEE2D9;  // light green
-$clr-lighter:          #EEF3F0;  // lighter green
-$clr-dark:             #157A6B;  // dark green
-$clr-contrast:         #D0648A;  // red
-$clr-contrast-dark:    #AB466A;  // dark red
-$clr-def:              #666;
-$clr-def-light:        #CCC;
-$clr-def-lighter:      #EFEFEF;
+$clr-primary:          #9bc4b4; //主色调 
+$clr-light:            #cde9db;  
+$clr-lighter:          #e7f4ed;  
+$clr-dark:             #0d0e0d;  
+$clr-contrast:         #f29653; //对比色调
+$clr-contrast-dark:    #cb5a29;   
+$clr-contrast-lighter: #efc9ad;   
 $clr-def-lightest:     #FFF;
-$clr-def-dark:         #444;
+$clr-def-lighter:      #EFEFEF;
+$clr-def-light:        #bbbbbb;
+$clr-def:              #999;
+$clr-def-dark:         #676972;
 $clr-def-darker:       #333;
 $clr-def-darkest:      #000;
 
@@ -20,17 +27,22 @@ $clr-def-darkest:      #000;
 
 
 // Page
-$clr-page-back: $clr-def-lighter;
+$clr-page-back: $clr-def-lightest;
 $clr-page-footer-back:$clr-def-darkest;
+
+
+
+// Nav
+$clr-nav-logo: $clr-def-dark;
 
 
 
 
 // Links
-$clr-link: $clr-contrast;
+$clr-link: $clr-primary;
 $clr-link--hover: $clr-def;
 $clr-link--active: $clr-def;
-$clr-link--visited:$clr-contrast-dark;
+$clr-link--visited:$clr-dark;
 
 
 
@@ -50,7 +62,7 @@ $clr-h2-6: $clr-def-dark;
 
 // Quotes
 $clr-qt:            $clr-def-dark;
-$clr-qt-back:       $clr-light;
+$clr-qt-back:       $clr-contrast;
 $clr-license-back:  $clr-lighter;
 $clr-code-back:     $clr-lighter;
 

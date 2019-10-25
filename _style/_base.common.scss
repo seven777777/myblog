@@ -1,0 +1,114 @@
+/*
+ * @Author: seven.zhang 
+ * @Date: 2018-05-31 10:33:36 
+ * @Last Modified by: seven.zhang
+ * @Last Modified time: 2019-04-29 14:58:55
+ */
+/*------------------------------------*\
+    #common
+\*------------------------------------*/
+
+// flex布局相关
+.flex{
+    display: flex;
+}
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex_align {
+    display: flex;
+    align-items: center;
+}
+.flex_justify {
+    display: flex;
+    justify-content: center;
+}
+.flex_justify_between{
+    display: flex;
+    justify-content: space-between;
+}
+.flex_justify_around {
+    display: flex;
+    justify-content: space-around;
+}
+.flex_full {
+    flex: 1;
+}
+
+
+// .tag-btn{
+//   display: inline-block;
+//   height: 30px;
+//   padding: 0 15px;
+//   margin: 0 10px;
+//   border-radius: 4px;
+//   background: $clr-contrast;
+//   color: white;
+//   line-height: 30px;
+// }
+// .m_title{
+//   font-size: 36px;
+//   font-weight: bold;
+//   color: $clr-h1;
+//   margin-bottom: 15px;
+// }
+// .artical_wrap{
+//   margin: 10px 0;
+//   box-sizing: border-box;
+//   padding: 10px 0;
+//   border-bottom: 1px dashed $clr-dark;
+//   .artical_title{
+//     display: block;
+//     font-size: $ft-sz-h1;
+//     color: $clr-contrast;
+//     font-weight: bold;
+//     margin-bottom: 20px;
+//   }
+//   .artical_excerpt{
+//     text-indent: 2em;
+//     font-size: 16px;
+//     line-height: 36px;
+//     color: #333;
+//   }
+// }
+
+
+//followme
+.followMe{
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  background: $clr-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .icon{
+    width: 32px;
+    height: 32px;
+    background: url('../images/icon2.png') 0 0 no-repeat;
+    background-size: 168px 142px;
+    margin: 0 10px;
+    &.db{
+      background-position: 0 -108px;
+    }
+    // &.db:hover{
+    //   background-position: 0 -36px;
+    // }
+    &.git{
+      background-position: -32px -108px;
+    }
+    &.wb{
+      width: 40px;
+      background-position: -64px -108px;
+    }
+    &.js{
+      height: 34px;
+      background-position: -104px -108px;
+    }
+    &.zh{
+      background-position: -136px -108px;
+    }
+  }
+}
