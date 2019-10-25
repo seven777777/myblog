@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-08-13 15:10:49
+ * @Last Modified time: 2019-10-25 16:37:36
  */
 
 // 页面滚动事件
@@ -60,5 +60,9 @@ const ipCityId = returnCitySN["cid"]
 $.get('https://www.tianqiapi.com/api/?version=v1&cityid='+ipCityId,function(res){
     console.log(res)
     // $('#weather').html(ipCityName + '：' + res.data[0].wea)
+})
+
+var mySwiper = new Swiper('.swiper-container', {
+	autoplay: true,//可选选项，自动滑动
 })
 

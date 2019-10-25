@@ -5,6 +5,16 @@
 <div class="content-wrap">
     {% include aboutMe.html %}
     {% include followMe.html %}
+
+    <!-- 图片轮播 -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">slider1</div>
+            <div class="swiper-slide">slider2</div>
+            <div class="swiper-slide">slider3</div>
+        </div>
+    </div>
+
     <div class="content-wrap mt30">
         <h1 class="m_title">Blogs</h1>
         {% for post in paginator.posts %}
