@@ -2,8 +2,11 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-10-25 16:37:36
+ * @Last Modified time: 2019-10-25 17:02:04
  */
+var mySwiper = new Swiper('.swiper-container', {
+	autoplay: true,//可选选项，自动滑动
+})
 
 // 页面滚动事件
 // let toTop=0,toTopAfter=0;
@@ -62,7 +65,5 @@ $.get('https://www.tianqiapi.com/api/?version=v1&cityid='+ipCityId,function(res)
     // $('#weather').html(ipCityName + '：' + res.data[0].wea)
 })
 
-var mySwiper = new Swiper('.swiper-container', {
-	autoplay: true,//可选选项，自动滑动
-})
+
 
