@@ -6,9 +6,15 @@
     <!-- 图片轮播 -->
     <div class="swiper-container" id="bannerSwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="../images/banner/banner01.jpg"></div>
-            <div class="swiper-slide"><img src="{{site.imgPath}}/banner/banner02.jpg"></div>
-            <div class="swiper-slide"><img src="{{site.imgPath}}/banner/banner03.jpg"></div>
+            <div class="swiper-slide">
+                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner01.jpg"></a>
+            </div>
+            <div class="swiper-slide">
+                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner02.jpg"></a>
+            </div>
+            <div class="swiper-slide">
+                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner03.jpg"></a>
+            </div>
         </div>
     </div>
 </div>
@@ -19,4 +25,10 @@
 var mySwiper = new Swiper('#bannerSwiper', {
 	autoplay: true,//可选选项，自动滑动
 })
+
+window.onload = function () {
+    new Image().src = '{{site.imgPath}}/banner/banner01.jpg';
+    // new Image().src = '{{site.imgPath}}/banner/banner02.jpg';
+    // new Image().src = '{{site.imgPath}}/banner/banner03.jpg';
+}
 </script>
