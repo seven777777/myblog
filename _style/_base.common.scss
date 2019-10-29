@@ -2,78 +2,328 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-10-29 13:57:13
+ * @Last Modified time: 2019-10-29 17:08:35
  */
 /*------------------------------------*\
     #common
 \*------------------------------------*/
 
-// flex布局相关
-.flex{
-    display: flex;
-}
-.flex_center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.flex_align {
-    display: flex;
-    align-items: center;
-}
-.flex_justify {
-    display: flex;
-    justify-content: center;
-}
-.flex_justify_between{
-    display: flex;
-    justify-content: space-between;
-}
-.flex_justify_around {
-    display: flex;
-    justify-content: space-around;
-}
-.flex_full {
-    flex: 1;
+// ========  全局布局 start  ========
+.pageWrap{
+    width: 100vw;
+    height: 100vh;
+    min-width: 1200px;
 }
 
+.content-wrap{
+    width: 960px;
+    margin: 0 auto;
+}
+nav{
+    background: rgba($color: white, $alpha: 0.8);
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    padding: 0 20px;
+    @extend .flex_justify_between;
+    .logo{
+        font-size: 20px;
+        color: $clr-nav-logo;
+    }
+    .description{
+        color: $clr-def-dark;
+        font-size: 12px;
+        font-family: $ft-fm--cn;
+    }
+    .tab{
+        float:right;
+        a.tab-box{
+            display: inline-block;
+            padding: 0 10px;
+            color:$clr-def-dark;
+            font-size: 16px;
+            height: 60px;
+            line-height: 60px;
+            box-sizing: border-box;
+            &.active{
+                border-bottom: 2px solid $clr-primary;
+            }
+        }
+    }
+}
+footer{
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0;
+    line-height: 26px;
+    .box_footer{
+        border-right: 2px solid $clr-contrast-dark;
+        display: inline-block;
+        padding: 0 10px;
+        color: $clr-contrast-dark;
+        &:nth-child(1){
+            border-left: 2px solid $clr-contrast-dark;
+        }
+    }
+    .gzh_ewm{
+        width: 100px;
+        height: 100px;
+        background: url("../images/gzh.jpg") 0 0 no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: -110px;
+        left: 50%;
+        display: none;
+    }
+}
 
-// .tag-btn{
-//   display: inline-block;
-//   height: 30px;
-//   padding: 0 15px;
-//   margin: 0 10px;
-//   border-radius: 4px;
-//   background: $clr-contrast;
-//   color: white;
-//   line-height: 30px;
-// }
-// .m_title{
-//   font-size: 36px;
-//   font-weight: bold;
-//   color: $clr-h1;
-//   margin-bottom: 15px;
-// }
-// .artical_wrap{
-//   margin: 10px 0;
-//   box-sizing: border-box;
-//   padding: 10px 0;
-//   border-bottom: 1px dashed $clr-dark;
-//   .artical_title{
-//     display: block;
-//     font-size: $ft-sz-h1;
-//     color: $clr-contrast;
+// ========  全局布局 end  ========
+
+// ========  首页相关 start  ========
+.home-banner-warp{
+    width: 100%;
+    height: 666px;
+    position: relative;
+    background: $clr-light;
+    .swiper-container{
+        width: 100%;
+        height: 100%;
+        .banner-img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: auto;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+.home-navbar{
+    width: 940px;
+    height: 74px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    @extend .default-shadow;
+}
+
+.home-introduce{
+    background: white;
+    height: 200px;
+    border-radius: 8px;
+    margin-top: -80px;
+    position: relative;
+    z-index: 100;
+    padding: 20px;
+    @extend .default-shadow;
+}
+
+.category-list{
+    @extend .flex_justify_between;
+    height: 100px;
+    .item{
+        flex: 1;
+        height: 100%;
+        margin-right: 10px;
+        border-radius: 5px;
+        color: $clr-def-darker;
+        @extend .default-shadow;
+        &:nth-last-child(){
+            margin-right: 0;
+        }
+
+        &:nth-child(1){
+            background: salmon;
+        }
+        &:nth-child(2){
+            background: aquamarine;
+        }
+
+
+    }
+}
+
+// ========  首页相关 end  ========
+
+// ========  default页面 start  ========
+.default-nav-wrap{
+    height: 60px;
+    .default-nav{
+        width: 100%;
+        height: 60px;
+        background: $clr-def-lightest;
+        position: fixed;
+        top: 0;
+        border-bottom: 3px solid $clr-primary;
+        z-index: 10;
+        @extend .flex_align;
+        @extend .default-shadow;
+    }
+}
+
+// ========  default页面 end  ========
+
+
+// a {
+//     color: $clr-link;
 //     font-weight: bold;
-//     margin-bottom: 20px;
-//   }
-//   .artical_excerpt{
-//     text-indent: 2em;
-//     font-size: 16px;
-//     line-height: 36px;
-//     color: #333;
-//   }
+//     text-decoration: none;
+//     word-wrap: break-word;
+//     display: inline-block;
+//     position: relative;
+//     &:hover{
+//         @include svg-wave('f29653');
+//         &::before{
+//             content: '#';
+//             position: absolute;            
+//             left: -12px;
+//             top: -5px;
+//             font-size: 12px;
+//             color: $clr-def-light;
+//         }
+//     }
+// }
+// #nav-top{
+//     a{
+//         &:hover{
+//             background: none;
+//             &::before{
+//                 content: ''
+//             }
+//         }
+//     }
 // }
 
+// header{
+//     a{
+//         color: white;
+//         &:hover{
+//             background: none;
+//             &::before{
+//                 content: ''
+//             }
+//         }
+//     }
+// }
+
+// .button {
+//     padding: 0.4em 1em;
+//     border-radius: 1.2em;
+//     background-color: $clr-primary;
+//     color: $clr-def-lighter;
+//     text-shadow: none;
+//     text-indent: 0;
+//     font-size: $ft-sz-sm;
+//     margin: 0 0.2em 0.5em 0.2em;
+//     display: inline-block;
+
+//     &:visited {
+//         color: $clr-def-lighter;
+//     }
+
+//     &:hover {
+//         color: $clr-def-lighter;
+//         background-color: $clr-contrast;
+//     }
+
+//     &:visited:hover {
+//         color: $clr-def-lighter;
+//     }
+
+//     &.def {
+//         background-color: $clr-def;
+
+//         &:hover {
+//             color: $clr-def-lighter;
+//             background-color: $clr-contrast;
+//         }
+//     }
+// }
+
+
+blockquote {
+    background-color: $clr-qt-back;
+    margin: 20px 0;
+    padding: 1em 1.5em;
+    border-style: solid;
+    border-color: $clr-primary;
+    border-width: 0px 1px 0px 7px;
+    color: $clr-qt;
+    font-size: $ft-sz-qt;
+    position: relative;
+
+    &::before {
+        // display: block;
+        content: '“';
+        // width: 20px;
+        // padding: 0 10px 10px;
+        // height: 30px;
+        font-size: 60px;
+        font-weight: bold;
+        position: absolute;
+        left: -77px;
+        top: 0;
+        // background-color: white;
+        // box-shadow: 0px 0px 5px 1px rgba(200, 200, 200, 0.5);
+        z-index: -10;
+    }
+
+    p {
+        text-indent: 0;
+        line-height: 1.75em;
+        text-shadow: none;
+        color: $clr-qt;
+        font-family: $ft-fm-quote;
+        font-size: $ft-sz-qt;
+        word-wrap: break-word;
+    }
+
+}
+
+.cn blockquote p {
+  text-indent: 0;
+}
+
+pre > code {
+  display: block;
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: $clr-code-back;
+  overflow-x: auto;
+  word-wrap: normal;
+  white-space: inherit;
+}
+
+code {
+  border: dashed 1px $clr-primary;
+  color: $clr-dark;
+  padding: 2px 8px;
+  margin: 5px 0;
+  font-size: 0.85em;
+  border-radius: 5px;
+  font-family: $ft-fm-code;
+  text-shadow: none;
+  background-color: $clr-code-back;
+  word-wrap: break-word;
+  white-space: pre;
+}
+
+h1>code {
+  color: $clr-h1;
+}
+
+h2>code, h3>code, h4>code, h5>code, h6>code {
+  color: $clr-h2-6;
+}
 
 //followme
 .followMe{
@@ -114,5 +364,10 @@
 }
 
 
-
-// 
+.postlist-title{
+    font-size: 24px;
+}
+.postlist-time{
+    color:$clr-def-light;
+    font-size: 20px;
+}

@@ -1,10 +1,3 @@
-/*
- * @Author: seven.zhang 
- * @Date: 2018-05-15 09:31:32 
- * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-10-29 14:32:25
- */
-
 /*------------------------------------*\
     #PAGE
 \*------------------------------------*/
@@ -26,40 +19,57 @@ body{
     font-weight: $ft-wt-def;
     font-size: $ft-sz-def;
 }
-
-.pageWrap{
-    width: 100vw;
-    height: 100vh;
+ol, ul { list-style: none; }
+h1,h2,h3,h4,h5,h6{
+    font-family: $ft-fm-def;
+    font-weight: $ft-wt-bold;
+    margin: 0.5em 0;
+    color: $clr-def-dark;
+    line-height: 50px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.content-wrap{
-    width: 960px;
-    margin: 0 auto;
+// flex布局相关
+.flex{
+    display: flex;
+}
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex_align {
+    display: flex;
+    align-items: center;
+}
+.flex_justify {
+    display: flex;
+    justify-content: center;
+}
+.flex_justify_between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex_justify_around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex_full {
+    flex: 1;
 }
 
-// 首页
-.home-banner-warp{
-    width: 100%;
-    height: 666px;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: $clr-light;
-    .swiper-container{
-        width: 100%;
-        height: 100%;
-        .banner-img{
-            display: block;
-            width: 100%;
-            height: 100%;
-            img{
-                width: 100%;
-                height: auto;
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-        }
-    }
+// margin & padding
+.mt_20{ margin-top: 20px;}
+
+.default-shadow{
+    box-shadow: 0 1px 8px rgba($color: $clr-def-dark, $alpha: 0.3);
 }
+
+
+
+

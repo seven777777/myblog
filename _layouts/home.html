@@ -2,52 +2,91 @@
 
 <title>seven's blog</title>
 
-<div class="content-wrap">
-    {% include aboutMe.html %}
-    {% include followMe.html %}
-
-    <!-- 图片轮播 -->
-    <!-- <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">slider1</div>
-            <div class="swiper-slide">slider2</div>
-            <div class="swiper-slide">slider3</div>
-        </div>
-    </div> -->
-
-    <div class="content-wrap mt30">
-        <h1 class="m_title">Blogs</h1>
-        {% for post in paginator.posts %}
-        <div class="artical_wrap">
-            <p class="postlist-time">{{ post.date | date: "%Y年%m月%d日" }}</p>
-            <h3>
-                <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-            </h3>
-            <p>
-                {% for tag in post.tags %}
-                <a class="tag-btn">{{tag}}</a>
-                {% endfor %}
-            </p>
-            <p class="artical_excerpt">{{ post.excerpt }}</p>
-        </div>
-        {% endfor %}
-
-        <div class="pagination">
-            {% if paginator.previous_page %}
-              <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="previous" style="float:left;"><< Previous</a>
-            {% else %}
-              <!-- <span class="previous">Previous</span> -->
-            {% endif %}
-              <span class="page_number ">Page: {{ paginator.page }} / {{ paginator.total_pages }}</span>
-            {% if paginator.next_page %}
-              <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next" style="float:right;margin-right:30px;">Next >></a>
-            {% else %}
-              <!-- <span class="next ">Next</span> -->
-            {% endif %}
-        </div>
-    </div>
-    
+<div class="home-navbar">
+    {% include nav.html %}
 </div>
-{% include followMe.html %}
+
+<div class="home-banner-warp">
+    <!-- 图片轮播 -->
+    <div class="swiper-container" id="bannerSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner01.jpg"></a>
+            </div>
+            <div class="swiper-slide">
+                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner02.jpg"></a>
+            </div>
+            <div class="swiper-slide">
+                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner03.jpg"></a>
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
+
+<!-- 个人简介 -->
+<div class="content-wrap home-introduce">
+    开发中。。。
+</div>
+
+<div class="content-wrap">
+    <ul class="category-list mt_20">
+        {% for category in site.categories %}
+        <li class="item"><a href="{{ site.baseurl}}/category/{{ category | first }}">{{ category | first }} {{ category | last | size }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="content-wrap mt30">
+    <h1 class="m_title">Blogs</h1>
+    {% for post in paginator.posts %}
+    <div class="artical_wrap">
+        <p class="postlist-time">{{ post.date | date: "%Y年%m月%d日" }}</p>
+        <h3>
+            <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </h3>
+        <p>
+            {% for tag in post.tags %}
+            <a class="tag-btn">{{tag}}</a>
+            {% endfor %}
+        </p>
+        <p class="artical_excerpt">{{ post.excerpt }}</p>
+    </div>
+    {% endfor %}
+
+    <div class="pagination">
+        {% if paginator.previous_page %}
+            <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="previous" style="float:left;"><< Previous</a>
+        {% else %}
+            <!-- <span class="previous">Previous</span> -->
+        {% endif %}
+            <span class="page_number ">Page: {{ paginator.page }} / {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+            <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next" style="float:right;margin-right:30px;">Next >></a>
+        {% else %}
+            <!-- <span class="next ">Next</span> -->
+        {% endif %}
+    </div>
+</div>
+
+
 
 {% include footer.html %}
+
+<script>
+var mySwiper = new Swiper('#bannerSwiper', {
+	autoplay: {
+        delay:5000
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+})
+
+window.onload = function () {
+    new Image().src = '{{site.imgPath}}/banner/banner01.jpg';
+    new Image().src = '{{site.imgPath}}/banner/banner02.jpg';
+    new Image().src = '{{site.imgPath}}/banner/banner03.jpg';
+}
+</script>

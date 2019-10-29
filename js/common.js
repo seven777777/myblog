@@ -2,11 +2,8 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-10-29 14:08:39
+ * @Last Modified time: 2019-10-29 16:33:14
  */
-
-//  首页图片轮播
-
 
 function getQueryString(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
@@ -47,8 +44,8 @@ $('#gzh').mouseleave(function(){
 });
 
 // 天气设置
-const ipCityName = returnCitySN["cname"]
-const ipCityId = returnCitySN["cid"]
+// const ipCityName = returnCitySN["cname"]
+// const ipCityId = returnCitySN["cid"]
 // 获取用户位置信息
 // function Mlocation(ip='101.231.183.227') {
 //     $.ajax({
@@ -69,10 +66,10 @@ const ipCityId = returnCitySN["cid"]
 // Mlocation()
 // https://api.asilu.com/weather_v2/ 
 // 根据ip所在城市 请求天气
-$.get('https://www.tianqiapi.com/api/?version=v1&cityid='+ipCityId,function(res){
-    console.log(res)
-    // $('#weather').html(ipCityName + '：' + res.data[0].wea)
-})
+// $.get('https://www.tianqiapi.com/api/?version=v1&cityid='+ipCityId,function(res){
+//     console.log(res)
+//     // $('#weather').html(ipCityName + '：' + res.data[0].wea)
+// })
 
 
 
