@@ -2,11 +2,11 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-10-28 16:51:28
+ * @Last Modified time: 2019-10-29 14:08:39
  */
-var mySwiper = new Swiper('.swiper-container', {
-	autoplay: true,//可选选项，自动滑动
-})
+
+//  首页图片轮播
+
 
 function getQueryString(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');

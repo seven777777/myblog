@@ -1,32 +1,22 @@
 {% include header.html %}
 
-<div class="content-wrap">
-    <ul class="listing">
-        {% for tag in site.tags %}
-            <li class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</li>
-            {% for post in tag[1] %}
-            <li class="listing-item">
-                <time datetime="{{ post.date | date:'%Y-%m-%d' }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-            </li>
-            {% endfor %}
-        {% endfor %}
-    </ul>
-    {% for category in site.categories %}
-        <ul>
-            <li>
-                <!-- <a href="{{ site.baseurl}}/category/{{ category.first }}.html">{{category.first}}（{{category.last.size}}）</a> -->
-                <a href="{{ site.baseurl}}/category/?type={{ category | first }}">{{ category | first }} {{ category | last | size }}</a>
-                <ul>
-                    {% for post in site.posts %}
-                        {% if post.category == category.first %}
-                            <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </li>
-        </ul>
-    {% endfor %}
+<title>seven's blog</title>
+
+<div class="home-banner-warp">
+    <!-- 图片轮播 -->
+    <div class="swiper-container" id="bannerSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../images/banner/banner01.jpg"></div>
+            <div class="swiper-slide"><img src="{{site.imgPath}}/banner/banner02.jpg"></div>
+            <div class="swiper-slide"><img src="{{site.imgPath}}/banner/banner03.jpg"></div>
+        </div>
+    </div>
 </div>
 
 {% include footer.html %}
+
+<script>
+var mySwiper = new Swiper('#bannerSwiper', {
+	autoplay: true,//可选选项，自动滑动
+})
+</script>
