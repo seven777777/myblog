@@ -33,7 +33,11 @@
 <div class="content-wrap">
     <ul class="category-list mt_20">
         {% for category in site.categories %}
-        <li class="item"><a href="{{ site.baseurl}}/category/{{ category | first }}">{{ category | first }} {{ category | last | size }}</a></li>
+        <li class="item" data-name="{{ category | first }}">
+            <a href="{{ site.baseurl}}/category/{{ category | first }}">{{ category | first }} {{ category | last | size }}</a>
+            <p class="title"></p>
+            <p class="desc"></p>
+        </li>
         {% endfor %}
     </ul>
 </div>
@@ -83,6 +87,26 @@ var mySwiper = new Swiper('#bannerSwiper', {
         prevEl: '.swiper-button-prev',
     },
 })
+
+// 初始化category列表文字显示
+function initCategory(){
+    console.log(categoryConfig,$('.category-list .item').length)
+    let categoryItem = $('.category-list .item')
+    const n = categoryItem.length;
+    const m = categoryConfig.length
+    for(var i=0; i<n;i++){
+        let _name = $(categoryItem[i]).data('name')
+        for(var s=0; s<m;s++){
+            if(_name == categoryConfig[s].name){
+                $(categoryItem[i]).find('.title').text(categoryConfig[s].title)
+                $(categoryItem[i]).find('.desc').text(categoryConfig[s].desc)
+                break;
+            }
+        }
+    }
+    
+}
+initCategory()
 
 window.onload = function () {
     new Image().src = '{{site.imgPath}}/banner/banner01.jpg';
