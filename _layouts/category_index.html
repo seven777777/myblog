@@ -1,46 +1,15 @@
 {% include header.html %}
 
 <div class="content-wrap">
-    <!-- <ul>
-        {% for post in paginator.posts %}
-            {% if tag == '中文'%}
-                <li><a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-            {% endif %}
-        {% endfor %}
-    </ul> -->
-    <!-- {% for category in site.categories %}
-        {% if category.first == page.category %}
-            {% for post in category.last %}
-            <div class="article">
-                <div class="well">
-                    <h1 class="none"><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }} {{ post.date | date: "（%Y年%m月%d日）" }}</a></h1>
-                    <div class="content">{{ post.excerpt | strip_html }}</div>
-                </div>
-            </div>
-            {% endfor %}
-        {% endif %}
-    {% endfor %} -->
-    <!-- {% for post in site.posts %}
+    
+    {% for post in site.posts %}
         {% assign type = category %}
         {% if post.category == 'life' %}
             <div class="artical_wrap">
                 <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </div>
         {% endif %}
-    {% endfor %} -->
-    {% for post in site.categories.CATEGORY %}
-        <!-- {% assign type = category %}
-        {% if post.category == 'life' %} -->
-            <div class="artical_wrap">
-                <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-            </div>
-        <!-- {% endif %} -->
     {% endfor %}
 </div>
 
 {% include footer.html %}
-
-<script>
-let category = getQueryString('type')
-console.log(category)
-</script>
