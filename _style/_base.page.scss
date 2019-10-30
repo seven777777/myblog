@@ -63,12 +63,18 @@ a {
     flex: 1;
 }
 
+// fontsize
+.fs_12{ font-size: 12px;}
+.fs_14{ font-size: 14px;}
+
 // margin & padding
 .mt_20{ margin-top: 20px;}
+.mr_10{ margin-right: 10px;}
 
 .default-shadow{
     box-shadow: 0 1px 8px rgba($color: $clr-def-dark, $alpha: 0.3);
 }
+
 
 
 

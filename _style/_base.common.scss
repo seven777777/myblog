@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-10-29 17:08:35
+ * @Last Modified time: 2019-10-30 16:45:19
  */
 /*------------------------------------*\
     #common
@@ -23,7 +23,6 @@ nav{
     background: rgba($color: white, $alpha: 0.8);
     width: 100%;
     height: 100%;
-    border-radius: 8px;
     padding: 0 20px;
     @extend .flex_justify_between;
     .logo{
@@ -118,39 +117,111 @@ footer{
 
 .home-introduce{
     background: white;
-    height: 200px;
-    border-radius: 8px;
+    height: 320px;
     margin-top: -80px;
     position: relative;
     z-index: 100;
-    padding: 20px;
+    display: flex;
     @extend .default-shadow;
-}
 
-.category-list{
-    @extend .flex_justify_between;
-    height: 100px;
-    .item{
+    .introduce-box{
         flex: 1;
-        height: 100%;
-        margin-right: 10px;
-        border-radius: 5px;
-        color: $clr-def-darker;
-        @extend .default-shadow;
-        &:nth-last-child(){
-            margin-right: 0;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        &.introduce-blog{
+            align-items: center;
+            padding: 20px;
+            .avatar{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: $clr-def-light;
+                border: 4px solid white;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .abname{
+                color: #3f3f3f;
+                font-weight: bold;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            .abdesc{
+                color: #1abc9c;
+                font-size: 14px;
+            }
+            .abtext{
+                padding: 20px 35px;
+                color: #9a9a9a;
+                line-height: 26px;
+                font-size: 14px;
+                text-align: center;
+            }
         }
+        &.introduce-category{
+            overflow: hidden;
+            border-left: 2px solid #ffea00;
+            border-right: 2px solid #ffea00;
+            .category-list{
+                background: #ffea00;
+                flex: 1;
+                padding: 20px;
+                display: block;
+                transition: all .5s;
+                display: flex;
+                align-items: center;
+                &:nth-child(2){
+                    background: #edda06;
+                }
+                &:hover{
+                    transform:scale(1.1);
+                    background: white;
+                }
 
-        &:nth-child(1){
-            background: salmon;
+                .list-icon{
+                    font-size: 50px;
+                    margin-right: 15px;
+                }
+                .list-head{
+                    font-size: 20px;
+                    color: $clr-def-darker;
+                }
+                .list-num{
+                    font-size: 14px;
+                    color: $clr-def-dark;
+                    line-height: 2;
+                }
+                .desc{
+                    font-size: 14px;
+                    color: $clr-def-dark;
+                }
+            }
         }
-        &:nth-child(2){
-            background: aquamarine;
+        &.introduce-link{
+            padding: 20px;
+            align-items: center;
+            .link-gzh{
+                width: 220px;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+                .text{
+                    font-size: 12px;
+                    color: $clr-def;
+                    text-align: center;
+                    line-height: 2;
+                }
+            }
         }
-
-
     }
 }
+
+
 
 // ========  首页相关 end  ========
 
