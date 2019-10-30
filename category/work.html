@@ -2,10 +2,9 @@
 layout: category_index
 ---
 <div class="content-wrap">
-    
     {% for post in site.posts %}
         {% assign type = category %}
-        {% if post.category == 'life' %}
+        {% if post.category == 'work' %}
             <div class="artical_wrap">
                 <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </div>

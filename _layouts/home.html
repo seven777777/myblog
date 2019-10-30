@@ -2,52 +2,134 @@
 
 <title>seven's blog</title>
 
-<div class="content-wrap">
-    {% include aboutMe.html %}
-    {% include followMe.html %}
+<div class="home-navbar">
+    {% include nav.html %}
+</div>
 
+<div class="home-banner-warp">
     <!-- 图片轮播 -->
-    <!-- <div class="swiper-container">
+    <div class="swiper-container" id="bannerSwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">slider1</div>
-            <div class="swiper-slide">slider2</div>
-            <div class="swiper-slide">slider3</div>
+            <div class="swiper-slide">
+                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner01.jpg"></a>
+            </div>
+            <div class="swiper-slide">
+                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner02.jpg"></a>
+            </div>
+            <div class="swiper-slide">
+                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner03.jpg"></a>
+            </div>
         </div>
-    </div> -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
 
-    <div class="content-wrap mt30">
-        <h1 class="m_title">Blogs</h1>
-        {% for post in paginator.posts %}
-        <div class="artical_wrap">
-            <p class="postlist-time">{{ post.date | date: "%Y年%m月%d日" }}</p>
-            <h3>
-                <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-            </h3>
-            <p>
-                {% for tag in post.tags %}
-                <a class="tag-btn">{{tag}}</a>
-                {% endfor %}
-            </p>
-            <p class="artical_excerpt">{{ post.excerpt }}</p>
+<div class="content-wrap home-introduce">
+    <div class="introduce-box introduce-blog">
+        <div class="avatar">
+            <img src="{{ site.baseurl}}/images/headpic.jpg" alt="seven的头像">
         </div>
+        <p class="abname">seven | 张敏</p>
+        <p class="abdesc"><span class="iconfont iconxiazai19 mr_10">上海</span> 前端开发工程师</p>
+        <p class="abtext">
+            本博客为seven的个人博客。<br>
+            主要用来做一些日常的技术分享，同时记录自己的生活。
+        </p>
+    </div>
+    <div class="introduce-box introduce-category" data-name="{{ category | first }}">
+        {% for category in site.categories %}
+        <a class="category-list" data-name="{{ category | first }}" href="{{ site.baseurl}}/category/{{ category | first }}">
+            <span class="list-icon iconfont"></span>
+            <div>
+                <p class="list-head">
+                    <span class="title"></span> | {{ category | first }}
+                </p>
+                <p class="list-num">共计<span>{{ category | last | size }}</span>篇文章</p>
+                <p class="desc"></p>
+            </div>
+        </a>
         {% endfor %}
-
-        <div class="pagination">
-            {% if paginator.previous_page %}
-              <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="previous" style="float:left;"><< Previous</a>
-            {% else %}
-              <!-- <span class="previous">Previous</span> -->
-            {% endif %}
-              <span class="page_number ">Page: {{ paginator.page }} / {{ paginator.total_pages }}</span>
-            {% if paginator.next_page %}
-              <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next" style="float:right;margin-right:30px;">Next >></a>
-            {% else %}
-              <!-- <span class="next ">Next</span> -->
-            {% endif %}
+    </div>
+    <div class="introduce-box introduce-link">
+        <div class="link-gzh">
+            <img src="{{ site.baseurl}}/images/gzh.jpg" alt="搴芳拾梦公众号"/>
+            <p class="text">扫码订阅公众号<br>不定期推送本站优质非技术文章哦！</p>
         </div>
     </div>
-    
 </div>
-{% include followMe.html %}
+
+<div class="content-wrap mt30">
+    <h1 class="m_title">Blogs</h1>
+    {% for post in paginator.posts %}
+    <div class="artical_wrap">
+        <p class="postlist-time">{{ post.date | date: "%Y年%m月%d日" }}</p>
+        <h3>
+            <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </h3>
+        <p>
+            {% for tag in post.tags %}
+            <a class="tag-btn">{{tag}}</a>
+            {% endfor %}
+        </p>
+        <p class="artical_excerpt">{{ post.excerpt }}</p>
+    </div>
+    {% endfor %}
+
+    <div class="pagination">
+        {% if paginator.previous_page %}
+            <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="previous" style="float:left;"><< Previous</a>
+        {% else %}
+            <!-- <span class="previous">Previous</span> -->
+        {% endif %}
+            <span class="page_number ">Page: {{ paginator.page }} / {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+            <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next" style="float:right;margin-right:30px;">Next >></a>
+        {% else %}
+            <!-- <span class="next ">Next</span> -->
+        {% endif %}
+    </div>
+</div>
+
+
 
 {% include footer.html %}
+
+<script>
+var mySwiper = new Swiper('#bannerSwiper', {
+	autoplay: {
+        delay:5000
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+})
+
+// 初始化category列表文字显示
+function initCategory(){
+    console.log(categoryConfig,$('.introduce-category .category-list').length)
+    let categoryItem = $('.introduce-category .category-list')
+    const n = categoryItem.length;
+    const m = categoryConfig.length
+    for(var i=0; i<n;i++){
+        let _name = $(categoryItem[i]).data('name')
+        for(var s=0; s<m;s++){
+            if(_name == categoryConfig[s].name){
+                $(categoryItem[i]).find('.list-icon').addClass(categoryConfig[s].icon)
+                $(categoryItem[i]).find('.title').text(categoryConfig[s].title)
+                $(categoryItem[i]).find('.desc').text(categoryConfig[s].desc)
+                break;
+            }
+        }
+    }
+    
+}
+initCategory()
+
+window.onload = function () {
+    new Image().src = '{{site.imgPath}}/banner/banner01.jpg';
+    new Image().src = '{{site.imgPath}}/banner/banner02.jpg';
+    new Image().src = '{{site.imgPath}}/banner/banner03.jpg';
+}
+</script>
