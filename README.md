@@ -54,3 +54,5 @@ permalink: //路由标签
 excerpt : //文章摘要
 ---
 ```
+
+banner尺寸：16：9
