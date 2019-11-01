@@ -41,6 +41,13 @@
       "unicode_decimal": 59034
     },
     {
+      "icon_id": "1262091",
+      "name": "rss",
+      "font_class": "rss",
+      "unicode": "e6ee",
+      "unicode_decimal": 59118
+    },
+    {
       "icon_id": "1467351",
       "name": "github",
       "font_class": "github",
