@@ -1,4 +1,4 @@
-baseurl: /myblog
+baseurl: "/myblog"
 name: "Blog of Min Zhang"
 description: "Web Front-End Blog by Min Zhang"
 
