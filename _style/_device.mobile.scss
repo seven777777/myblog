@@ -1,0 +1,48 @@
+/*------------------------------------*\
+    #MOBILE
+\*------------------------------------*/
+// mobile
+@media screen and (max-device-width: 600px) {
+
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .pageWrap{
+        min-width: 0;
+    }
+
+    .home-navbar {
+        width: 100%;
+        height: 40px;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        nav .logo{
+            font-size: 16px;
+        }
+    }
+
+    .home-banner-warp{
+        height: 230px;
+    }
+
+    .swiper-button-next, .swiper-button-prev{
+        display: none;
+    }
+
+    .content-wrap{
+        width: 100%;
+        padding: 10px 5%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .home-introduce{
+        margin-top: 0;
+        display: none;
+    }
+
+}
