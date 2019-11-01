@@ -13,6 +13,20 @@
       "unicode_decimal": 58899
     },
     {
+      "icon_id": "991068",
+      "name": "下一页",
+      "font_class": "xiayiye",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "991069",
+      "name": "上一页",
+      "font_class": "shangyiye",
+      "unicode": "e674",
+      "unicode_decimal": 58996
+    },
+    {
       "icon_id": "1115082",
       "name": "微信",
       "font_class": "weixin",

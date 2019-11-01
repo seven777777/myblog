@@ -11,13 +11,13 @@
     <div class="swiper-container" id="bannerSwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner01.jpg"></a>
+                <a class="banner-img" target="_blank" href="http://www.mafengwo.cn/i/17724604.html"><img src="{{site.imgPath}}/banner/banner01.jpg"></a>
             </div>
             <div class="swiper-slide">
-                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner02.jpg"></a>
+                <a class="banner-img" target="_blank" href="http://www.mafengwo.cn/i/17724604.html"><img src="{{site.imgPath}}/banner/banner02.jpg"></a>
             </div>
             <div class="swiper-slide">
-                <a class="banner-img" href="javascript:;"><img src="{{site.imgPath}}/banner/banner03.jpg"></a>
+                <a class="banner-img" target="_blank" href="http://www.mafengwo.cn/i/17724604.html"><img src="{{site.imgPath}}/banner/banner03.jpg"></a>
             </div>
         </div>
         <div class="swiper-button-prev"></div>
@@ -30,12 +30,20 @@
         <div class="avatar">
             <img src="{{ site.baseurl}}/images/headpic.jpg" alt="seven的头像">
         </div>
-        <p class="abname">seven | 张敏</p>
+        <div class="wb-follow">
+            <p class="abname mr_10">seven | 张敏</p>
+            <wb:follow-button uid="1984078467" type="red_1" width="62" height="26" ></wb:follow-button>
+        </div>
         <p class="abdesc"><span class="iconfont iconxiazai19 mr_10">上海</span> 前端开发工程师</p>
         <p class="abtext">
             本博客为seven的个人博客。<br>
             主要用来做一些日常的技术分享，同时记录自己的生活。
         </p>
+        <div class="followBox">
+            <i class="iconfont iconweixin item" title="扫描右侧二维码关注"></i>
+            <a href="https://github.com/seven777777" target="_blank" class="iconfont icongithub item" title="github"></a>
+            <a href="https://blog.csdn.net/seven521m" target="_blank" class="iconfont iconCN_csdnnet item" title="csdn"></a>
+        </div>
     </div>
     <div class="introduce-box introduce-category" data-name="{{ category | first }}">
         {% for category in site.categories %}
@@ -55,7 +63,7 @@
         <div class="link-gzh">
             <img src="{{ site.baseurl}}/images/gzh.jpg" alt="搴芳拾梦公众号"/>
             <p class="text">扫码订阅公众号<br>不定期推送本站优质非技术文章哦！</p>
-            <p>浏览量:<span id="" class="leancloud_visitors" data-flag-title=""> - </span>次.</p>
+            <!-- <p>浏览量:<span id="" class="leancloud_visitors" data-flag-title=""> - </span>次.</p> -->
         </div>
     </div>
 </div>
