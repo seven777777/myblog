@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-11-01 11:08:38
+ * @Last Modified time: 2019-11-01 13:45:13
  */
 /*------------------------------------*\
     #common
@@ -52,10 +52,10 @@ nav{
 footer{
     width: 100%;
     height: 100px;
-    margin: 0 auto;
     text-align: center;
     padding: 30px 0;
-    line-height: 26px;
+    background: $clr-def-darker;
+    margin-top: 20px;
     .box_footer{
         border-right: 2px solid $clr-contrast-dark;
         display: inline-block;
@@ -64,16 +64,6 @@ footer{
         &:nth-child(1){
             border-left: 2px solid $clr-contrast-dark;
         }
-    }
-    .gzh_ewm{
-        width: 100px;
-        height: 100px;
-        background: url("../images/gzh.jpg") 0 0 no-repeat;
-        background-size: cover;
-        position: absolute;
-        top: -110px;
-        left: 50%;
-        display: none;
     }
 }
 

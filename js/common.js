@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-11-01 10:49:54
+ * @Last Modified time: 2019-11-01 13:43:35
  */
 
 
@@ -37,14 +37,6 @@ function getQueryString(name) {
 //         toTopAfter=toTop;
 //     }, 0);
 // });
-
-// 尾部显示公众号二维码
-$('#gzh').mouseover(function(){
-    $(".gzh_ewm").fadeIn(100);
-});
-$('#gzh').mouseleave(function(){
-    $(".gzh_ewm").fadeOut(100);
-});
 
 // 天气设置
 // const ipCityName = returnCitySN["cname"]
