@@ -1,18 +1,21 @@
     
     
         <footer>
-            <p>
-                <a href="#" class="box_footer">Top</a>
-                <a href="https://seven777777.github.io/myblog/" class="box_footer">Blog</a>
-                <a href="https://github.com/seven777777" class="box_footer">Github</a>
-                <a href="http://weibo.com/SevenIsZhangmin" class="box_footer">微博</a>
-                <a href="http://zhihu.com/people/seven-1991" class="box_footer">知乎</a>
-                <a id="gzh" style="position: relative;" href="javascript:;" class="box_footer">
-                    公众号
-                    <span class="gzh_ewm"></span>
-                </a>
-                <a href="mailto:se7en.zhang@foxmail.com" target="_blank" class="box_footer">Email</a>
-            </p>
+            <div>
+                <p>Copyright © 2016-2019 Seven</p>
+                <p>Powered by：Jekyll , Github Pages</p>
+                <div class="flex_center">
+                    <p class="mr_10">follow me by：</p>{% include followMe.html %}
+                </div>
+            </div>
+            <div class="link-gzh ml_40">
+                <img src="{{ site.baseurl}}/images/gzh.jpg" alt="搴芳拾梦公众号"/>
+                <p class="text">搴芳拾梦微信公众号</p>
+            </div>
+            <a href="#" class="toTop ml_40 flex_column_center" title="回到顶部">
+                <i class="iconfont iconTOP"></i>
+                TOP
+            </a>
         </footer>
     </div>
 
