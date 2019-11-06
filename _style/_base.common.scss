@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-11-01 13:45:13
+ * @Last Modified time: 2019-11-06 10:47:43
  */
 /*------------------------------------*\
     #common
@@ -12,6 +12,7 @@
 .pageWrap{
     width: 100%;
     min-width: 1200px;
+    min-height: 100vh;
 }
 
 .content-wrap{
@@ -51,20 +52,44 @@ nav{
 }
 footer{
     width: 100%;
-    height: 100px;
-    text-align: center;
-    padding: 30px 0;
+    height: 150px;
     background: $clr-def-darker;
     margin-top: 20px;
-    .box_footer{
-        border-right: 2px solid $clr-contrast-dark;
-        display: inline-block;
-        padding: 0 10px;
-        color: $clr-contrast-dark;
-        &:nth-child(1){
-            border-left: 2px solid $clr-contrast-dark;
+    color:#999;
+    font-size:12px;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .link-gzh{
+        @extend .flex_column_center;
+        img{
+            width: 60px;
+            height: auto;
+        }
+        .text{
+            font-size: 12px;
+            color: $clr-def;
+            text-align: center;
+            line-height: 2;
+            white-space: nowrap;
         }
     }
+    .toTop{
+        line-height: 1.5;
+    }
+}
+.scrollBox{
+    width: 40px;
+    height: 40px;
+    background: $clr-contrast;
+    color: white;
+    font-size: 20px;
+    @extend .flex_center;
+    position: fixed;
+    bottom: 180px;
+    left: 50%;
+    margin-left: 500px;
 }
 
 .followBox{
@@ -77,6 +102,23 @@ footer{
         &:hover{
             color: #666;
         }
+    }
+}
+
+// 版权
+.copyright{
+    border: 2px dashed #333;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #666;
+    margin: 30px auto;
+    @extend .flex_align;
+    a{
+        color: $clr-contrast;
+        font-weight: bold;
+        display: inline-block;
+        margin: 0 5px;
     }
 }
 
@@ -227,9 +269,6 @@ footer{
     }
 }
 
-
-
-
 // ========  首页相关 end  ========
 
 // ========  default页面 start  ========
@@ -247,8 +286,22 @@ footer{
         @extend .default-shadow;
     }
 }
+.default-con{
+    @extend .content-wrap;
+    @extend .con-min-height;
+    @extend .default-shadow;
+    padding: 20px;
+    margin-top: 20px;
+}
 
 // ========  default页面 end  ========
+
+
+// ========  post布局相关 start  ========
+
+
+// ========  post布局相关 end  ========
+
 
 
 // a {
@@ -401,44 +454,6 @@ h1>code {
 
 h2>code, h3>code, h4>code, h5>code, h6>code {
   color: $clr-h2-6;
-}
-
-//followme
-.followMe{
-  width: 100%;
-  height: 50px;
-  margin: 0 auto;
-  background: $clr-primary;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .icon{
-    width: 32px;
-    height: 32px;
-    background: url('../images/icon2.png') 0 0 no-repeat;
-    background-size: 168px 142px;
-    margin: 0 10px;
-    &.db{
-      background-position: 0 -108px;
-    }
-    // &.db:hover{
-    //   background-position: 0 -36px;
-    // }
-    &.git{
-      background-position: -32px -108px;
-    }
-    &.wb{
-      width: 40px;
-      background-position: -64px -108px;
-    }
-    &.js{
-      height: 34px;
-      background-position: -104px -108px;
-    }
-    &.zh{
-      background-position: -136px -108px;
-    }
-  }
 }
 
 

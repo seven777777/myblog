@@ -1,5 +1,7 @@
 {% include header.html %}
 
+<title>seven's blog | {{ page.title }}</title>
+
 <div class="default-nav-wrap">
     <div class="default-nav">
         <div class="content-wrap">
@@ -7,13 +9,13 @@
         </div>
     </div>
 </div>
-<div class="content-wrap">
+<div class="default-con">
     <div class="module_wrap">
-        <title>{{ page.title }}</title>
-
-        <p>浏览量:<span id="" class="leancloud_visitors" data-flag-title=""> - </span>次.</p>
+        <p>{{ page.title }}</p>
 
         {{ content }}
+
+        {% include copyright.html %}
     </div>
 </div>
 
