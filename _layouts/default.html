@@ -11,7 +11,16 @@
 </div>
 <div class="default-con">
     <div class="module_wrap">
-        <p class="module-title">{{ page.title }}</p>
+        <h1 class="module-title flex_justify_between">
+            <span>{{ page.title }}</span>
+            {% if page.time %}
+            <div class="flex_align">
+                <i class="iconfont iconjilu mr_5"></i>
+                {% assign time = page.time %}
+                <div class="tag-time timeago cn" title="{{ time | replace: '.', '-' | replace: ' ', 'T' }}+08:00">{{ time }}</div>
+            </div>
+            {% endif %}
+        </h1>
 
         {{ content }}
 

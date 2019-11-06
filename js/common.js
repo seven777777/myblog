@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-11-01 13:43:35
+ * @Last Modified time: 2019-11-06 16:42:14
  */
 
 
@@ -15,7 +15,7 @@ function getQueryString(name) {
     return null;
 }
 
-
+$('.timeago').timeago().show()
 
 // 页面滚动事件
 // let toTop=0,toTopAfter=0;

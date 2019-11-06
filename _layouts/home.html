@@ -90,11 +90,12 @@
         {% for post in paginator.posts %}
         <div class="postlist-block">
             <div class="flex_align">
-                <span class="tag-time">一个月前 ● </span>
+                {% assign time = post.time %}
+                <div class="timeago tag-time cn" title="{{ time | replace: '.', '-' | replace: ' ', 'T' }}+08:00">{{ time }}</div>
                 <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </div>
             <ul class="postlist-subDes">
-                <li><i class="iconfont iconjilu mr_5"></i>{{ post.date | date: "%Y年%m月%d日" }}</li>
+                <li><i class="iconfont iconrili mr_5"></i>{{ post.date | date: "%Y年%m月%d日" }}</li>
             </ul>
             <div class="postlist-tag-wrap">
                 <i class="iconfont iconbiaoqian mr_5"></i>
