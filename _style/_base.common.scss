@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-11-05 16:57:21
+ * @Last Modified time: 2019-11-06 10:47:43
  */
 /*------------------------------------*\
     #common
@@ -18,7 +18,6 @@
 .content-wrap{
     width: 960px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 nav{
     background: rgba($color: white, $alpha: 0.8);
@@ -103,6 +102,23 @@ footer{
         &:hover{
             color: #666;
         }
+    }
+}
+
+// 版权
+.copyright{
+    border: 2px dashed #333;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #666;
+    margin: 30px auto;
+    @extend .flex_align;
+    a{
+        color: $clr-contrast;
+        font-weight: bold;
+        display: inline-block;
+        margin: 0 5px;
     }
 }
 
@@ -269,6 +285,13 @@ footer{
         @extend .flex_align;
         @extend .default-shadow;
     }
+}
+.default-con{
+    @extend .content-wrap;
+    @extend .con-min-height;
+    @extend .default-shadow;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 // ========  default页面 end  ========
