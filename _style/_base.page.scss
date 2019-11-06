@@ -23,9 +23,7 @@ ol, ul { list-style: none; }
 h1,h2,h3,h4,h5,h6{
     font-family: $ft-fm-def;
     font-weight: $ft-wt-bold;
-    margin: 0.5em 0;
-    color: $clr-def-dark;
-    line-height: 50px;
+    line-height: 2;
 }
 a {
     text-decoration: none;
@@ -78,9 +76,13 @@ a {
 
 // margin & padding
 .mt_20{ margin-top: 20px;}
+.mr_5{ margin-right: 5px;}
 .mr_10{ margin-right: 10px;}
 .ml_15{ margin-left: 15px;}
 .ml_40{ margin-left: 40px;}
+.mb_10{ margin-bottom: 10px;}
+
+.p_20{ padding: 20px;}
 
 // background
 .bg_white{ background: white;}

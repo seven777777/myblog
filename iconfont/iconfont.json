@@ -48,6 +48,13 @@
       "unicode_decimal": 59118
     },
     {
+      "icon_id": "1305451",
+      "name": "标签",
+      "font_class": "biaoqian",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
       "icon_id": "1467351",
       "name": "github",
       "font_class": "github",
