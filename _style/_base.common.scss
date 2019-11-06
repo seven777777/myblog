@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-11-06 15:47:24
+ * @Last Modified time: 2019-11-06 16:16:47
  */
 /*------------------------------------*\
     #common
@@ -299,17 +299,27 @@ footer{
 
 // ========  post布局相关 start  ========
 .module-title{
-    font-size: 20px;
+    font-size: 22px;
     color: $clr-h1;
     line-height: 2.5;
     border-bottom: 8px double $clr-dark;
     margin-bottom: 20px;
 }
 
+.postlist-wrap{
+    // display: flex;
+    // &.layout-block{
+    //     flex-wrap: wrap;
+    //     justify-content: space-between;
+    //     .postlist-block{
+    //         width: 46%;
+    //     }
+    // }
+}
 .postlist-block{
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px dashed $clr-primary;
+    // border-bottom: 1px dashed $clr-primary;
     .tag-time{
         color: $clr-def;
         margin-right: 10px;
@@ -344,6 +354,10 @@ footer{
         font-size: 14px;
         color: $clr-def-dark;
         line-height: 2;
+        text-indent: 28px;
+        background: rgba($color: $clr-lighter, $alpha: 0.2);
+        padding: 10px;
+        margin: 15px 0;
     }
 }
 

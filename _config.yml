@@ -8,7 +8,7 @@ loadingImg: "https://seven777777.github.io/myblog/images/loading.gif"
 imgPath: "https://seven777777.github.io/myblog/images"
 
 
-paginate: 4
+paginate: 6
 paginate_path: "/page:num"
 
 markdown: kramdown

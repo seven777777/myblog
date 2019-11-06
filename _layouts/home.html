@@ -85,26 +85,29 @@
         </li>
     {% endfor %} -->
     <h1 class="module-title">Blogs</h1>
-    {% for post in paginator.posts %}
-    <div class="postlist-block">
-        <div class="flex_align">
-            <span class="tag-time">一个月前 ● </span>
-            <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        </div>
-        <ul class="postlist-subDes">
-            <li><i class="iconfont iconjilu mr_5"></i>{{ post.date | date: "%Y年%m月%d日" }}</li>
-        </ul>
-        <div class="postlist-tag-wrap">
-            <i class="iconfont iconbiaoqian mr_5"></i>
-            <ul class="flex_align">
-                {% for tag in post.tags %}
-                <li class="postlist-tag"><a href="#">{{tag}}</a></li>
-                {% endfor %}
+
+    <div class="postlist-wrap layout-block">
+        {% for post in paginator.posts %}
+        <div class="postlist-block">
+            <div class="flex_align">
+                <span class="tag-time">一个月前 ● </span>
+                <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            </div>
+            <ul class="postlist-subDes">
+                <li><i class="iconfont iconjilu mr_5"></i>{{ post.date | date: "%Y年%m月%d日" }}</li>
             </ul>
+            <div class="postlist-tag-wrap">
+                <i class="iconfont iconbiaoqian mr_5"></i>
+                <ul class="flex_align">
+                    {% for tag in post.tags %}
+                    <li class="postlist-tag"><a href="#">{{tag}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <p class="postlist-excerpt">{{ post.excerpt }}</p>
         </div>
-        <p class="postlist-excerpt">{{ post.excerpt }}</p>
+        {% endfor %}
     </div>
-    {% endfor %}
 
     <div class="pagination">
         {% if paginator.previous_page %}
