@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 元素的水平及垂直居中实现方法二三
 time: 2017.8.8 15:20:00
 tags: 页面效果 css

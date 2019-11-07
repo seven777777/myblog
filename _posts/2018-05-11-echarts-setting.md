@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: ECharts 使用小计
 time: 2018.5.11 13:07:00
 tags: ECharts

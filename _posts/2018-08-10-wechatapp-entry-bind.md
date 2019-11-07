@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 小程序初涉——入口页设置&事件绑定
 time: 2018.8.10 14:30:00
 tags: 微信小程序

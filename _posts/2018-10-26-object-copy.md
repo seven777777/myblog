@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 关于引用类型：数组和对象的赋值
 time: 2018.10.26 16:32:00
 tags: js

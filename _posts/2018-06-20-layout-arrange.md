@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 纯干货~常用布局汇总（持续更新）
 time: 2018.6.20 14:11:00
 tags: css 干货
