@@ -1,7 +1,4 @@
 {% include header.html %}
-
-<title>seven's blog | {{ page.title }}</title>
-
 <div class="default-nav-wrap">
     <div class="default-nav">
         <div class="content-wrap">
@@ -9,14 +6,9 @@
         </div>
     </div>
 </div>
+
 <div class="default-con">
-    <div class="module_wrap">
-        <p>{{ page.title }}</p>
-
-        {{ content }}
-
-        {% include copyright.html %}
-    </div>
+    {{ content }}
 </div>
 
 {% include footer.html %}

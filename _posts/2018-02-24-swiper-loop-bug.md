@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: swiper loop：true引发的问题
 time: 2018.2.24 11:17:00
 tags: swiper 采坑

@@ -63,9 +63,13 @@
     </div>
 </div>
 
-<div class="content-wrap mt30">
+<!-- <div class="content-wrap">
     {% include copyright.html %}
-    <section>
+</div> -->
+
+<div class="content-wrap mt30 p_20">
+    {% include copyright.html %}
+    <!-- <section>
         <h4>Recent Posts</h4>
         <ul id="recent_posts">
             {% for post in site.posts limit:3 %}
@@ -79,35 +83,50 @@
         <li class="post">
             <a href="">{{tag | first}}({{tag | last | size}} )</a>
         </li>
-    {% endfor %}
-    <h1 class="m_title">Blogs</h1>
-    {% for post in paginator.posts %}
-    <div class="artical_wrap">
-        <p class="postlist-time">{{ post.date | date: "%Y年%m月%d日" }}</p>
-        <h3>
-            <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        </h3>
-        <p>
-            {% for tag in post.tags %}
-            <a class="tag-btn">{{tag}}</a>
-            {% endfor %}
-        </p>
-        <p class="artical_excerpt">{{ post.excerpt }}</p>
+    {% endfor %} -->
+    <h1 class="module-title">Blogs</h1>
+
+    <div class="postlist-wrap layout-block">
+        {% for post in paginator.posts %}
+        <div class="postlist-block">
+            <div class="flex_align">
+                {% assign time = post.time %}
+                <div class="timeago tag-time cn" title="{{ time | replace: '.', '-' | replace: ' ', 'T' }}+08:00">{{ time }}</div>
+                <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            </div>
+            <ul class="postlist-subDes">
+                <li><i class="iconfont iconrili mr_5"></i>{{ post.date | date: "%Y年%m月%d日" }}</li>
+            </ul>
+            <div class="postlist-tag-wrap">
+                <i class="iconfont iconbiaoqian mr_5"></i>
+                <ul class="flex_align">
+                    {% for tag in post.tags %}
+                    <li class="postlist-tag"><a href="{{ site.baseurl }}/list?tag={{tag}}">{{tag}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <p class="postlist-excerpt">{{ post.excerpt }}</p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 
     <div class="pagination">
         {% if paginator.previous_page %}
-            <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="previous" style="float:left;"><< Previous</a>
+            <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="paginationItem">
+                <i class="iconfont iconshangyiye"></i>
+            </a>
         {% else %}
-            <!-- <span class="previous">Previous</span> -->
+            <span class="paginationItem-notallowed"><i class="iconfont iconshangyiye"></i></span>
         {% endif %}
-            <span class="page_number ">Page: {{ paginator.page }} / {{ paginator.total_pages }}</span>
+            <span class="paginationItem">{{ paginator.page }} / {{ paginator.total_pages }}</span>
         {% if paginator.next_page %}
-            <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next" style="float:right;margin-right:30px;">Next >></a>
+            <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="paginationItem">
+                <i class="iconfont iconxiayiye"></i>
+            </a>
         {% else %}
-            <!-- <span class="next ">Next</span> -->
+            <span class="paginationItem-notallowed next"><i class="iconfont iconxiayiye"></i></span>
         {% endif %}
+        <a href="{{ site.baseurl }}/list" class="paginationItem">All Posts</a>
     </div>
     
 </div>

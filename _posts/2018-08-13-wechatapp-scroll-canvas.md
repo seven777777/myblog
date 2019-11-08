@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 小程序初涉——页面滑动以及canvas层级问题
 time: 2018.8.13 10:21:00
 tags: 微信小程序

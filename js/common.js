@@ -2,9 +2,9 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-11-01 13:43:35
+ * @Last Modified time: 2019-11-07 14:16:24
  */
-
+$('.timeago').timeago().show()
 
 function getQueryString(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
@@ -15,7 +15,46 @@ function getQueryString(name) {
     return null;
 }
 
+function queryString() {
+    // This function is anonymous, is executed immediately and
+    // the return value is assigned to QueryString!
+    var query_string = {};
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+      var pair = vars[i].split("=");
+      // If first entry with this name
+      if (typeof query_string[pair[0]] === "undefined") {
+          query_string[pair[0]] = pair[1];
+      // If second entry with this name
+      } else if (typeof query_string[pair[0]] === "string") {
+          var arr = [ query_string[pair[0]], pair[1] ];
+          query_string[pair[0]] = arr;
+      // If third or later entry with this name
+      } else {
+          query_string[pair[0]].push(pair[1]);
+      }
+    }
+      return query_string;
+}
 
+
+// 列表页处理
+function setPostList(){
+    var query = queryString();
+
+    if (query.tag !== undefined) {
+        var tag = decodeURI(query.tag);
+        var tagClassName = tag.replace(new RegExp('\\.', 'g'), '\\.');
+        $('#tagname').parent().show()
+        $('#tagname').text(tag);
+        // $('h1').hide();
+        $('.postlist-block').not('.tag-' + tagClassName).hide();
+    }else{
+        $('#tagname').parent().hide()
+    }
+}
+setPostList()
 
 // 页面滚动事件
 // let toTop=0,toTopAfter=0;

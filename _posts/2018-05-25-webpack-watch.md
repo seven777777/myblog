@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: webpack之watch
 time: 2018.5.25 20:11:00
 tags: webpack

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 小程序初涉——倒计时效果
 time: 2018.8.14 12:45:00
 tags: 微信小程序

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Echarts使用干货整理（不断更新）
 time: 2019.09.29 14:34:57
 tags: Echarts

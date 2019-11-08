@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: js 关于正确率的控制
 time: 2018.11.06 14:12:00
 tags: js

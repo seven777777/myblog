@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-11-06 10:47:43
+ * @Last Modified time: 2019-11-06 16:54:44
  */
 /*------------------------------------*\
     #common
@@ -290,96 +290,113 @@ footer{
     @extend .content-wrap;
     @extend .con-min-height;
     @extend .default-shadow;
-    padding: 20px;
+    padding: 30px 50px;
     margin-top: 20px;
+
+    img{
+        display: block;
+        margin: 10px auto;
+        max-width: 100%;
+    }
 }
 
 // ========  default页面 end  ========
 
 
 // ========  post布局相关 start  ========
+.module-title{
+    font-size: 22px;
+    color: $clr-h1;
+    line-height: 2.5;
+    border-bottom: 8px double $clr-dark;
+    margin-bottom: 20px;
+}
 
+.postlist-wrap{
+    // display: flex;
+    // &.layout-block{
+    //     flex-wrap: wrap;
+    //     justify-content: space-between;
+    //     .postlist-block{
+    //         width: 46%;
+    //     }
+    // }
+}
+.tag-time{
+    color: $clr-def;
+    margin-right: 10px;
+    font-size: 12px;
+    @extend .flex_align;
+}
+.postlist-block{
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    // border-bottom: 1px dashed $clr-primary;
+    
+    .postlist-title{
+        font-size: 18px;
+        font-weight: bold;
+        color: $clr-link;
+        line-height: 2;
+        @extend .wavelink;
+        &:hover{
+            color: rgba($color: $clr-link, $alpha: 0.7);
+        }
+    }
+    .postlist-subDes{
+        color:$clr-def-light;
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 10px;
+        @extend .flex_align;
+    }
+    .postlist-tag-wrap{
+        color:$clr-def-light;
+        margin-bottom: 10px;
+        @extend .flex_align;
+    }
+    .postlist-tag{
+        @include base_btn($clr-contrast-darkest,small)
+    }
+    .postlist-excerpt{
+        font-size: 14px;
+        color: $clr-def-dark;
+        line-height: 2;
+        text-indent: 28px;
+        background: rgba($color: $clr-lighter, $alpha: 0.2);
+        padding: 10px;
+        margin: 15px 0;
+    }
+}
+
+.pagination{
+    padding: 20px 0;
+    @extend .flex_center;
+    .paginationItem{
+        @include base_btn($clr-contrast-darkest);
+    }
+    .paginationItem-notallowed{
+        @include base_btn($clr-def-dark,normal,false)
+    }
+}
 
 // ========  post布局相关 end  ========
 
-
-
-// a {
-//     color: $clr-link;
-//     font-weight: bold;
-//     text-decoration: none;
-//     word-wrap: break-word;
-//     display: inline-block;
-//     position: relative;
-//     &:hover{
-//         @include svg-wave('f29653');
-//         &::before{
-//             content: '#';
-//             position: absolute;            
-//             left: -12px;
-//             top: -5px;
-//             font-size: 12px;
-//             color: $clr-def-light;
-//         }
-//     }
-// }
-// #nav-top{
-//     a{
-//         &:hover{
-//             background: none;
-//             &::before{
-//                 content: ''
-//             }
-//         }
-//     }
-// }
-
-// header{
-//     a{
-//         color: white;
-//         &:hover{
-//             background: none;
-//             &::before{
-//                 content: ''
-//             }
-//         }
-//     }
-// }
-
-// .button {
-//     padding: 0.4em 1em;
-//     border-radius: 1.2em;
-//     background-color: $clr-primary;
-//     color: $clr-def-lighter;
-//     text-shadow: none;
-//     text-indent: 0;
-//     font-size: $ft-sz-sm;
-//     margin: 0 0.2em 0.5em 0.2em;
-//     display: inline-block;
-
-//     &:visited {
-//         color: $clr-def-lighter;
-//     }
-
-//     &:hover {
-//         color: $clr-def-lighter;
-//         background-color: $clr-contrast;
-//     }
-
-//     &:visited:hover {
-//         color: $clr-def-lighter;
-//     }
-
-//     &.def {
-//         background-color: $clr-def;
-
-//         &:hover {
-//             color: $clr-def-lighter;
-//             background-color: $clr-contrast;
-//         }
-//     }
-// }
-
+.wavelink{
+    text-decoration: none;
+    position: relative;
+    &:hover{
+        @include svg-wave('f29653');
+        &::before{
+            content: '#';
+            position: absolute;            
+            left: -12px;
+            top: -5px;
+            font-size: 12px;
+            color: $clr-link;
+        }
+    }
+}
 
 blockquote {
     background-color: $clr-qt-back;
@@ -454,13 +471,4 @@ h1>code {
 
 h2>code, h3>code, h4>code, h5>code, h6>code {
   color: $clr-h2-6;
-}
-
-
-.postlist-title{
-    font-size: 24px;
-}
-.postlist-time{
-    color:$clr-def-light;
-    font-size: 20px;
 }

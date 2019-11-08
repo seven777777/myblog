@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 页面Tab切点击切换
 time: 2016.4.7 21:47:00
 tags: 页面效果 css
