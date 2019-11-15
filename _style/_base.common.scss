@@ -63,6 +63,7 @@ footer{
     justify-content: center;
     .link-gzh{
         @extend .flex_column_center;
+        margin-left: 40px;
         img{
             width: 60px;
             height: auto;
@@ -77,6 +78,7 @@ footer{
     }
     .toTop{
         line-height: 1.5;
+        margin-left: 40px;
     }
 }
 .scrollBox{
@@ -326,6 +328,7 @@ footer{
     color: $clr-def;
     margin-right: 10px;
     font-size: 12px;
+    white-space: nowrap;
     @extend .flex_align;
 }
 .postlist-block{
