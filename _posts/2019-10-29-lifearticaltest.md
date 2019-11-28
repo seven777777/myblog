@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Echarts使用干货整理（不断更新）
-time: 2019.09.29 14:34:57
-tags: Echarts
+title: 生活文章测试
+time: 2019.10.29 14:34:57
+tags: 测试
 category: life
 excerpt : 整理一些平时不太注意，或者曾经踩过坑的Echarts设置，其实官方文档都可以找到，记录在此只是为了下次遇到同样问题能够快速解决。
 ---

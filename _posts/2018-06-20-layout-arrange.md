@@ -2,7 +2,7 @@
 layout: post
 title: 纯干货~常用布局汇总（持续更新）
 time: 2018.6.20 14:11:00
-tags: css 干货
+tags: CSS 干货
 category: work
 excerpt : 整理一些使用频率较高的布局样式，方便日常开发时参考，增加开发效率。
 ---
