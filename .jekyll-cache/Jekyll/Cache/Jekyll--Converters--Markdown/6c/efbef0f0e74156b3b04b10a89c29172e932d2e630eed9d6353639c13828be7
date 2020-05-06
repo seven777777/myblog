@@ -1,0 +1,51 @@
+I"�
+<p>从前我们在网页中会需要内容定位，或者返回顶部之类的功能，通常使用锚点来实现，但是页面跳转太过生硬，用户体验不够，于是会通过一大串的js来实现平滑滚动的效果，近两年出现了一些新的属性可以很方便的完成这种交互，很大程度的减小了开发难度。</p>
+
+<h3 id="一cssscroll-behavior">一、CSS：scroll-behavior</h3>
+<p>约莫是去年开始出现的这个属性，只需要在需要滚动的地方增加一行如下属性，即可。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scroll-behavior:smooth;
+</code></pre></div></div>
+<p>非常方便，不过看了下兼容性，不是很高。
+<img src="https://seven777777.github.io/myblog/images/post/scroll1.png" alt="image" /></p>
+
+<p>对于一些对兼容性要求不是很高的，可以使用，非常方便。</p>
+
+<p><a href="https://codepen.io/seven77/pen/OaVZBj">可以点击查看简单的demo</a></p>
+
+<h3 id="二jsscrollintoview">二、JS：scrollIntoView</h3>
+<p><code class="highlighter-rouge">scrollIntoView()</code>方法是一个IE6浏览器也支持的原生JS API，可以让元素进入视区，通过触发滚动容器的定位实现。</p>
+
+<p>通常使用只需向方法传一个参数即可实现。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>document.documentElement.scrollIntoView(false);
+</code></pre></div></div>
+<p>传入false表示将页面滚动条在最下面，true或不传则相反</p>
+
+<p>如果需要让页面平滑滚动到指定位置，则需要增加参数<code class="highlighter-rouge">behavior</code>，设置其值为“smooth”，如下</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>document.documentElement.scrollIntoView({
+    behavior: "smooth",
+    block: "end",
+    inline: "nearest"
+});
+</code></pre></div></div>
+<p>其实如果直接传入的一个boolean值则相当于设置了<code class="highlighter-rouge">block</code>的值：</p>
+
+<ul>
+  <li>true =&gt; block:”start”</li>
+  <li>false =&gt; block:”end”</li>
+</ul>
+
+<p>inline可选值为”start”，”center”，”end”或”nearest”。默认为”nearest”。</p>
+
+<p>使用<code class="highlighter-rouge">scrollIntoView</code>的场景：</p>
+<ul>
+  <li>想页面增加内容时，让页面滚动最下面添加的位置</li>
+  <li>聊天向上显示最新对话</li>
+  <li>回到顶部</li>
+</ul>
+
+<p>等</p>
+
+<p>本文只是简单介绍了使用方法，想要详细了解的话，可以参考张鑫旭的这篇文章：<a href="https://www.zhangxinxu.com/wordpress/2018/10/scroll-behavior-scrollintoview-平滑滚动">CSS scroll-behavior和JS scrollIntoView让页面滚动平滑</a></p>
+
+<p>07 Nov 2018</p>
+:ET

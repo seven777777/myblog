@@ -1,0 +1,98 @@
+I"�<h4 id="场景">场景：</h4>
+
+<p>当项目中多处出现相同的模块时，此时的正常考虑是将其做成公共组建，通过传参不同，实现多处复用</p>
+
+<h4 id="具体">具体：</h4>
+
+<p>背景：项目使用的技术是VUE+ElementUI</p>
+
+<p>此处，多处出现的模块是select选择框，封装成组件后，传给它option的值，代码如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--组件文件 比如说这个组件叫 vSelect 下面会用--&gt;
+&lt;template&gt;
+    &lt;el-select
+    @change="handleChange"
+    v-model="value"
+    :placeholder="请选择"&gt;
+        &lt;el-option
+        v-for="(item,index) in options"
+        :key="index"
+        :label="item.label"
+        :value="item.value"&gt;
+        &lt;/el-option&gt;
+    &lt;/el-select&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data() {
+        return {
+            value: '',
+        }
+    },
+    props:['options'],
+    methods: {
+        handleChange(value) {
+           this.$emit('my-event',value);
+        }
+    },
+   
+  }
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>使用时只需把文件import进来，代码如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
+    &lt;vSelect :options="options" @my-event="select"&gt;&lt;/vSelect&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    import vSelect from '文件路径'
+    export default {
+        data() {
+            return {
+                options: [
+                    {
+                        value:0,
+                        label:'选项一'
+                    },
+                    {
+                        value:1,
+                        label:'选项二'
+                    },
+                ],
+            }
+        },
+        components: {
+            vSelect
+        },
+        methods: {
+            select(value) {
+               console.log(value)
+            }
+        },
+    }
+&lt;/script&gt;
+</code></pre></div></div>
+<p>以上的话便可以实现一个组件的简单调用，选择后的值会从子组件传到父组件</p>
+
+<h4 id="问题">问题：</h4>
+
+<p>多处使用同一个组件时，会代表不同的选项，拿到的值也需要做不同的处理，正常也可以通过写多个方法来实现对取得的值的不同处理，但是这种方法不够灵活。</p>
+
+<h4 id="解决">解决：</h4>
+<p>此时自然而然想到的一种解决方法就是给上面的select函数再增加一个参数，根据参数不同进行不同的处理</p>
+
+<p>但是真正实施起来却发现会出现很多问题。</p>
+
+<p>其实解决方法很简单，就是一开始没转过来弯，还是花了一些时间，最终的解决方案就是使用回调函数：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;vSelect :options="options" @my-event="val=&gt;select(val,param)"&gt;&lt;/vSelect&gt;
+
+select(value,param) {
+   console.log(value,param)
+}
+</code></pre></div></div>
+
+<p>回过头来看，真的觉的这个压根都不能算作一个问题，就当记录一下作为Vue组件使用的初级教程吧，希望能够帮助到一些人。</p>
+
+<p>30 Sep 2018</p>
+:ET
