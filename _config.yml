@@ -7,7 +7,6 @@ url: "https://seven777777.github.io"
 loadingImg: "https://seven777777.github.io/myblog/images/loading.gif"
 imgPath: "https://seven777777.github.io/myblog/images"
 
-gems: [jekyll-paginate]
 paginate: 6
 paginate_path: "/page:num"
 
@@ -21,3 +20,4 @@ permalink: pretty
 plugins:
 - jekyll-paginate
 port: 4001
+
