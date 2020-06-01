@@ -95,7 +95,10 @@
                 <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </div>
             <ul class="postlist-subDes">
-                <li><i class="iconfont iconrili mr_5"></i>{{ post.date | date: "%Y年%m月%d日" }}</li>
+                <li class="mr_5">
+                    <i class="iconfont iconrili mr_5"></i>
+                    {{ post.date | date: "%Y年%m月%d日" }}
+                </li>
             </ul>
             <div class="postlist-tag-wrap">
                 <i class="iconfont iconbiaoqian mr_5"></i>

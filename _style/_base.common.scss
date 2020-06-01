@@ -436,6 +436,7 @@ blockquote {
         font-family: $ft-fm-quote;
         font-size: $ft-sz-qt;
         word-wrap: break-word;
+        font-weight: bold;
     }
 
 }
@@ -456,16 +457,17 @@ pre > code {
 
 code {
   border: dashed 1px $clr-primary;
-  color: $clr-dark;
+  color: $clr-def-darker;
   padding: 2px 8px;
   margin: 5px 0;
-  font-size: 0.85em;
+  font-size: 0.9em;
   border-radius: 5px;
   font-family: $ft-fm-code;
   text-shadow: none;
   background-color: $clr-code-back;
   word-wrap: break-word;
   white-space: pre;
+  line-height: 1.8;
 }
 
 h1>code {
