@@ -1,0 +1,14 @@
+I"G<p>通常我们需要使用VUE的watch去监听一些值的变化，从而去进行一些操作，但是对于对象的监听，我们往往会遇到一些问题，对象内部的某个属性改变的时候无法触发watch函数，这个时候就需要使用vue的深度监听，具体如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watch:{
+    myObj:{
+        handler(newValue, oldValue) {
+　　　　　　//执行操作
+　　　　},
+　　　　deep: true
+    }
+}
+</code></pre></div></div>
+<p>结束！</p>
+
+<p>06 Nov 2018</p>
+:ET
