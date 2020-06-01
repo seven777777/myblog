@@ -122,6 +122,9 @@ footer{
         display: inline-block;
         margin: 0 5px;
     }
+    .con{
+        margin-left: 15px;
+    }
 }
 
 // ========  全局布局 end  ========
@@ -295,7 +298,7 @@ footer{
     padding: 30px 50px;
     margin-top: 20px;
 
-    img{
+    p>img{
         display: block;
         margin: 10px auto;
         max-width: 100%;
@@ -306,10 +309,34 @@ footer{
 
 
 // ========  post布局相关 start  ========
+.module_wrap{
+    font-size: 0.9em;
+    line-height: 1.6;
+    // 二级标题
+    h4{
+        padding-left: 15px;
+        position: relative;
+        margin: 20px 0 10px 0;
+        font-size: $ft-sz-h4;
+        // &::before{
+        //     content: '';
+        //     width: 3px;
+        //     height: 1.5rem;
+        //     position: absolute;
+        //     left: 0;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        //     background-color: $clr-dark;
+        // }
+    }
+}
 .module-title{
-    font-size: 22px;
+    font-size: 1.2em;
     color: $clr-h1;
-    line-height: 2.5;
+    height: 2.8em;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
     border-bottom: 8px double $clr-dark;
     margin-bottom: 20px;
 }
@@ -340,7 +367,7 @@ footer{
         font-size: 18px;
         font-weight: bold;
         color: $clr-link;
-        line-height: 2;
+        line-height: 1.6;
         @extend .wavelink;
         &:hover{
             color: rgba($color: $clr-link, $alpha: 0.7);
@@ -418,11 +445,11 @@ blockquote {
         // width: 20px;
         // padding: 0 10px 10px;
         // height: 30px;
-        font-size: 60px;
+        font-size: 2.6em;
         font-weight: bold;
         position: absolute;
-        left: -77px;
-        top: 0;
+        left: -1.2em;
+        top: -0.5em;
         // background-color: white;
         // box-shadow: 0px 0px 5px 1px rgba(200, 200, 200, 0.5);
         z-index: -10;
@@ -445,18 +472,10 @@ blockquote {
   text-indent: 0;
 }
 
-pre > code {
-  display: block;
-  padding: 10px 15px;
-  margin: 10px 0;
-  background-color: $clr-code-back;
-  overflow-x: auto;
-  word-wrap: normal;
-  white-space: inherit;
-}
+
 
 code {
-  border: dashed 1px $clr-primary;
+//   border: dashed 1px $clr-primary;
   color: $clr-def-darker;
   padding: 2px 8px;
   margin: 5px 0;
@@ -468,6 +487,19 @@ code {
   word-wrap: break-word;
   white-space: pre;
   line-height: 1.8;
+}
+
+pre > code {
+    display: block;
+    padding: 10px 15px;
+    margin: 10px 0;
+    background-color: $clr-code-back;
+    overflow-x: auto;
+    word-wrap: normal;
+    white-space: inherit;
+}
+p > code {
+    margin: 0 5px;
 }
 
 h1>code {

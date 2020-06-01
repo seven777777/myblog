@@ -12,6 +12,16 @@
     
     .pageWrap{
         min-width: 0;
+        .default-con{
+            box-shadow: none;
+        }
+    }
+    .module-title{
+        height: auto;
+        border-bottom: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .home-navbar {
@@ -22,6 +32,15 @@
         z-index: 1000;
         nav .logo{
             font-size: 16px;
+        }
+    }
+
+    .default-nav{
+        .content-wrap{
+            padding: 0;
+        }
+        .description{
+            display: none;
         }
     }
 
@@ -38,6 +57,11 @@
         padding: 10px 5%;
         height: auto;
         flex-direction: column;
+        .postlist-block{
+            .timeago{
+                display: none!important;
+            }
+        }
     }
 
     .home-introduce{
@@ -59,6 +83,13 @@
            display: flex;
            flex-direction: column;
            align-items: center;
+        }
+    }
+
+    .copyright{
+        flex-direction: column;
+        .con{
+            margin-left: 0;
         }
     }
 
