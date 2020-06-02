@@ -17,7 +17,8 @@
             <div class="flex_align">
                 <i class="iconfont iconjilu mr_5"></i>
                 {% assign time = page.time %}
-                <div class="tag-time timeago cn mr_5" title="{{ time | replace: '.', '-' | replace: ' ', 'T' }}+08:00">{{ time }}</div>
+                <div class="tag-time mr_5">{{ time | date: "%Y年%m月%d日" }}</div>
+                <!-- <div class="tag-time timeago cn mr_5" title="{{ time | replace: '.', '-' | replace: ' ', 'T' }}+08:00">{{ time }}</div> -->
                 <i class="iconfont iconliulan mr_5"></i>
                 <span class="tag-time" id="busuanzi_value_page_pv">0</span>
             </div>
