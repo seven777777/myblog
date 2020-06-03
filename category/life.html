@@ -2,7 +2,8 @@
 layout: default
 title: 生活相关博文
 ---
-<div class="content-wrap">
+<div>
+    <h1 class="module-title">life</h1>
     {% for post in site.posts %}
         {% assign type = category %}
         {% if post.category == 'life' %}
@@ -11,4 +12,6 @@ title: 生活相关博文
             </div>
         {% endif %}
     {% endfor %}
+
+    {% include copyright.html %}
 </div>

@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<div class="content-wrap">
+<div>
+    <h1 class="module-title">work</h1>
     {% for post in site.posts %}
         {% assign type = category %}
         {% if post.category == 'work' %}
@@ -10,4 +11,6 @@ layout: default
             </div>
         {% endif %}
     {% endfor %}
+
+    {% include copyright.html %}
 </div>

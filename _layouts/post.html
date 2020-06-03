@@ -25,6 +25,15 @@
             {% endif %}
         </h1>
 
+        <div class="postlist-tag-wrap">
+            <i class="iconfont iconbiaoqian mr_5"></i>
+            <ul class="flex_align">
+                {% for tag in page.tags %}
+                <li class="postlist-tag"><a href="{{ site.baseurl }}/list?tag={{tag}}">{{tag}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
         {{ content }}
 
         {% include copyright.html %}
