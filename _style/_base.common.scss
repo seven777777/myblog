@@ -329,6 +329,16 @@ footer{
         //     background-color: $clr-dark;
         // }
     }
+
+    .emoji{
+        display: inline-block;
+        margin: 0;
+    }
+
+    p{
+        display: flex;
+        align-items: center;
+    }
 }
 .module-title{
     font-size: 1.2em;
@@ -464,6 +474,10 @@ blockquote {
         font-size: $ft-sz-qt;
         word-wrap: break-word;
         font-weight: bold;
+        a{
+            font-style: italic;
+            color: $clr-contrast-darkest;
+        }
     }
 
 }

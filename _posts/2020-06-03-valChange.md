@@ -11,7 +11,7 @@ excerpt : 本文主要回顾整理一下之前（大概一年前，:joy:，这�
 
 之前其实写了两种方案，最终使用的如下的方案：
 
-<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange.gif " />
+<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange.gif" />
 
 不过本篇文章会将两种方案都整理出来，方便日后有同样的需求时可以快速复用，同时也可以给正在实现这个需求的同学们一些参考！
 
@@ -90,7 +90,7 @@ $("#valScrollAmt").html(amtDom(numArr));
 ```
 不过此时因为我们还没有增加样式，出来的界面还看不出效果，且有一丢丢丑
 
-<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/pic1.png " />
+<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/pic1.png" />
 
 下面我们就增加一些样式，这一步不仅仅是美化，而是必要的，这种实现方式对dom的排版是有固定要求的
 
@@ -116,7 +116,7 @@ $("#valScrollAmt").html(amtDom(numArr));
 
 增加完样式的样子就是下面这样啦
 
-<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/pic2.png " />
+<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/pic2.png" />
 
 
 最后就是让他动起来了
@@ -154,11 +154,11 @@ $(".scrollItem").each(function(i){
 
 最终效果就是这样啦：
 
-<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange2.gif " />
+<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange2.gif" />
 
 还有一个带小数点和千分位的效果：
 
-<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange3.gif " />
+<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange3.gif" />
 
 是不是很简单！:smile:
 
@@ -198,7 +198,7 @@ setInterval(update, 3000); //3秒钟执行一次 update();
 ```
 效果如下：
 
-<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange4.gif " />
+<img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange4.gif" />
 
 #### 三、滚动式变化完整代码
 ```

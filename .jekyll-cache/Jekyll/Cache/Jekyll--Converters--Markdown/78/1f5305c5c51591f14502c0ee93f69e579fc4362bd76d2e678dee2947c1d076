@@ -1,8 +1,8 @@
-I"�-<p>本文主要回顾整理一下之前（大概一年前，:joy:，这一年实在比较忙 ）写的一个页面动画。</p>
+I"�-<p>本文主要回顾整理一下之前（大概一年前，:joy:，这一年实在比较忙 ）写的一个页面动画。</p>
 
 <p>之前其实写了两种方案，最终使用的如下的方案：</p>
 
-<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange.gif " /></p>
+<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange.gif" /></p>
 
 <p>不过本篇文章会将两种方案都整理出来，方便日后有同样的需求时可以快速复用，同时也可以给正在实现这个需求的同学们一些参考！</p>
 
@@ -82,7 +82,7 @@ $("#valScrollAmt").html(amtDom(numArr));
 </code></pre></div></div>
 <p>不过此时因为我们还没有增加样式，出来的界面还看不出效果，且有一丢丢丑</p>
 
-<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/pic1.png " /></p>
+<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/pic1.png" /></p>
 
 <p>下面我们就增加一些样式，这一步不仅仅是美化，而是必要的，这种实现方式对dom的排版是有固定要求的</p>
 
@@ -107,7 +107,7 @@ $("#valScrollAmt").html(amtDom(numArr));
 
 <p>增加完样式的样子就是下面这样啦</p>
 
-<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/pic2.png " /></p>
+<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/pic2.png" /></p>
 
 <p>最后就是让他动起来了</p>
 
@@ -143,11 +143,11 @@ $(".scrollItem").each(function(i){
 
 <p>最终效果就是这样啦：</p>
 
-<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange2.gif " /></p>
+<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange2.gif" /></p>
 
 <p>还有一个带小数点和千分位的效果：</p>
 
-<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange3.gif " /></p>
+<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange3.gif" /></p>
 
 <p>是不是很简单！:smile:</p>
 
@@ -186,7 +186,7 @@ setInterval(update, 3000); //3秒钟执行一次 update();
 </code></pre></div></div>
 <p>效果如下：</p>
 
-<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange4.gif " /></p>
+<p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange4.gif" /></p>
 
 <h4 id="三滚动式变化完整代码">三、滚动式变化完整代码</h4>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// css部分

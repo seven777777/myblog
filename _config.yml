@@ -19,5 +19,6 @@ permalink: pretty
 
 plugins:
 - jekyll-paginate
+- jemoji
 port: 4001
 
