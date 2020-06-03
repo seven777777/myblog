@@ -311,7 +311,7 @@ footer{
 // ========  post布局相关 start  ========
 .module_wrap{
     font-size: 0.9em;
-    line-height: 1.6;
+    line-height: 2;
     // 二级标题
     h4{
         padding-left: 15px;
@@ -338,6 +338,7 @@ footer{
     p{
         display: flex;
         align-items: center;
+        text-indent:2em
     }
 }
 .module-title{
