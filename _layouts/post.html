@@ -37,7 +37,7 @@
         {{ content }}
 
         <!-- ························Gitalk评论系统·························· -->
-        <!-- <div id="gitalk-container"></div>
+        <div id="gitalk-container"></div>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
         <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
         <script>
@@ -45,21 +45,21 @@
                 id: location.pathname,   // Ensure uniqueness and length less than 50
                 clientID: '6140c3098c5e95fcf6a9',
                 clientSecret: '4c660ac4037d51cfd8edbccadac4c8cb8a611425',
-                repo: 'seven777777.github.io/myblog',
+                repo: 'https://seven777777.github.io/myblog/',
                 owner: 'seven',
                 admin: 'seven',
                 distractionFreeMode: false  // Facebook-like distraction free mode
             })
             gitalk.render('gitalk-container')
-        </script>  -->
+        </script> 
 
         <!-- ························Gitment评论系统·························· -->
-        <div id="gitmentContainer"></div>
+        <!-- <div id="gitmentContainer"></div> -->
         <!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
         <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
         <!-- <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
         <script src="https://billts.site/js/gitment.js"></script> -->
-        <link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+        <!-- <link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
         <script src="https://jjeejj.github.io/js/gitment.js"></script>
 
         <script>
@@ -72,7 +72,7 @@
                 },
             });
             gitment.render('gitmentContainer');
-        </script>
+        </script> -->
 
         {% include copyright.html %}
     </div>
