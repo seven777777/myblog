@@ -1,0 +1,493 @@
+I"J<h3 id="arrayfrom">Array.from()</h3>
+<p>从一个类似数组或可迭代对象中创建一个新的，浅拷贝的数组实例</p>
+
+<h5 id="用途">用途：</h5>
+<ol>
+  <li>字符串转数组</li>
+  <li>结合new Set()，进行数组去重</li>
+  <li>遍历数组</li>
+  <li>生成一个数字序列</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--字符串转数组--&gt;
+Array.from('foo');// ["f", "o", "o"]
+
+&lt;!--去重--&gt;
+let s = new Set(['1', '2','2','3']); 
+Array.from(s); // ['1','2','3']
+
+&lt;!--遍历数组--&gt;
+Array.from([1, 2, 3], x =&gt; x + x);// [2, 4, 6]
+
+&lt;!--生成一个数字序列--&gt;
+Array.from({length: 5}, (v, i) =&gt; i);// [0, 1, 2, 3, 4]
+</code></pre></div></div>
+
+<h3 id="arrayisarray">Array.isArray()</h3>
+<p>用于确定传递的值是否是一个 Array</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array.isArray([1, 2, 3]); // true
+
+Array.isArray({foo: 123});// false
+
+Array.isArray(Array.prototype);// true
+</code></pre></div></div>
+<h3 id="arrayof">Array.of()</h3>
+<p>创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array.of(7);       // [7] 
+Array.of(1, 2, 3); // [1, 2, 3]
+
+Array(7);          // [ , , , , , , ]
+Array(1, 2, 3);    // [1, 2, 3]
+</code></pre></div></div>
+<h3 id="arrayprototypeconcat">Array.prototype.concat()</h3>
+<p>用于合并两个或多个数组</p>
+<blockquote>
+  <p>此方法不会更改现有数组，而是返回一个新数组。</p>
+</blockquote>
+
+<p>concat方法不会改变this或任何作为参数提供的数组，而是返回一个浅拷贝，它包含与原始数组相结合的相同元素的副本。 原始数组的元素将复制到新数组中</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr1 = [[1],2];
+var arr2 = [].concat(arr1);
+arr1[0].push(2);
+
+arr1 =&gt; [[1,2], 2];
+arr2 =&gt; [[1,2], 2];
+
+
+var arr3 = [1,2,3];
+var arr4 = [].concat(arr1);
+arr3.push(5);
+
+arr3 =&gt; [1, 2, 3, 5];
+arr4 =&gt; [1, 2, 3];
+
+</code></pre></div></div>
+<h3 id="arrayprototypecopywithin">Array.prototype.copyWithin()</h3>
+<p>浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度</p>
+<blockquote>
+  <p>此方法会更改原有数组，但不会改变其长度</p>
+</blockquote>
+
+<h5 id="语法">语法</h5>
+<p><code class="highlighter-rouge">arr.copyWithin(target[, start[, end]])</code></p>
+
+<p>不常用，至少目前我没用过。详情可点击<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin">这里</a>了解。</p>
+
+<p>它是用来移动 Array 或者 TypedArray 数据的一个高性能的方法</p>
+
+<h3 id="arrayprototypeentries">Array.prototype.entries()</h3>
+<p>返回一个新的Array Iterator对象，该对象包含数组中每个索引的键/值对</p>
+<blockquote>
+  <p>Iterator对象的next方法可以遍历迭代器取得原数组的[key,value]</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--next方法获取键值--&gt;
+var arr = ["a", "b", "c"]; 
+var iterator = arr.entries();
+console.log(iterator.next());
+
+/*{value: Array(2), done: false}
+          done:false
+          value:(2) [0, "a"]
+           __proto__: Object
+*/
+// iterator.next()返回一个对象，对于有元素的数组，
+// 是next{ value: Array(2), done: false }；
+// next.done 用于指示迭代器是否完成：在每次迭代时进行更新而且都是false，
+// 直到迭代器结束done才是true。
+// next.value是一个["key","value"]的数组，是返回的迭代器中的元素值。
+
+&lt;!--for...of循环获得键值--&gt;
+var arr = ["a", "b", "c"];
+var iterator = arr.entries();
+
+for (let e of iterator) {
+    console.log(e);
+}
+
+// [0, "a"] 
+// [1, "b"] 
+// [2, "c"]
+</code></pre></div></div>
+<h5 id="用于二维数组按行排序">用于二维数组按行排序</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function sortArr(arr) {
+    var goNext = true;
+    var entries = arr.entries();
+    while (goNext) {
+        var result = entries.next();
+        if (result.done !== true) {
+            result.value[1].sort((a, b) =&gt; a - b);
+            goNext = true;
+        } else {
+            goNext = false;
+        }
+    }
+    return arr;
+}
+
+var arr = [[1,34],[456,2,3,44,234],[4567,1,4,5,6],[34,78,23,1]];
+sortArr(arr);
+
+/*(4) [Array(2), Array(5), Array(5), Array(4)]
+    0:(2) [1, 34]
+    1:(5) [2, 3, 44, 234, 456]
+    2:(5) [1, 4, 5, 6, 4567]
+    3:(4) [1, 23, 34, 78]
+    length:4
+    __proto__:Array(0)
+*/
+</code></pre></div></div>
+
+<h3 id="arrayprototypeevery">Array.prototype.every()</h3>
+<p>测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[12, 5, 8, 130, 44].every(x =&gt; x &gt;= 10); // false
+[12, 54, 18, 130, 44].every(x =&gt; x &gt;= 10); // true
+</code></pre></div></div>
+<h3 id="arrayprototypefill">Array.prototype.fill()</h3>
+<p>用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
+<h5 id="语法-1">语法</h5>
+<p>arr.fill(value[, start[, end]])</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3].fill(4);               // [4, 4, 4]
+[1, 2, 3].fill(4, 1);            // [1, 4, 4]
+[1, 2, 3].fill(4, 1, 2);         // [1, 4, 3]
+[1, 2, 3].fill(4, 1, 1);         // [1, 2, 3]
+[1, 2, 3].fill(4, 3, 3);         // [1, 2, 3]
+[1, 2, 3].fill(4, -3, -2);       // [4, 2, 3]
+[1, 2, 3].fill(4, NaN, NaN);     // [1, 2, 3]
+[1, 2, 3].fill(4, 3, 5);         // [1, 2, 3]
+Array(3).fill(4);                // [4, 4, 4]
+[].fill.call({ length: 3 }, 4);  // {0: 4, 1: 4, 2: 4, length: 3}
+
+// Objects by reference.
+var arr = Array(3).fill({}) // [{}, {}, {}];
+arr[0].hi = "hi"; // [{ hi: "hi" }, { hi: "hi" }, { hi: "hi" }]
+</code></pre></div></div>
+<h3 id="arrayprototypefilter">Array.prototype.filter()</h3>
+<p>创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+
+/**
+ * Array filters items based on search criteria (query)
+ */
+const filterItems = (query) =&gt; {
+  return fruits.filter((el) =&gt;
+    el.toLowerCase().indexOf(query.toLowerCase()) &gt; -1
+  );
+}
+
+console.log(filterItems('ap')); // ['apple', 'grapes']
+console.log(filterItems('an')); // ['banana', 'mango', 'orange']
+</code></pre></div></div>
+<h3 id="arrayprototypefind">Array.prototype.find()</h3>
+<p>返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。</p>
+<h3 id="arrayprototypefindindex">Array.prototype.findIndex()</h3>
+<p>返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1。</p>
+<h3 id="arrayprototypeflat-">Array.prototype.flat() *</h3>
+<p>按照一个可指定的深度递归遍历数组，将所有元素与遍历到的子数组中的元素合并为一个新数组返回。</p>
+
+<h5 id="用途-1">用途</h5>
+
+<h6 id="1-扁平化嵌套数组">1. 扁平化嵌套数组</h6>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr1 = [1, 2, [3, 4]];
+arr1.flat(); 
+// [1, 2, 3, 4]
+
+var arr2 = [1, 2, [3, 4, [5, 6]]];
+arr2.flat();
+// [1, 2, 3, 4, [5, 6]]
+
+var arr3 = [1, 2, [3, 4, [5, 6]]];
+arr3.flat(2);
+// [1, 2, 3, 4, 5, 6]
+
+//使用 Infinity 作为深度，展开任意深度的嵌套数组
+arr3.flat(Infinity); 
+// [1, 2, 3, 4, 5, 6]
+</code></pre></div></div>
+
+<h6 id="2-移除数组中的空项">2. 移除数组中的空项</h6>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr4 = [1, 2, , 4, 5];
+arr4.flat();
+// [1, 2, 4, 5]
+</code></pre></div></div>
+
+<h3 id="arrayprototypeflatmap">Array.prototype.flatMap()</h3>
+
+<p>首先使用映射函数映射每个元素，然后将结果压缩成一个新数组</p>
+<blockquote>
+  <p>它与 map 和 深度值1的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。</p>
+</blockquote>
+
+<h5 id="map--flatmap">Map &amp;&amp; flatMap</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr1 = [1, 2, 3, 4];
+
+arr1.map(x =&gt; [x * 2]); 
+// [[2], [4], [6], [8]]
+
+arr1.flatMap(x =&gt; [x * 2]);
+// [2, 4, 6, 8]
+
+// 等价于
+arr1.reduce((acc, x) =&gt; acc.concat([x * 2]), []);
+// [2, 4, 6, 8]
+
+// 只会将 flatMap 中的函数返回的数组 “压平” 一层
+arr1.flatMap(x =&gt; [[x * 2]]);
+// [[2], [4], [6], [8]]
+</code></pre></div></div>
+<h3 id="arrayprototypeforeach">Array.prototype.forEach()</h3>
+
+<blockquote>
+  <p>没有办法中止或者跳出 forEach() 循环，除了抛出一个异常。</p>
+</blockquote>
+
+<p>若需要提前终止循环，可以使用：简单循环</p>
+<ul>
+  <li>for…of 循环</li>
+  <li>Array.prototype.every()</li>
+  <li>Array.prototype.some()</li>
+  <li>Array.prototype.find()</li>
+  <li>Array.prototype.findIndex()</li>
+</ul>
+
+<p>最常用，不赘述。</p>
+
+<h3 id="arrayprototypeincludes">Array.prototype.includes()</h3>
+<p>判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回false。</p>
+
+<h3 id="arrayprototypeindexof">Array.prototype.indexOf()</h3>
+<p>返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。</p>
+
+<h3 id="arrayprototypejoin">Array.prototype.join()</h3>
+<p>将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。</p>
+
+<h3 id="arrayprototypekeys">Array.prototype.keys()</h3>
+<p>返回一个包含数组中每个索引键的Array Iterator对象。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr = ["a", , "c"];
+var sparseKeys = Object.keys(arr);
+var denseKeys = [...arr.keys()];
+console.log(sparseKeys); // ['0', '2']
+console.log(denseKeys);  // [0, 1, 2]
+</code></pre></div></div>
+<h3 id="arrayprototypelastindexof">Array.prototype.lastIndexOf()</h3>
+<p>返回指定元素（也即有效的 JavaScript 值或变量）在数组中的最后一个的索引，如果不存在则返回 -1。从数组的后面向前查找，从 fromIndex 处开始。</p>
+<h3 id="arrayprototypemap">Array.prototype.map()</h3>
+<p>创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var numbers = [1, 4, 9];
+var roots = numbers.map(Math.sqrt);
+// roots的值为[1, 2, 3], numbers的值仍为[1, 4, 9]
+</code></pre></div></div>
+<h3 id="arrayprototypepop">Array.prototype.pop()</h3>
+<p>从数组中删除最后一个元素，并返回该元素的值。</p>
+<blockquote>
+  <p>该方法更改数组的长度</p>
+</blockquote>
+
+<h3 id="arrayprototypepush">Array.prototype.push()</h3>
+<p>将一个或多个元素添加到数组的末尾，并返回该数组的新长度。</p>
+<h3 id="arrayprototypereduce">Array.prototype.reduce()</h3>
+<p>对数组中的每个元素执行一个自定义的reducer函数(升序执行)，将其结果汇总为单个返回值。</p>
+
+<h5 id="用途-2">用途</h5>
+<ol>
+  <li>将二维数组转化为一维</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+ ( acc, cur ) =&gt; acc.concat(cur),
+ []
+);
+</code></pre></div></div>
+
+<ol>
+  <li>计算数组中每个元素出现的次数</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+var countedNames = names.reduce(function (allNames, name) { 
+  if (name in allNames) {
+    allNames[name]++;
+  }
+  else {
+    allNames[name] = 1;
+  }
+  return allNames;
+}, {});
+// countedNames is:
+// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+</code></pre></div></div>
+
+<ol>
+  <li>按属性对object分类</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var people = [
+  { name: 'Alice', age: 21 },
+  { name: 'Max', age: 20 },
+  { name: 'Jane', age: 20 }
+];
+
+function groupBy(objectArray, property) {
+  return objectArray.reduce(function (acc, obj) {
+    var key = obj[property];
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(obj);
+    return acc;
+  }, {});
+}
+
+var groupedPeople = groupBy(people, 'age');
+// groupedPeople is:
+// { 
+//   20: [
+//     { name: 'Max', age: 20 }, 
+//     { name: 'Jane', age: 20 }
+//   ], 
+//   21: [{ name: 'Alice', age: 21 }] 
+// }
+</code></pre></div></div>
+
+<ol>
+  <li>数组去重</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1,2,1,2,3,5,4,5,3,4,4,4,4];
+let result = arr.sort().reduce((init, current) =&gt; {
+    if(init.length === 0 || init[init.length-1] !== current) {
+        init.push(current);
+    }
+    return init;
+}, []);
+console.log(result); //[1,2,3,4,5]
+</code></pre></div></div>
+
+<p>还有其他详见<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">官网</a></p>
+
+<h3 id="arrayprototypereduceright">Array.prototype.reduceRight()</h3>
+<p>接受一个函数作为累加器（accumulator）和数组的每个值（从右到左）将其减少为单个值。</p>
+<h5 id="reduce-与-reduceright-之间的区别">reduce 与 reduceRight 之间的区别</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var a = ['1', '2', '3', '4', '5']; 
+var left  = a.reduce(function(prev, cur)      { return prev + cur; }); 
+var right = a.reduceRight(function(prev, cur) { return prev + cur; }); 
+
+console.log(left);  // "12345"
+console.log(right); // "54321"
+</code></pre></div></div>
+<h3 id="arrayprototypereverse">Array.prototype.reverse()</h3>
+<p>颠倒数组中元素的位置，并返回该数组的引用。</p>
+<blockquote>
+  <p>该方法会改变原数组。</p>
+</blockquote>
+
+<h3 id="arrayprototypeshift">Array.prototype.shift()</h3>
+<p>从数组中删除第一个元素，并返回该元素的值</p>
+<blockquote>
+  <p>此方法更改数组的长度。</p>
+</blockquote>
+
+<h3 id="arrayprototypeslice">Array.prototype.slice()</h3>
+<p>返回一个含有提取元素的新数组，一个由 begin和 end（不包括end）决定的原数组的浅拷贝</p>
+<blockquote>
+  <p>原始数组不会被改变。</p>
+</blockquote>
+
+<h3 id="arrayprototypesome">Array.prototype.some()</h3>
+<p>测试是否至少有一个元素可以通过被提供的函数方法，该方法返回一个Boolean类型的值。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2, 5, 8, 1, 4].some(x =&gt; x &gt; 10);  // false
+[12, 5, 8, 1, 4].some(x =&gt; x &gt; 10); // true
+</code></pre></div></div>
+
+<h3 id="arrayprototypesort">Array.prototype.sort()</h3>
+<p>用原地算法对数组的元素进行排序，并返回数组。</p>
+<blockquote>
+  <p>默认排序顺序是根据字符串Unicode码点。</p>
+</blockquote>
+
+<h5 id="对非-ascii-字符排序">对非 ASCII 字符排序</h5>
+<blockquote>
+  <p>一些非英语语言的字符串需要使用 <code class="highlighter-rouge">String.localeCompare</code>。这个函数可以将函数排序到正确的顺序</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var items = ['réservé', 'premier', 'cliché', 'communiqué', 'café', 'adieu'];
+items.sort(function (a, b) {
+  return a.localeCompare(b);
+});
+
+// items is ['adieu', 'café', 'cliché', 'communiqué', 'premier', 'réservé']
+</code></pre></div></div>
+
+<h3 id="arrayprototypesplice">Array.prototype.splice()</h3>
+<p>通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。</p>
+<blockquote>
+  <p>此方法会改变原数组。</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--从第 2 位开始删除 0 个元素，插入“drum” 和 "guitar"--&gt;
+var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+var removed = myFish.splice(2, 0, 'drum', 'guitar');
+
+// 运算后的 myFish: ["angel", "clown", "drum", "guitar", "mandarin", "sturgeon"]
+// 被删除的元素: [], 没有元素被删除
+
+&lt;!--从倒数第 2 位开始删除 1 个元素--&gt;
+var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+var removed = myFish.splice(-2, 1);
+
+// 运算后的 myFish: ["angel", "clown", "sturgeon"]
+// 被删除的元素: ["mandarin"]
+</code></pre></div></div>
+<h3 id="arrayprototypetolocalestring">Array.prototype.toLocaleString()</h3>
+<p>返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 “,”）隔开。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var prices = ['￥7', 500, 8123, 12];
+prices.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' });
+
+// "￥7,￥500,￥8,123,￥12"
+</code></pre></div></div>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString">详情点击</a>。</p>
+
+<h3 id="arrayprototypetostring">Array.prototype.toString()</h3>
+<p>返回一个字符串，表示指定的数组及其元素</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var array1 = [1, 2, 'a', '1a'];
+
+console.log(array1.toString());
+//"1,2,a,1a"
+</code></pre></div></div>
+
+<h3 id="arrayprototypeunshift">Array.prototype.unshift()</h3>
+<p>将一个或多个元素添加到数组的开头，并返回该数组的新长度。</p>
+<blockquote>
+  <p>该方法修改原有数组</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [4,5,6];
+arr.unshift(1,2,3);
+console.log(arr); // [1, 2, 3, 4, 5, 6]
+</code></pre></div></div>
+
+<h3 id="arrayprototypevalues">Array.prototype.values()</h3>
+<p>返回一个新的 Array Iterator 对象，该对象包含数组每个索引的值</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = ['w', 'y', 'k', 'o', 'p'];
+let eArr = arr.values();
+// 您的浏览器必须支持 for..of 循环
+// 以及 let —— 将变量作用域限定在 for 循环中
+for (let letter of eArr) {
+  console.log(letter);
+}
+</code></pre></div></div>
+:ET

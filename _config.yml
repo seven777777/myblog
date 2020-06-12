@@ -22,3 +22,8 @@ plugins:
 - jemoji
 port: 4001
 
+# gitalk:
+#     owner: seven777777
+#     repo: blog-comment
+#     clientID: 6140c3098c5e95fcf6a9
+#     clientSecret: 4c660ac4037d51cfd8edbccadac4c8cb8a611425

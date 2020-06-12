@@ -33,6 +33,7 @@ Array.from({length: 5}, (v, i) => i);// [0, 1, 2, 3, 4]
 
 ### Array.isArray()
 用于确定传递的值是否是一个 Array
+
 ```
 Array.isArray([1, 2, 3]); // true
 
@@ -198,7 +199,9 @@ console.log(filterItems('an')); // ['banana', 'mango', 'orange']
 按照一个可指定的深度递归遍历数组，将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
 
 ##### 用途
+
 1. 扁平化嵌套数组
+
 ```
 var arr1 = [1, 2, [3, 4]];
 arr1.flat(); 
@@ -216,7 +219,11 @@ arr3.flat(2);
 arr3.flat(Infinity); 
 // [1, 2, 3, 4, 5, 6]
 ```
+
+
+
 2. 移除数组中的空项
+
 ```
 var arr4 = [1, 2, , 4, 5];
 arr4.flat();
@@ -224,6 +231,7 @@ arr4.flat();
 ```
 
 ### Array.prototype.flatMap()
+
 首先使用映射函数映射每个元素，然后将结果压缩成一个新数组
 > 它与 map 和 深度值1的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。
 
