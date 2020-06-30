@@ -354,6 +354,11 @@ footer{
             text-indent: 0;
         }
     }
+
+    p > a{
+        font-style: italic;
+        color: $clr-contrast-darkest;
+    }
 }
 .module-title{
     font-size: 1.2em;
