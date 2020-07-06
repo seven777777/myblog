@@ -1,0 +1,22 @@
+I"�<p>有时候，不同的项目对于node版本的要求不同，如何快捷的控制我们电脑的node版本就成了我们需要考虑的问题</p>
+
+<p>这里记录一下我平常使用的node版本控制工具：nvm</p>
+
+<blockquote>
+  <p>nvm is a version manager for node.js, designed to be installed per-user, and invoked per-shell. nvm works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash), in particular on these platforms: unix, macOS, and windows WSL.</p>
+</blockquote>
+
+<h4 id="安装windows">安装(windows)</h4>
+<p>传送门：<a href="https://github.com/coreybutler/nvm-windows/releases">https://github.com/coreybutler/nvm-windows/releases</a></p>
+
+<p>网上有很多详细说明，这里就不赘述！</p>
+
+<h4 id="常用命令">常用命令</h4>
+<ul>
+  <li><code class="highlighter-rouge">nvm ls</code> 查看已经安装的所有nodejs版本</li>
+  <li><code class="highlighter-rouge">nvm install</code> 版本号，可安装指定版本的nodejs</li>
+  <li><code class="highlighter-rouge">nvm use</code> 版本号，即可切换到指定版本</li>
+  <li><code class="highlighter-rouge">nvm current</code> 当前使用版本</li>
+  <li><code class="highlighter-rouge">nvm uninstall</code> 版本号，卸载指定版本</li>
+</ul>
+:ET
