@@ -93,6 +93,46 @@ var baseData = [
                 star:'4'
             }
         ]
+    },
+    {
+        month:'7月',
+        book:[
+            {
+                name:'七个平行世界的我',
+                author:'小岩井',
+                type:'小说',
+                star:'3'
+            },
+            {
+                name:'十一字谜案',
+                author:'东野圭吾',
+                type:'小说',
+                star:'3'
+            },
+            {
+                name:'情迷佛罗伦萨',
+                author:'毛姆',
+                type:'小说',
+                star:'4'
+            }
+        ]
+    },
+    {
+        month:'8月',
+        book:[
+            {
+                name:'万历十五年',
+                author:'黄仁宇',
+                type:'历史',
+                star:'5'
+            },
+            {
+                name:'rework',
+                author:'Jason Fried & David Heinemeier Hansson',
+                type:'企业管理',
+                star:'4'
+            }
+        ]
     }
 ]
 var data = [
