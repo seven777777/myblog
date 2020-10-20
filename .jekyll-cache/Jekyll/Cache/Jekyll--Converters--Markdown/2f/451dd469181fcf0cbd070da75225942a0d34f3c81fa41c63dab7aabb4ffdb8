@@ -1,0 +1,192 @@
+I"�#<p>前言：</p>
+
+<p>你是否在开发过程中随心所欲的进行变量命名？</p>
+
+<p>作为一个码龄差不多四五年的程序员，在开发过程中常常要面对各种类、变量、函数的命名。
+虽然这些年也差不多也逐渐形成了一些个人风格的命名规则，但并没有成一个比较规范的系统，因此很多时候还是比较随心的。</p>
+
+<p>最近看了《代码大全2》中变量名的力量一章，于是把书中的知识点挑出了一些列了出来。</p>
+
+<p>相信，对于有一定经验的程序员，可以帮助重新审视自己的日常编码习惯，从而改正一些错误的习惯；对于那些新手程序员，可以在初期，好好规范自己，从而养成良好的代码风格。</p>
+
+<p>总之，这是一篇干货！</p>
+
+<h2 id="一选择好变量名的注意事项">一、选择好变量名的注意事项</h2>
+<p>一个好的变量名是可读的，易记的和恰如其分的</p>
+
+<h3 id="命名注意事项">命名注意事项</h3>
+<p>通常，对变量的描述就是最佳的变量名</p>
+
+<h5 id="适当的命名长度">适当的命名长度</h5>
+<p>太短，无法传达足够的信息</p>
+
+<p>太长，难写且会使得程序的视觉结构变得模糊不清</p>
+
+<h5 id="变量名对作用域的影响">变量名对作用域的影响</h5>
+<p>较长的名字适用于很少用到的变量或者全局变量，</p>
+
+<p>较短的名字适用于局部变量或者循环变量</p>
+
+<p>不过作为一项防御式编程策略，应尽量避免使用短的变量名</p>
+
+<p>对位于全局命名空间中的名字加以限定词</p>
+
+<h3 id="变量名中的计算值限定词">变量名中的计算值限定词</h3>
+<p>对于一些表示计算结果的变量：总额，平均值，最大值等，使用类似于：Total、Sum、Average、Max、Min、Record、String、Pointer，这样的限定词来修改某个名字，应当把限定词加到名字的后面。
+如：revenueAverage、expenseTotal</p>
+
+<p>一致性可以提高可读性，简化维护工作</p>
+
+<p>把计算的量放到名字后面的规则也有例外。Num限定词的位置已经是约定俗成的。Num放在变量名开始位置表示一个总数。放在结束位置代表一个下标。</p>
+<ul>
+  <li>NumCustomers——表示员工总数</li>
+  <li>customerCount——表示员工总数</li>
+  <li>customerIndex——代表某个特定员工</li>
+</ul>
+
+<h3 id="变量名中常用的对仗词">变量名中常用的对仗词</h3>
+<p>通过应用命名规则来提高对仗词使用的一致性，从而提高可读性。</p>
+
+<ul>
+  <li>begin/end</li>
+  <li>first/last</li>
+  <li>locked/unlocked</li>
+  <li>min/max</li>
+  <li>next/previous</li>
+  <li>old/new</li>
+  <li>opened/closed</li>
+  <li>visible/invisible</li>
+  <li>source/target</li>
+  <li>source/destination</li>
+  <li>up/down</li>
+</ul>
+
+<h2 id="二为特定类型的数据命名">二、为特定类型的数据命名</h2>
+<h3 id="循环下标">循环下标</h3>
+<p>约定俗成的名字：i,j,k</p>
+
+<p>如果变量要在循环之外使用，应取一个更有意义的名字。</p>
+
+<p>谨慎地为循环下标变量命名可以避免产生下标串话（index cross-talk)的常见问题：想用j的时候写了i，想用i的时候却写了j。同时也使得访问数据更加清晰:
+score[teamIndex][eventIndex]要比score[i][j]给出的信息更多。</p>
+<h3 id="状态变量">状态变量</h3>
+<p>为了清楚可见，标记应该用枚举类型、具名常量，或用作具名常量的全局变量来对其赋值，而且其值应该与上面这些量作比较
+e.g.</p>
+
+<p>bad:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(printFlag == 16)
+</code></pre></div></div>
+<p>good:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(reportType == ReportType_Annual)
+</code></pre></div></div>
+<h3 id="临时变量">临时变量</h3>
+<p>常用temp</p>
+
+<p>但也可以使用更具描述性的名字进行替代</p>
+
+<h3 id="布尔变量">布尔变量</h3>
+<h4 id="典型的布尔变量名">典型的布尔变量名</h4>
+<ul>
+  <li>done 表示某件事情已完成</li>
+  <li>error 表示有错误发生</li>
+  <li>found 表示某个值已经找到</li>
+  <li>success/ok 表示操作是否成功</li>
+</ul>
+
+<blockquote>
+  <p>给布尔变量赋予隐含 真/假 含义的名字</p>
+</blockquote>
+
+<p>有些程序员（包括我自己）喜欢在布尔变量名前加上is，这种方法优点之一是它不能用于哪些模糊不清的名字：isStatus？
+缺点之一是降低了简单逻辑表达式的可读性：if(isFound)可读性略差于if(found)</p>
+
+<h4 id="使用肯定的布尔变量名">使用肯定的布尔变量名</h4>
+<p>减少使用如下名字：notFound，notDone…
+特别难阅读，尤其是它们被求反</p>
+
+<h3 id="枚举类型">枚举类型</h3>
+<p>可以通过组前缀，如：Color_、Planet_或者Month_来明确表示该类型的成员都属于一个组。</p>
+
+<h3 id="常量">常量</h3>
+<p>具名常量时，应该根据该常量所表示的含义，而不是该常量所具有的数值为该抽象事物命名。。
+Five = 6.0 就显得很可笑了。</p>
+
+<h2 id="三非正式命名规则">三、非正式命名规则</h2>
+<h3 id="与语言无关的命名规则的指导原则">与语言无关的命名规则的指导原则</h3>
+<h4 id="区分变量名和子程序名字">区分变量名和子程序名字</h4>
+<p>变量名和对象名以小写字母开始</p>
+
+<p>子程序名以大写字母开始</p>
+
+<h4 id="区分类和对象">区分类和对象</h4>
+<h5 id="方案一通过大写字母开头区分类型和变量">方案一：通过大写字母开头区分类型和变量</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Widget widget
+</code></pre></div></div>
+<h5 id="方案二通过全部大写区分类型和变量">方案二：通过全部大写区分类型和变量</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WIDEGE widget
+</code></pre></div></div>
+<h5 id="方案三通过给类型加上t_前缀区分类型和变量">方案三：通过给类型加上t_前缀区分类型和变量</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>t_Widget widget
+</code></pre></div></div>
+<h5 id="方案四通过给变量加上a前缀区分类型和变量">方案四：通过给变量加上“a”前缀区分类型和变量</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Widget aWidget
+</code></pre></div></div>
+<h5 id="方案五通过对变量采用更明确的名字区分类型和变量">方案五：通过对变量采用更明确的名字区分类型和变量</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Widget employeeWidget
+</code></pre></div></div>
+
+<blockquote>
+  <ul>
+    <li>标识全局变量 g_</li>
+    <li>标识成员变量 m_</li>
+    <li>标识类型声明 t_</li>
+    <li>标识具名常量 c_</li>
+    <li>标识枚举类型元素 增加特定类型的前缀； 如：color_</li>
+    <li>在不能保证输入参数只读的语言里标识只读参数</li>
+    <li>格式化命名以提高可读性
+两种常用的方法：大小写&amp;分隔符</li>
+  </ul>
+</blockquote>
+
+<h3 id="缩写的一般指导原则">缩写的一般指导原则</h3>
+<ul>
+  <li>标准的缩写（列在字典中的常见缩写）</li>
+  <li>去掉所有非前置元音 （computer-&gt;cmptr)</li>
+  <li>去掉虚词 and、or、the等</li>
+  <li>使用每个单词的第一个或前几个字母</li>
+  <li>统一的在每个单词的第一、第二或第三个（选择最合适的一个）字母后截断</li>
+  <li>保留每个单词的第一个和最后一个字母</li>
+  <li>使用名字的每一个重要的单词，最多不超过三个</li>
+  <li>去除无用的后缀 ing、ed等</li>
+  <li>保留每个音节中最引人注意的发音</li>
+  <li>确保不要改变变量的含义</li>
+  <li>反复使用上述技术，直至将每个变量名长度缩减至8~20个字符或者达到所用语言对变量名的限制字符数</li>
+</ul>
+
+<h3 id="应该避免的名字">应该避免的名字</h3>
+<ul>
+  <li>避免使用令人误解的名字或缩写</li>
+  <li>避免使用具有相似含义的名字</li>
+  <li>避免使用具有不同含义却有相似名字的变量</li>
+  <li>避免使用发音相近的名字</li>
+  <li>避免在名字中使用数字</li>
+  <li>避免在名字中拼错单词</li>
+  <li>避免使用英语中常常拼错的单词：Absense、acummulate、acsend…</li>
+  <li>不要仅靠大小写来区分变量名</li>
+  <li>避免使用多种自然语言</li>
+  <li>避免使用标准类型、变量和子程序的名字</li>
+  <li>不要使用与变量含义完全无关的名字</li>
+  <li>避免在名字中包含易混淆的字符 很难区分的对：
+    <ul>
+      <li>数字1和小写字母l</li>
+      <li>数字1和大写字母L</li>
+      <li>.和,</li>
+      <li>零0和大写字母O</li>
+      <li>2和Z</li>
+      <li>:和;</li>
+      <li>S和5</li>
+      <li>G和6</li>
+    </ul>
+  </li>
+</ul>
+:ET

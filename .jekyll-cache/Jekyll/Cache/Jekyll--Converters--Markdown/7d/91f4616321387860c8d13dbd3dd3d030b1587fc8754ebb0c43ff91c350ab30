@@ -1,0 +1,89 @@
+I"<p>关于为何会构建这本书：</p>
+
+<p>起因是对于开发过程中一些复用率比较高的代码片段，每次遇到都要想着去之前项目中出现的地方，进行参考复用，时间久了，找起来就很麻烦，于是准备在github建一个仓库，用来整理存放一些常用的代码干货。</p>
+
+<p>仓库建完搁置一段时间，想到之前希望自己平时的写作也有像github一样的仓库进行管理，于是去了解到了gitbook，后来写作方面一直也没有什么进展，于是也是搁置。</p>
+
+<p>于是两件事碰撞到一起，一拍即合，既为我的干货代码找到一个很方便的呈现方式，也让我借此熟悉了一边gitbook构建的过程，一举两得！</p>
+
+<p>下面主要针对构建过程中的一些重要点进行归纳整理（本文适用于有一定github使用基础的人群，如果需要傻瓜式详细教程，可以去网上搜索，有很多）</p>
+
+<h4 id="技术栈">技术栈</h4>
+<p>本书开发技术栈：GitBook + Typora + Git</p>
+
+<blockquote>
+  <ul>
+    <li>Typora 下载地址：https://typora.io/</li>
+    <li>Git 下载地址：https://git-scm.com/downloads</li>
+  </ul>
+</blockquote>
+
+<h4 id="项目相关语法">项目相关语法</h4>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">npm install -g gitbook-cli</code> 安装gitbook</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">gitbook init</code> 初始化
+初始化后会生成两个文件 ——README.md 和 SUMMARY.md</p>
+
+    <p>在SUMMARY.md中修改文件目录后，重新执行<code class="highlighter-rouge">gitbook init</code>，会根据SUMMARY.md文件中描述的目录和文件,创建相应的文件夹</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// SUMMARY.md 示例
+* [前言](README.md)
+* [第一章](Chapter1/README.md)
+	* [第1节：test](Chapter1/test.md)
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">gitbook serve</code> 预览书籍</p>
+
+    <p>默认端口是：4000</p>
+
+    <p>可以指定端口 <code class="highlighter-rouge">gitbook serve --port xxxx </code></p>
+
+    <p>默认会输出到<code class="highlighter-rouge">/_book</code>文件夹下，可指定输出文件夹 <code class="highlighter-rouge">gitbook serve [书籍路径] [输出路径]</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">gitbook build</code> 创建书籍</p>
+
+    <p>默认会输出到<code class="highlighter-rouge">/_book</code>文件夹下，可指定输出文件夹 <code class="highlighter-rouge">gitbook build [书籍路径] [输出路径]</code></p>
+
+    <p>因为我希望能够在github上生成预览页面，因此，根据github page的设定，此处使用<code class="highlighter-rouge">gitbook build ./ ./docs</code> 设置输出文件夹名为<code class="highlighter-rouge">docs</code></p>
+  </li>
+</ul>
+
+<h4 id="其他">其他</h4>
+
+<ol>
+  <li>生成 PDF 格式的电子书</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> gitbook pdf ./ ./mybook.pdf
+</code></pre></div></div>
+
+<ol>
+  <li>生成 epub 格式的电子书</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> gitbook epub ./ ./mybook.epub
+</code></pre></div></div>
+
+<ol>
+  <li>生成 mobi 格式的电子书</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> gitbook mobi ./ ./mybook.mobi
+</code></pre></div></div>
+
+<p>最后放两个链接：</p>
+
+<p>这里整理了很多gitbook相关的插件：<a href="https://www.cnblogs.com/mingyue5826/p/10307051.html">https://www.cnblogs.com/mingyue5826/p/10307051.html</a></p>
+
+<p>这是我的书在github的仓库：<a href="https://github.com/seven777777/DryCodeWarehouse">https://github.com/seven777777/DryCodeWarehouse</a></p>
+
+<p>最后是我的书的访问地址：<a href="https://seven777777.github.io/DryCodeWarehouse/">业务代码干货宝典</a></p>
+
+<p>内容还在不断更新中，如果觉得有用，可以收藏一下哟！</p>
+
+:ET

@@ -1,0 +1,102 @@
+I"<p>Date对象用于处理日期和时间</p>
+
+<h4 id="一new-date">一、new Date()</h4>
+<p>默认状态下，new Date()会返回当前日期和时间，格式如下</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date() //Tue Sep 29 2020 16:38:00 GMT+0800 (中国标准时间)
+</code></pre></div></div>
+<p>创建特定的时间，传参如下：</p>
+
+<ol>
+  <li>new Date(“month dd,yyyy hh:mm:ss”);</li>
+  <li>new Date(“month dd,yyyy”);</li>
+  <li>new Date(yyyy,mth,dd,hh,mm,ss);</li>
+  <li>new Date(yyyy,mth,dd)</li>
+  <li>new Date(ms)</li>
+</ol>
+
+<p>month:用英文 表示月份名称，从January到December</p>
+
+<p>mth:用整数表示月份，从0（1月）到11（12月）</p>
+
+<p>dd:表示一个 月中的第几天，从1到31</p>
+
+<p>yyyy:四位数表示的年份</p>
+
+<p>hh:小时数，从0（午夜）到23（晚11点）</p>
+
+<p>mm: 分钟数，从0到59的整数</p>
+
+<p>ss:秒数，从0到59的整数</p>
+
+<p>ms:毫秒数，为大于等于0的整数</p>
+
+<h4 id="二new-date时间戳年月日等">二、new Date()——&gt;时间戳，年月日，等</h4>
+<h5 id="转时间戳">转时间戳</h5>
+<p>时间戳是指格林威治时间自1970年1月1日(00:00:00 GMT)至当前时间的总秒数</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
+
+date.valueOf() // 1601368680782
+date.getTime() // 1601368680782
+Number(date) // 1601368680782
+
+// 以上返回的都是毫秒数，转成时间戳需要将毫秒转成秒
+// 如：Math.round(new Date().getTime()/1000)
+Math.round(date.getTime()/1000) // 1601368681
+</code></pre></div></div>
+
+<h5 id="获取年月日">获取年月日</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
+
+// 年
+date.getFullYear() // 2020
+// 月（实际月份为 结果 + 1，当前为9月）
+date.getMonth() // 8
+// 日
+date.getDate() // 29
+// 星期几
+date.getDay() // 2  返回结果为0~6，表示一周中的某一天，0表示周日
+
+</code></pre></div></div>
+<h5 id="获取时分秒">获取时分秒</h5>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
+
+// 时
+date.getHours() // 16
+// 分
+date.getMinutes() // 38
+// 秒
+date.getSeconds() // 0
+// 毫秒
+date.getMilliseconds() // 782
+</code></pre></div></div>
+
+<blockquote>
+  <p>通过获取年月日，时分秒，可以进行多个时间之间的时间差运算，实际业务场景还是蛮多的，不过现在有很多库，比如moment.js，对于一些运算进行了封装，使用起来也很方便。但对于原生的实现，也还是很有了解的必要的。</p>
+</blockquote>
+
+<h5 id="date-对象转换为字符串">Date 对象转换为字符串</h5>
+<p>常用于当前Date的更直观的显示。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
+
+date.toTimeString() // 16:38:00 GMT+0800 (中国标准时间)
+date.toDateString() // Tue Sep 29 2020
+date.toLocaleString()// 2020/9/29 下午4:38:00
+date.toLocaleTimeString()// 下午4:38:00
+date.toLocaleDateString()// 2020/9/29
+</code></pre></div></div>
+
+<p>关于<code class="highlighter-rouge">toLocaleString</code>,还有些有趣的应用，有兴趣的可以看我的这篇文章：<a href="https://seven777777.github.io/myblog/work/2020/09/29/toLocaleString/">toLocaleString也太好用了吧！（超方便转千分位，中文数字等）</a></p>
+
+<h4 id="三时间戳普通时间">三、时间戳——&gt;普通时间</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var timestamp = 1601368681
+
+new Date(timestamp * 1000).toLocaleString() // 2020/9/29 下午4:38:01
+new Date(timestamp * 1000).toLocaleDateString() // 2020/9/29
+</code></pre></div></div>
+
+<p>实际上就是将时间戳转换成Date对象，然后就可以使用上面Date对象的所有方法</p>
+
+<p>而时间戳转Date对象说白了就是文章一开始列的创建特定时间的第五条方法：<code class="highlighter-rouge">new Date(ms)</code> 将时间戳乘以1000便得到了ms。</p>
+
+<p>以上，可以根据上面的方法进行时间格式化函数的封装，此处就只提供一些基础方法了，之后有空可能会在出一篇格式化时间的函数封装的文章。</p>
+:ET

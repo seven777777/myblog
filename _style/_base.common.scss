@@ -1,8 +1,8 @@
 /*
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
- * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-11-06 16:54:44
+ * @Last Modified by: seven
+ * @Last Modified time: 2020-10-20 16:35:07
  */
 /*------------------------------------*\
     #common
@@ -427,6 +427,8 @@ footer{
     background: rgba($color: $clr-lighter, $alpha: 0.4);
     padding: 10px;
     margin: 15px 0;
+    word-break: break-all;
+    overflow: hidden;
     .emoji{
         display: inline-block;
         margin: 0;

@@ -1,0 +1,133 @@
+I"�<p>网上关于clientHeight， offsetHeight，scrollHeight…的相关文章其实很多，整理这篇文章的主要目的还是在于加深一下自己对于这些元素的记忆，每次用到的时候，总是模棱两可的，需要再去查阅一下，希望自己总结之后，彻底把这几种height搞明白！</p>
+
+<blockquote>
+  <p>以<code class="highlighter-rouge">height</code>为例，<code class="highlighter-rouge">width</code>相关方法与其相同</p>
+</blockquote>
+
+<h3 id="详细列举">详细列举</h3>
+<p>除了各种height所代表的具体值容易把人搞晕之外，js和jquery对各种值获取的不同语法也是容易晕的点</p>
+
+<p>下面除了详细列举不同值的具体含义外，也会详细列举js和jquery的不同写法。</p>
+
+<p>首先我将题目上列举的那些值，分成两大部分进行分析，一部分是关于元素的本身的各种值，另一部分是涉及到元素滚动的相关值。</p>
+
+<h4 id="1-关于元素本身的各种height">1. 关于元素本身的各种height</h4>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/2020-08-19-some-height/pic01.png" /></p>
+
+<p>具体的根据上图，详细说明如下：</p>
+
+<h5 id="11-获取dom高度不包含paddingbordermargin">1.1 获取dom高度：不包含padding，border，margin</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// jquery
+$(dom).height()
+</code></pre></div></div>
+
+<h5 id="12-获取dom高度包含padding不包含bordermargin">1.2 获取dom高度：包含padding，不包含border，margin</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// jquery
+$(dom).innerHeight()
+
+// js
+document.getElementById(idname).clientHeight
+</code></pre></div></div>
+
+<h5 id="13-获取dom高度包含paddingborder不包含margin">1.3 获取dom高度：包含padding，border，不包含margin</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// jquery
+$(dom).outerHeight()
+
+// js
+document.getElementById(idname).offsetHeight
+</code></pre></div></div>
+
+<h5 id="14-获取dom高度包含paddingbordermargin">1.4 获取dom高度：包含padding，border，margin</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// jquery
+$(dom).outerHeight(true)
+
+// js（相对麻烦一点，需手动获取margin值，并增加）
+var demo = document.getElementById(idname);
+var computedStyle = getComputedStyle(demo, null);
+var marginHeight = Number(computedStyle.marginTop.split('px')[0]) + Number(computedStyle.marginBottom.split('px')[0])
+
+document.getElementById(idname).offsetHeight + marginHeight
+</code></pre></div></div>
+<p>以上是关于元素本身高度相关的属性</p>
+
+<h4 id="2-涉及元素滚动">2. 涉及元素滚动</h4>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/2020-08-19-some-height/pic02.png" /></p>
+
+<p>主要就是两个值：<code class="highlighter-rouge">scrollHeight</code> 和 <code class="highlighter-rouge">scrollTop</code></p>
+
+<p>直接通过上图，其实两者分别代表的值已经一目了然了</p>
+
+<blockquote>
+  <p>当没出现滚动条时，</p>
+  <ul>
+    <li>scrollHeight = clientHeight</li>
+    <li>scrollTop = 0</li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//jquery
+$(dom).scrollTop()
+// js
+document.documentElement.scrollTop
+
+//jquery
+$(dom)[0].scrollHeight
+// js
+document.documentElement.scrollHeight
+</code></pre></div></div>
+
+<h4 id="3-jquery的offsettop与js的offsettop之间的区别">3. jquery的offset().top与js的offsetTop之间的区别</h4>
+
+<p>之前我一直以为如标题表示的两个值是相同的，但其实并不是：</p>
+<h5 id="js的offsettop元素顶部与自己最近的设置了position值的父元素的偏移值如果没有则表示距离body的值">js的offsetTop：元素顶部与自己最近的设置了<code class="highlighter-rouge">position</code>值的父元素的偏移值，如果没有，则表示距离body的值。</h5>
+
+<p>可以通过下图进行理解</p>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/2020-08-19-some-height/pic03.png" /></p>
+
+<blockquote>
+  <p>值不会伴随滚动而改变</p>
+</blockquote>
+
+<h5 id="jquery的offsettop元素上边框相对于文档顶端的偏移量">jquery的offset().top：元素上边框相对于文档顶端的偏移量</h5>
+
+<blockquote>
+  <p>伴随滚动，值会发生改变</p>
+</blockquote>
+
+<p>当两者参照元素相同时，会出现如下规律：
+offset().top = offsetTop - scrollTop</p>
+
+<p>demo：</p>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/2020-08-19-some-height/scrollImg.gif" /></p>
+
+<blockquote>
+  <p>当无滚动条且offsetTop与offset().top参照对象相同时，它们获取的值相同。</p>
+</blockquote>
+
+<p>关于两者的区别，参考了这篇文章☞<a href="https://www.cnblogs.com/echolun/p/10146197.html">https://www.cnblogs.com/echolun/p/10146197.html</a></p>
+
+<p>文中demo查看：网页——<a href="https://seven777777.github.io/blog-demo/allKindsHeight.html">戳这里</a>，源码——<a href="https://github.com/seven777777/blog-demo/blob/master/allKindsHeight.html">戳这里</a></p>
+
+<h3 id="扩展">扩展</h3>
+<h4 id="设置滚动高度">设置滚动高度</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>window.scrollTo({top:值,behavior: "smooth"})
+
+//behavior: "smooth" 表示平滑滚动
+</code></pre></div></div>
+
+<h4 id="监听滚动到最底部">监听滚动到最底部</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scrollTop == (document.documentElement.scrollHeight - document.documentElement.offsetHeight)
+</code></pre></div></div>
+
+<p>还有很多就不详细展开了，把上面的各种属性都熟悉之后，找到不同值之间的关系，便可以灵活运用到各种实际开发场景中！</p>
+
+<p>本文写的比较匆忙，后续可能还会补充修改，如果一些描述不太准确，欢迎留言指出！</p>
+:ET

@@ -1,0 +1,61 @@
+I"U
+<p>记录一个刚刚遇到的问题，以及解决方法。希望可以帮助之后遇到同样问题的小伙伴们！</p>
+
+<h3 id="问题描述">问题描述</h3>
+<p>使用elementui的级联选择控件，并需要对其设置默认值，以及修改默认值时，发现问题：</p>
+
+<p>先贴出相关核心代码如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;el-cascader
+    ref="locationCascader"
+    v-model="location"
+    placeholder="省份/城市/区域"
+    :options="cityRegionObj"&gt;
+&lt;/el-cascader&gt;
+
+data(){
+    return {
+        location:[]
+    }
+}
+
+</code></pre></div></div>
+
+<h5 id="1首次设置默认值-此时-location-的值是-湖北省武汉东湖高新">1.首次设置默认值 此时 location 的值是 [‘湖北省’,’武汉’,’东湖高新’]</h5>
+<p><img src="https://seven777777.github.io/myblog/images/post/2020-07-31-el-cascader-bugfix/el_cascader01.gif" /></p>
+
+<p>可以看见首次载入显示是没有问题的</p>
+
+<h5 id="2再次设置-location-的值为-">2.再次设置 location 的值为 []</h5>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/2020-07-31-el-cascader-bugfix/el_cascader02.gif" /></p>
+
+<p>这时控件下拉的值依旧还保留着上一次的值</p>
+
+<h3 id="解决过程">解决过程</h3>
+<p>首先想到的是去官方的API里寻找有没有我没有注意到的属性和方法。</p>
+
+<p>经过一番查找，我发现了下面这个方法：</p>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/2020-07-31-el-cascader-bugfix/el_cascader03.png" /></p>
+
+<p>然后当我信心满满的前去时间时，发现报错。</p>
+
+<p>这条路走不通，于是只能继续网上搜索解决方案，也看到一些提出的解决方法，其中包括修改源码等等，尝试了几个，也都没有效果。</p>
+
+<p>最终在这里☞<a href="https://github.com/ElemeFE/element/issues/18669">https://github.com/ElemeFE/element/issues/18669</a>找到了解决方法！</p>
+
+<h3 id="解决方法">解决方法</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>methods:{
+    &lt;!--重新赋值前先调用此方法--&gt;
+    &lt;!--this.$refs.locationCascader：这个值基于你之前在dom上定义的ref--&gt;
+    resetCasadeSelector() {
+        if (this.$refs.locationCascader) {
+            this.$refs.locationCascader.$refs.panel.activePath = []
+            this.$refs.locationCascader.$refs.panel.calculateCheckedNodePaths()
+        }
+    }
+}
+</code></pre></div></div>
+<p>亲测有效，如果还有其他有效方法，欢迎留言交流！</p>
+:ET
