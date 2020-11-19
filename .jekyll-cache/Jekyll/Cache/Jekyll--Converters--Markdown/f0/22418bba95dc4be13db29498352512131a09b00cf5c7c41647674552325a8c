@@ -1,4 +1,4 @@
-I"�<h2>小程序初涉——入口页设置&amp;事件绑定</h2>
+I"&<h2>小程序初涉——入口页设置&amp;事件绑定</h2>
 <p>微信小程序</p>
 
 <h2 id="入口页设置">入口页设置</h2>
@@ -6,7 +6,7 @@
 <p>根目录下的app.json文件中，控制pages数组，设置在第一行的页面就是默认启动页面</p>
 
 <p>例如下面的设置中，home页就是启动页面，想要修改启动页，只需要改变排列顺序即可。</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//app.json
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//app.json
 {
     "pages":[
         "pages/home/home",
@@ -28,10 +28,10 @@
 <img src="https://seven777777.github.io/myblog/images/post/xcx03.png" alt="image" /></p>
 
 <blockquote>
-  <p>tip:此处的可视化修改都可以对应到项目的<code class="highlighter-rouge">project.config.json</code>文件内的设置，该编译设置对应的就是如下：</p>
+  <p>tip:此处的可视化修改都可以对应到项目的<code class="language-plaintext highlighter-rouge">project.config.json</code>文件内的设置，该编译设置对应的就是如下：</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//project.config.json
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//project.config.json
 {
     //...
     "condition": {

@@ -1,10 +1,10 @@
-I"�+<h3 id="前言">前言</h3>
+I"+0<h3 id="前言">前言</h3>
 <p>日常开发中，数组或是对象的遍历是一个经常会遇到的事情，关于遍历，其实Js提供了很多方法，但是对于他们之间的区别却理解的不是很透彻，通常情况就是抓起来一个forEach就用。为了提高代码质量，我认为有必要深入了解一下不同遍历的特点。当然，本文不作太多深入讲解，只是就各种的特点进行整理展示。</p>
 
-<h3 id="一forinforofforeach">一、<code class="highlighter-rouge">for..in</code>，<code class="highlighter-rouge">for..of</code>，<code class="highlighter-rouge">forEach</code></h3>
+<h3 id="一forinforofforeach">一、<code class="language-plaintext highlighter-rouge">for..in</code>，<code class="language-plaintext highlighter-rouge">for..of</code>，<code class="language-plaintext highlighter-rouge">forEach</code></h3>
 <h4 id="1遍历对象">1、遍历对象</h4>
-<h5 id="forin输出-索引"><code class="highlighter-rouge">for..in</code>：输出 索引</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let obj = { 
+<h5 id="forin输出-索引"><code class="language-plaintext highlighter-rouge">for..in</code>：输出 索引</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let obj = { 
     a:1,
     b:2,
     c:3
@@ -16,30 +16,30 @@ for(let i in obj){
 //b
 //c
 </code></pre></div></div>
-<h5 id="forof--foreach不支持"><code class="highlighter-rouge">for..of</code> &amp;&amp; <code class="highlighter-rouge">forEach</code>：不支持</h5>
+<h5 id="forof--foreach不支持"><code class="language-plaintext highlighter-rouge">for..of</code> &amp;&amp; <code class="language-plaintext highlighter-rouge">forEach</code>：不支持</h5>
 
 <h4 id="2遍历数组">2、遍历数组</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1,'参数2',3]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1,'参数2',3]
 </code></pre></div></div>
-<h5 id="forin输出-索引-1"><code class="highlighter-rouge">for..in</code>：输出 索引</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(let i in arr){
+<h5 id="forin输出-索引-1"><code class="language-plaintext highlighter-rouge">for..in</code>：输出 索引</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(let i in arr){
     console.log(i)
 }
 //0
 //1
 //2
 </code></pre></div></div>
-<p><code class="highlighter-rouge">for..in</code> 也可以通过 <code class="highlighter-rouge">arr[i]</code>的方式输出值</p>
-<h5 id="forof输出-值"><code class="highlighter-rouge">for..of</code>：输出 值</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(let i of arr){
+<p><code class="language-plaintext highlighter-rouge">for..in</code> 也可以通过 <code class="language-plaintext highlighter-rouge">arr[i]</code>的方式输出值</p>
+<h5 id="forof输出-值"><code class="language-plaintext highlighter-rouge">for..of</code>：输出 值</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(let i of arr){
     console.log(i)
 }
 //1
 //参数2
 //3
 </code></pre></div></div>
-<h5 id="foreach输出-值索引"><code class="highlighter-rouge">forEach</code>：输出 值&amp;索引</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arr.forEach((item,index)=&gt;{
+<h5 id="foreach输出-值索引"><code class="language-plaintext highlighter-rouge">forEach</code>：输出 值&amp;索引</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arr.forEach((item,index)=&gt;{
     console.log(item,index)
 }}
 //1 0
@@ -47,12 +47,12 @@ for(let i in obj){
 //3 2
 </code></pre></div></div>
 <h4 id="3遍历的数组或对象包含原型属性或者自定义属性时">3、遍历的数组或对象包含原型属性或者自定义属性时</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1,'参数2',3]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1,'参数2',3]
 arr.attr='attr'
 Array.prototype.arrCustom = function() {};
 </code></pre></div></div>
-<h5 id="forin全部输出"><code class="highlighter-rouge">for..in</code>：全部输出</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(let i in arr){
+<h5 id="forin全部输出"><code class="language-plaintext highlighter-rouge">for..in</code>：全部输出</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(let i in arr){
     console.log(i)
 }
 //0
@@ -61,8 +61,8 @@ Array.prototype.arrCustom = function() {};
 //attr
 //arrCustom
 </code></pre></div></div>
-<p>当然也可以通过 <code class="highlighter-rouge">hasOwnProperty</code>进行一些优化，但是自定义的属性依旧会输出</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(let i in arr){
+<p>当然也可以通过 <code class="language-plaintext highlighter-rouge">hasOwnProperty</code>进行一些优化，但是自定义的属性依旧会输出</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(let i in arr){
     if (arr.hasOwnProperty(i)) {
         console.log(i);
     }
@@ -73,13 +73,13 @@ Array.prototype.arrCustom = function() {};
 //attr
 </code></pre></div></div>
 
-<h5 id="forof--foreach不受影响输出正常"><code class="highlighter-rouge">for..of</code> &amp; <code class="highlighter-rouge">forEach</code>：不受影响，输出正常</h5>
+<h5 id="forof--foreach不受影响输出正常"><code class="language-plaintext highlighter-rouge">for..of</code> &amp; <code class="language-plaintext highlighter-rouge">forEach</code>：不受影响，输出正常</h5>
 <h4 id="4遍历时能否中断循环">4、遍历时能否中断循环</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1,3,5,7,9]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1,3,5,7,9]
 </code></pre></div></div>
-<h5 id="forin无法中断"><code class="highlighter-rouge">for..in</code>：无法中断</h5>
-<h5 id="forof可以使用break中断"><code class="highlighter-rouge">for..of</code>：可以使用<code class="highlighter-rouge">break</code>中断</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(let i of arr){
+<h5 id="forin无法中断"><code class="language-plaintext highlighter-rouge">for..in</code>：无法中断</h5>
+<h5 id="forof可以使用break中断"><code class="language-plaintext highlighter-rouge">for..of</code>：可以使用<code class="language-plaintext highlighter-rouge">break</code>中断</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for(let i of arr){
     console.log(i);
     if (i==5) {
         break;
@@ -89,8 +89,8 @@ Array.prototype.arrCustom = function() {};
 //3
 //5
 </code></pre></div></div>
-<h5 id="foreach无法中断"><code class="highlighter-rouge">forEach</code>：无法中断</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arr.forEach((item,i)=&gt;{
+<h5 id="foreach无法中断"><code class="language-plaintext highlighter-rouge">forEach</code>：无法中断</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arr.forEach((item,i)=&gt;{
     console.log(item);
     if (item==5) {
         return false;
@@ -102,9 +102,9 @@ Array.prototype.arrCustom = function() {};
 //7
 //9
 </code></pre></div></div>
-<h3 id="二一些forof特有的功能">二、一些<code class="highlighter-rouge">for..of</code>特有的功能</h3>
+<h3 id="二一些forof特有的功能">二、一些<code class="language-plaintext highlighter-rouge">for..of</code>特有的功能</h3>
 <h4 id="1迭代字符串">1、迭代字符串</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let str = 'mystr'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let str = 'mystr'
 
 for(let i of str){
     console.log(i);
@@ -117,9 +117,9 @@ for(let i of str){
 </code></pre></div></div>
 <h4 id="2迭代arguments类数组对象">2、迭代arguments类数组对象</h4>
 <h4 id="3迭代类dom集合">3、迭代类DOM集合</h4>
-<p>无需<code class="highlighter-rouge">[].slice.call()</code>，也不需要<code class="highlighter-rouge">Array.from()</code>进行数组转化</p>
+<p>无需<code class="language-plaintext highlighter-rouge">[].slice.call()</code>，也不需要<code class="language-plaintext highlighter-rouge">Array.from()</code>进行数组转化</p>
 <h4 id="4迭代类型数组">4、迭代类型数组</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let typeArr = new Uint8Array([0x00, 0xff]);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let typeArr = new Uint8Array([0x00, 0xff]);
 
 for (let value of typeArr) {
   console.log(value);
@@ -128,7 +128,7 @@ for (let value of typeArr) {
 // 255
 </code></pre></div></div>
 <h4 id="5迭代map">5、迭代Map</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let mapData = new Map([['a', 1], ['b', 2], ['c', 3]]);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let mapData = new Map([['a', 1], ['b', 2], ['c', 3]]);
 
 for (let [key, value] of mapData) {
   console.log(value);
@@ -138,7 +138,7 @@ for (let [key, value] of mapData) {
 // 3
 </code></pre></div></div>
 <h4 id="6迭代set">6、迭代Set</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let setData = new Set([1, 1, 2, 2, 3, 3]);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let setData = new Set([1, 1, 2, 2, 3, 3]);
 
 for (let value of setData) {
   console.log(value);
@@ -150,21 +150,21 @@ for (let value of setData) {
 <p>等等。</p>
 
 <h3 id="总结">总结：</h3>
-<p><code class="highlighter-rouge">for..of</code>是ES6中新增的语法，相对来说应用场景会更丰富一些，但是兼容性的话想对弱一些，使用的时候应酌情考虑
+<p><code class="language-plaintext highlighter-rouge">for..of</code>是ES6中新增的语法，相对来说应用场景会更丰富一些，但是兼容性的话想对弱一些，使用的时候应酌情考虑
 不考虑兼容性的情况下：</p>
 <ol>
-  <li>纯对象的遍历======<code class="highlighter-rouge">for..in</code></li>
-  <li>数组遍历，不需要知道索引时======<code class="highlighter-rouge">for..of</code></li>
-  <li>需要索引=====<code class="highlighter-rouge">forEach</code></li>
+  <li>纯对象的遍历======<code class="language-plaintext highlighter-rouge">for..in</code></li>
+  <li>数组遍历，不需要知道索引时======<code class="language-plaintext highlighter-rouge">for..of</code></li>
+  <li>需要索引=====<code class="language-plaintext highlighter-rouge">forEach</code></li>
 </ol>
 
-<p>因为<code class="highlighter-rouge">for..of</code>可以中断，所以数组遍历时更推荐使用。</p>
+<p>因为<code class="language-plaintext highlighter-rouge">for..of</code>可以中断，所以数组遍历时更推荐使用。</p>
 
 <h3 id="番外">番外：</h3>
 <p>除了以上三个重点列出的遍历方法外，其实JS中还有很多其他的遍历方法，只是应用场景稍有不同。</p>
 <h4 id="对象遍历">对象遍历</h4>
-<p>除了以上的<code class="highlighter-rouge">for..in</code>，还有下面的一些方法也可以实现</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var mySymbol = Symbol();
+<p>除了以上的<code class="language-plaintext highlighter-rouge">for..in</code>，还有下面的一些方法也可以实现</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var mySymbol = Symbol();
 
 let myObj = {
     name:'seven',
@@ -176,40 +176,40 @@ myObj.sex='female'
 </code></pre></div></div>
 <ol>
   <li>
-    <p><code class="highlighter-rouge">Obeject.keys(obj)</code></p>
+    <p><code class="language-plaintext highlighter-rouge">Obeject.keys(obj)</code></p>
 
     <p>可以返回一个数组，包括对象自身的所有可枚举属性，不包括继承的属性和Symbol属性</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object.keys(myObj)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object.keys(myObj)
 //["name", "age", "sex"]
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><code class="highlighter-rouge">Object.getOwnPropertyNames(obj)</code></p>
+    <p><code class="language-plaintext highlighter-rouge">Object.getOwnPropertyNames(obj)</code></p>
 
     <p>返回一个数组,包含对象自身的所有属性，不含Symbol属性,包括不可枚举属性</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object.getOwnPropertyNames(myObj)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object.getOwnPropertyNames(myObj)
 //["name", "age", "sex"]
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><code class="highlighter-rouge">Object.getOwnPropertySymbols(obj)</code></p>
+    <p><code class="language-plaintext highlighter-rouge">Object.getOwnPropertySymbols(obj)</code></p>
 
     <p>返回一个数组,包含对象自身的所有Symbol属性</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object.getOwnPropertySymbols(myObj)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object.getOwnPropertySymbols(myObj)
 //[Symbol()]
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><code class="highlighter-rouge">Reflect.ownKeys(obj)</code></p>
+    <p><code class="language-plaintext highlighter-rouge">Reflect.ownKeys(obj)</code></p>
 
     <p>返回一个数组,包含对象自身的所有属性,不管属性名是Symbol或字符串,也不管是否可枚举</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reflect.ownKeys(myObj)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reflect.ownKeys(myObj)
 //["name", "age", "sex", Symbol()]
 </code></pre></div>    </div>
     <h4 id="数组遍历">数组遍历</h4>
   </li>
   <li>
-    <p><code class="highlighter-rouge">Array.every()</code>：测试数组的所有元素是否都通过了指定函数的测试
+    <p><code class="language-plaintext highlighter-rouge">Array.every()</code>：测试数组的所有元素是否都通过了指定函数的测试
 ```
 function isBelowThreshold(currentValue) {
   return currentValue &lt; 40;
@@ -220,7 +220,7 @@ var array1 = [1, 30, 39, 29, 10, 13];</p>
 
 <p>console.log(array1.every(isBelowThreshold))
 // true</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. `Array.some()`：检测数组中的元素是否满足指定条件
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. `Array.some()`：检测数组中的元素是否满足指定条件
 + 如果有一个元素满足条件，则表达式返回true , 剩余的元素不会再执行检测。
 + 如果没有满足条件的元素，则返回false。
  &gt; tip：不会改变原始数组
@@ -232,7 +232,7 @@ var array1 = [1, 30, 39, 29, 10, 13];</p>
 }
 ages.some(checkAdult)
 //true</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3. `Array.filter()`：创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3. `Array.filter()`：创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素
 &gt; tip：不会改变原始数组
 </code></pre></div></div>
 <p>var ages = [32, 33, 16, 40];</p>
@@ -243,7 +243,7 @@ ages.some(checkAdult)
 
 <p>ages.filter(checkAdult)
 //[32, 33, 40]</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4. `Array.map()`：返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4. `Array.map()`：返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组
 &gt; tip：不会改变原始数组
 </code></pre></div></div>
 <p>var ages = [32, 33, 16, 40];</p>
@@ -254,7 +254,7 @@ ages.some(checkAdult)
 
 <p>ages.map(checkAdult)
 //[33, 34, 17, 41]</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5. `Array.reduce()`：接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5. `Array.reduce()`：接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值
  &gt; tip：不会改变原始数组
 </code></pre></div></div>
 <p>var numbers = [65, 44, 12, 4];</p>
@@ -269,7 +269,7 @@ numbers.reduce(getSum);
 //127
 ```</p>
 
-<p>本文关于<code class="highlighter-rouge">for..in</code>、<code class="highlighter-rouge">for..of</code>、<code class="highlighter-rouge">forEach</code>的对比参考自张鑫旭大神的文章，传送门在这里：<a href="https://www.zhangxinxu.com/wordpress/2018/08/for-in-es6-for-of/">看，for..in和for..of在那里吵架！</a>，文风还是挺诙谐幽默的，推荐一看！</p>
+<p>本文关于<code class="language-plaintext highlighter-rouge">for..in</code>、<code class="language-plaintext highlighter-rouge">for..of</code>、<code class="language-plaintext highlighter-rouge">forEach</code>的对比参考自张鑫旭大神的文章，传送门在这里：<a href="https://www.zhangxinxu.com/wordpress/2018/08/for-in-es6-for-of/">看，for..in和for..of在那里吵架！</a>，文风还是挺诙谐幽默的，推荐一看！</p>
 
 <p>07 Nov 2018</p>
 :ET

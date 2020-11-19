@@ -1,8 +1,8 @@
-I"5<p>看见一篇博文，列出了博主关于字节跳动的线上面试题：<a href="https://blog.csdn.net/handsomezhanghui/article/details/108691314">https://blog.csdn.net/handsomezhanghui/article/details/108691314</a>，针对这些题目，我试着做了以下解答，以供参考。（部分解答参考网上其他资料）</p>
+I"�6<p>看见一篇博文，列出了博主关于字节跳动的线上面试题：<a href="https://blog.csdn.net/handsomezhanghui/article/details/108691314">https://blog.csdn.net/handsomezhanghui/article/details/108691314</a>，针对这些题目，我试着做了以下解答，以供参考。（部分解答参考网上其他资料）</p>
 
 <h4 id="题一">题一</h4>
 <h5 id="问题">问题：</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>把下面的纯文整理为3行4列
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>把下面的纯文整理为3行4列
 aaaa "dd"  f g;fd分
 1 "2dd"     113 512
    q 'w'  er,-/ g
@@ -11,7 +11,7 @@ aaaa "dd"  f g;fd分
 <img src="https://seven777777.github.io/myblog/images/post/2020-09-28-tiktok-answer/pic01.png" /></p>
 
 <h5 id="解答">解答</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const str =` aaaa "dd"  f g;fd分
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const str =` aaaa "dd"  f g;fd分
 1 "2dd"     113 512
    q 'w'  er,-/ g`
 
@@ -20,20 +20,20 @@ let result = str.split(/[(\r\n)\r\n]+/).map(item=&gt;{
 })
 </code></pre></div></div>
 <ol>
-  <li>先根据回车或者换行将字符串转换成数组，匹配据回车或者换行的正则：<code class="highlighter-rouge">/[(\r\n)\r\n]+/</code></li>
-  <li>去除每一行字符串前后的空字符：<code class="highlighter-rouge">string.trim()</code></li>
-  <li>将去除空字符的每一项的字符串，匹配一个或多个空格，转换成数组，匹配一个或多个空格的正则：<code class="highlighter-rouge">/\s+/</code></li>
+  <li>先根据回车或者换行将字符串转换成数组，匹配据回车或者换行的正则：<code class="language-plaintext highlighter-rouge">/[(\r\n)\r\n]+/</code></li>
+  <li>去除每一行字符串前后的空字符：<code class="language-plaintext highlighter-rouge">string.trim()</code></li>
+  <li>将去除空字符的每一项的字符串，匹配一个或多个空格，转换成数组，匹配一个或多个空格的正则：<code class="language-plaintext highlighter-rouge">/\s+/</code></li>
 </ol>
 
 <h4 id="题二">题二</h4>
 <h5 id="问题-1">问题：</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>阐述一下对原码/反码/补码的理解，相互之间的转换方法
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>阐述一下对原码/反码/补码的理解，相互之间的转换方法
 </code></pre></div></div>
 <h5 id="解答-1">解答</h5>
 <p>原码、反码和补码是计算机内定点数的三种表示法</p>
 
 <p>原码：符号位加上真值的绝对值， 即用第一位表示符号，“0”表示正，“1”表示负， 其余位表示值.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[+1]原 = 0000 0001
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[+1]原 = 0000 0001
 
 [-1]原 = 1000 0001
 </code></pre></div></div>
@@ -47,7 +47,7 @@ let result = str.split(/[(\r\n)\r\n]+/).map(item=&gt;{
       <li>负数的反码是在其原码的基础上, 符号位不变，其余各个位取反.</li>
     </ul>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [+1] = [00000001]原 = [00000001]反
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [+1] = [00000001]原 = [00000001]反
 
  [-1] = [10000001]原 = [11111110]反
 </code></pre></div>    </div>
@@ -58,7 +58,7 @@ let result = str.split(/[(\r\n)\r\n]+/).map(item=&gt;{
       <li>负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)</li>
     </ul>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [+1] = [00000001]原 = [00000001]反 = [00000001]补
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [+1] = [00000001]原 = [00000001]反 = [00000001]补
 
  [-1] = [10000001]原 = [11111110]反 = [11111111]补
 </code></pre></div>    </div>
@@ -68,7 +68,7 @@ let result = str.split(/[(\r\n)\r\n]+/).map(item=&gt;{
 
 <h4 id="题三">题三</h4>
 <h5 id="问题-2">问题：</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>日常信息流开发过程中，经常需要显示文章发表的时间与当前时间的关系状态。
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>日常信息流开发过程中，经常需要显示文章发表的时间与当前时间的关系状态。
 
 比如:刚刚、1分钟之前、一个小时之前等。要求实现-一个函数，输入为一个日期时间戳日期，
 
@@ -80,7 +80,7 @@ let result = str.split(/[(\r\n)\r\n]+/).map(item=&gt;{
 </code></pre></div></div>
 <h5 id="解答-2">解答</h5>
 <p>简单按照要求，写了一个函数</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// time为时间戳
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// time为时间戳
 function timeAgo(time){
     var dateStart = new Date(time);//获取开始时间
     var dateEnd = new Date();//获取当前时间
@@ -132,7 +132,7 @@ timeAgo(1600933140000)
 
 <h4 id="题四">题四</h4>
 <h5 id="问题-3">问题：</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>请实现一个观察者模式，拥有四个方法on, of, once和trigger
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>请实现一个观察者模式，拥有四个方法on, of, once和trigger
 const Event = {
 
   on() {} //绑定
@@ -159,7 +159,7 @@ event.off('test'); //删除所有事件回调
 event.once('test', echo);//只触发一次
 </code></pre></div></div>
 <h5 id="解答-3">解答</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Event {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Event {
     constructor() {
         this.events = {};
     }
@@ -214,7 +214,7 @@ function echo3(msg) { console.log(msg + 'ddd')};
 </code></pre></div></div>
 <p>测试一下</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var event = new Event();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var event = new Event();
 event.on('testOn',echo)
 event.on('testOn',echo2)
 event.on('testOn',echo3)
@@ -233,10 +233,10 @@ event.trigger('testOn','offffall')
 
 <h4 id="题五">题五</h4>
 <h5 id="问题-4">问题：</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>分别使用正则和非正则实现1234567890.12格式化为:1,234,567,890.12。
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>分别使用正则和非正则实现1234567890.12格式化为:1,234,567,890.12。
 </code></pre></div></div>
 <h5 id="解答-4">解答：</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var num = 1234567890.12
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var num = 1234567890.12
 // 正则
 var resultNum = (num + '').replace(/(\d)(?=(\d{3})+\.)/g, function ($0, $1) {
     return $1 + ',';
@@ -250,7 +250,7 @@ console.log(resultNum2); //1,234,567,890.12
 
 <h4 id="题六">题六</h4>
 <h5 id="问题-5">问题：</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>请写出程序运行结果
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>请写出程序运行结果
 var x = 1;
 var bar = function(param) {
     console.log(this.x)
@@ -280,18 +280,18 @@ func();//1
 
 <h4 id="题七">题七</h4>
 <h5 id="问题-6">问题：</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>页面中有个table,然后里面有很多项，这个table的数据是异步加载进来，然后渲染出来的，想要实现点击td就输出td标签内的内容。
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>页面中有个table,然后里面有很多项，这个table的数据是异步加载进来，然后渲染出来的，想要实现点击td就输出td标签内的内容。
 </code></pre></div></div>
 <h5 id="解答-6">解答：</h5>
 <p>这一题，按我个人的理解也没有那么复杂，抽取下题目关键点：1.数据异步加载 2.很多项</p>
 
 <p>假设基于原生或者jquery实现的话</p>
 
-<p>首先考虑到2的性能方面的优化，就是使用事件委托，所以点击事件不能绑定在td本身，至于绑在什么地方，首先想到的是它的父级<code class="highlighter-rouge">table</code>，但由于数据是异步加载的，所以可能会导致绑定事件时dom没有渲染，导致绑定失效。</p>
+<p>首先考虑到2的性能方面的优化，就是使用事件委托，所以点击事件不能绑定在td本身，至于绑在什么地方，首先想到的是它的父级<code class="language-plaintext highlighter-rouge">table</code>，但由于数据是异步加载的，所以可能会导致绑定事件时dom没有渲染，导致绑定失效。</p>
 
-<p>因此事件绑定在<code class="highlighter-rouge">table</code>或<code class="highlighter-rouge">body</code>上取决于数据未加载时，table元素是否存在。</p>
+<p>因此事件绑定在<code class="language-plaintext highlighter-rouge">table</code>或<code class="language-plaintext highlighter-rouge">body</code>上取决于数据未加载时，table元素是否存在。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$('table').on('click','td',function(e){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$('table').on('click','td',function(e){
     alert(e.target.innerHTML)
 })
 $('body').on('click','table td',function(e){
@@ -303,7 +303,7 @@ $('body').on('click','table td',function(e){
 
 <h4 id="题八">题八</h4>
 <h5 id="问题-7">问题：</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>完成以下布局，尽可能列出你能想到的方案，页面结构包括页头，主体内容，页脚
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>完成以下布局，尽可能列出你能想到的方案，页面结构包括页头，主体内容，页脚
 
 当主体内容高度超过浏览器窗口时，页脚隐藏，
 

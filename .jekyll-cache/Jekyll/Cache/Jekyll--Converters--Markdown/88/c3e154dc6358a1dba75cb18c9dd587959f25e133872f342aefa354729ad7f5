@@ -1,4 +1,4 @@
-I"�<p>鉴于之前做的大屏的项目，全屏背景图过大，传统的写法导致页面渲染过慢，因而非常影响用户体验。</p>
+I"$ <p>鉴于之前做的大屏的项目，全屏背景图过大，传统的写法导致页面渲染过慢，因而非常影响用户体验。</p>
 
 <p>除此以外，很多时候在开发过程中会出现很多图片的情况，图片过多或大，会直接影响页面的响应时间，从而导致页面性能变差。</p>
 
@@ -31,7 +31,7 @@
 
 <h4 id="检测平台是否支持webp格式">检测平台是否支持webp格式</h4>
 <h5 id="1检测浏览器是否支持webp的图片格式如果支持就返回true否则返回false">1.检测浏览器是否支持webp的图片格式，如果支持，就返回true，否则返回false</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function checkWebp() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function checkWebp() {
     try{
         return (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0);
     }catch(err) {
@@ -43,7 +43,7 @@ console.log(checkWebp());
 </code></pre></div></div>
 <h5 id="2来自官网">2.来自官网</h5>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// check_webp_feature:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// check_webp_feature:
 //   'feature' can be one of 'lossy', 'lossless', 'alpha' or 'animation'.
 //   'callback(feature, result)' will be passed back the detection result (in an asynchronous way!)
 function check_webp_feature(feature, callback) {
@@ -70,13 +70,13 @@ function check_webp_feature(feature, callback) {
 
 <p>第一个参数feature可以传 lossy,lossless,alpha,animation中的一个，第一个传个回调函数。获取他result。如果支持，返回ture,否则返回false。可以再谷歌和IE下试试，谷歌返回ture，IE返回false</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>check_webp_feature('lossless',function(feature,result){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>check_webp_feature('lossless',function(feature,result){
     alert(result); //true or false
 });
 </code></pre></div></div>
 <h5 id="3加载一张webp图片如果可以加载出来那么就是支持webp否则就是不支持如果支持webp那么给html加一个class-叫-webps">3.加载一张webp图片，如果可以加载出来，那么就是支持webp，否则就是不支持。如果支持webp，那么给html加一个class 叫 webps。</h5>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;(function(doc) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;(function(doc) {
 
     // 给html根节点加上webps类名
     function addRootTag() {
@@ -122,7 +122,7 @@ function check_webp_feature(feature, callback) {
 <h6 id="scss配置">scss配置</h6>
 <p>如果项目使用了scss，也可以编辑一个函数类：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@mixin bg($url) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@mixin bg($url) {
     background-image: url($url);
     @at-root(with: all) .webps &amp; {
         background-image: url($url + '.webp');
@@ -131,7 +131,7 @@ function check_webp_feature(feature, callback) {
 </code></pre></div></div>
 <p>应用之后，效果等同于：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.testbg{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.testbg{
     background-image: url(.../test.png);
 }
 .webps .testbg{

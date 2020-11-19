@@ -1,5 +1,5 @@
-I"�$<h3 id="基本概念">基本概念</h3>
-<p>目前，我查找了一下，下面三种数据类型都可以使用<code class="highlighter-rouge">toLocaleString</code>的方法</p>
+I"@'<h3 id="基本概念">基本概念</h3>
+<p>目前，我查找了一下，下面三种数据类型都可以使用<code class="language-plaintext highlighter-rouge">toLocaleString</code>的方法</p>
 <ol>
   <li>number.toLocaleString([locales [, options]])：返回这个数字在特定语言环境下的表示字符串</li>
   <li>array.toLocaleString([locales [, options]])：返回一个字符串表示数组中的元素</li>
@@ -10,11 +10,11 @@
 
 <h3 id="应用">应用</h3>
 <p>1.把阿拉伯数字转成中文数字</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var num = 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var num = 1
 num.toLocaleString('zh-u-nu-hanidec') // "一"
 </code></pre></div></div>
 <p>2.转千分位</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var num = 12345678.123
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var num = 12345678.123
 num.toLocaleString() // "12,345,678.123"
 </code></pre></div></div>
 
@@ -23,13 +23,13 @@ num.toLocaleString() // "12,345,678.123"
 </blockquote>
 
 <p>3.转百分比</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var num = 1345.2345
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var num = 1345.2345
 num.toLocaleString('zh',{style:'percent'}) // "134,523%"
 num.toLocaleString('zh',{style:'percent' , useGrouping: false}) // "134523%"
 num.toLocaleString('zh',{style:'percent' , useGrouping: false}) // "134523%"
 </code></pre></div></div>
 <p>4.转货币符号</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var num = 1234.2345
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var num = 1234.2345
 num.toLocaleString('zh',{style:'currency' , currency:'CNY' }) // "¥1,234.23"
 num.toLocaleString('ja',{style:'currency' , currency:'JPY' }) // "￥1,234"
 num.toLocaleString('zh',{style:'currency' , currency:'CNY' , useGrouping: false , minimumFractionDigits: 3}) // "¥1234.235"
@@ -40,11 +40,11 @@ arr.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) // ￥1,￥2
 </code></pre></div></div>
 
 <blockquote>
-  <p>注意：3，4的设置，结果默认都只保留了两位小数,可通过<code class="highlighter-rouge">minimumFractionDigits</code>这个参数进行设置</p>
+  <p>注意：3，4的设置，结果默认都只保留了两位小数,可通过<code class="language-plaintext highlighter-rouge">minimumFractionDigits</code>这个参数进行设置</p>
 </blockquote>
 
 <p>5.指定整数最少位数、小数最少与最多位数，有效数字的位数，不够用 0 补全 （采用四舍五入法）</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let num = 1234.456;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let num = 1234.456;
 num.toLocaleString('zh', { minimumIntegerDigits: 5 }); //01,234.456
 num.toLocaleString('zh', { minimumFractionDigits: 4, useGrouping: false }); //1234.4560
 num.toLocaleString('zh', { maximumFractionDigits: 2, useGrouping: false }); //1234.46
@@ -53,7 +53,7 @@ num.toLocaleString('zh', { maximumSignificantDigits: 4, useGrouping: false }); /
 </code></pre></div></div>
 
 <p>6.转换时间显示</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
 date.toLocaleString() // "2020/9/28 下午5:14:53"
 date.toLocaleString('zh',{ hour12: false }) // "2020/9/28 17:14:53"
 </code></pre></div></div>
@@ -72,35 +72,35 @@ date.toLocaleString('zh',{ hour12: false }) // "2020/9/28 17:14:53"
 
 <h5 id="options一个对象">options：一个对象</h5>
 <ol>
-  <li><code class="highlighter-rouge">style</code> 格式化时使用的样式
+  <li><code class="language-plaintext highlighter-rouge">style</code> 格式化时使用的样式
     <ul>
-      <li><code class="highlighter-rouge">decimal</code> 表示纯数字格式 为默认值</li>
-      <li><code class="highlighter-rouge">currency</code> 表示货币格式</li>
-      <li><code class="highlighter-rouge">percent</code> 表示百分比格式</li>
+      <li><code class="language-plaintext highlighter-rouge">decimal</code> 表示纯数字格式 为默认值</li>
+      <li><code class="language-plaintext highlighter-rouge">currency</code> 表示货币格式</li>
+      <li><code class="language-plaintext highlighter-rouge">percent</code> 表示百分比格式</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">currency</code> 在货币格式化中使用的货币符号（如果style是“currency”,必须提供货币属性）
+  <li><code class="language-plaintext highlighter-rouge">currency</code> 在货币格式化中使用的货币符号（如果style是“currency”,必须提供货币属性）
     <ul>
-      <li><code class="highlighter-rouge">USD</code> 美元</li>
-      <li><code class="highlighter-rouge">EUR</code> 欧元</li>
-      <li><code class="highlighter-rouge">CNY</code> 人民币</li>
+      <li><code class="language-plaintext highlighter-rouge">USD</code> 美元</li>
+      <li><code class="language-plaintext highlighter-rouge">EUR</code> 欧元</li>
+      <li><code class="language-plaintext highlighter-rouge">CNY</code> 人民币</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">currencyDisplay</code> 如何在货币格式化中显示货币
+  <li><code class="language-plaintext highlighter-rouge">currencyDisplay</code> 如何在货币格式化中显示货币
     <ul>
-      <li><code class="highlighter-rouge">symbol</code> 使用本地化的货币符号例如€ （默认）</li>
-      <li><code class="highlighter-rouge">code</code> 使用国际标准组织货币代码</li>
-      <li><code class="highlighter-rouge">name</code> 使用本地化的货币名称</li>
+      <li><code class="language-plaintext highlighter-rouge">symbol</code> 使用本地化的货币符号例如€ （默认）</li>
+      <li><code class="language-plaintext highlighter-rouge">code</code> 使用国际标准组织货币代码</li>
+      <li><code class="language-plaintext highlighter-rouge">name</code> 使用本地化的货币名称</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">useGrouping</code> 是否使用分组分隔符，默认：true</li>
+  <li><code class="language-plaintext highlighter-rouge">useGrouping</code> 是否使用分组分隔符，默认：true</li>
   <li>
-    <p><code class="highlighter-rouge">minimumIntegerDigits</code></p>
+    <p><code class="language-plaintext highlighter-rouge">minimumIntegerDigits</code></p>
 
     <p>使用的整数数字的最小数目.可能的值是从1到21,默认值是1</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">minimumFractionDigits</code></p>
+    <p><code class="language-plaintext highlighter-rouge">minimumFractionDigits</code></p>
 
     <p>使用的小数位数的最小数目.可能的值是从0到20;</p>
 
@@ -109,23 +109,23 @@ date.toLocaleString('zh',{ hour12: false }) // "2020/9/28 17:14:53"
     <p>默认为货币格式是由国际标准化组织列表(ISO 4217 currency code list)提供(如果列表中没有提供则值为2)</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">maximumFractionDigits</code></p>
+    <p><code class="language-plaintext highlighter-rouge">maximumFractionDigits</code></p>
 
     <p>使用的小数位数的最大数目。可能的值是从0到20;</p>
 
-    <p>纯数字格式的默认值是<code class="highlighter-rouge">minimumfractiondigits</code>和3中大的那一个;</p>
+    <p>纯数字格式的默认值是<code class="language-plaintext highlighter-rouge">minimumfractiondigits</code>和3中大的那一个;</p>
 
-    <p>货币格式默认值是<code class="highlighter-rouge">minimumfractiondigits</code>和国际标准化组织列表(如果列表中没有提供则值为2)中大的那一个</p>
+    <p>货币格式默认值是<code class="language-plaintext highlighter-rouge">minimumfractiondigits</code>和国际标准化组织列表(如果列表中没有提供则值为2)中大的那一个</p>
 
-    <p>百分比格式默认值是<code class="highlighter-rouge">minimumfractiondigits</code>和0中大的那一个</p>
+    <p>百分比格式默认值是<code class="language-plaintext highlighter-rouge">minimumfractiondigits</code>和0中大的那一个</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">minimumSignificantDigits</code></p>
+    <p><code class="language-plaintext highlighter-rouge">minimumSignificantDigits</code></p>
 
     <p>使用的有效数字的最小数目。可能的值是从1到21；默认值是1</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">maximumSignificantDigits</code></p>
+    <p><code class="language-plaintext highlighter-rouge">maximumSignificantDigits</code></p>
 
     <p>使用的有效数字的最大数量。可能的值是从1到21</p>
 
@@ -137,12 +137,12 @@ date.toLocaleString('zh',{ hour12: false }) // "2020/9/28 17:14:53"
   <p>TIP: 如果定义了8或9其中任意一个属性，则忽略5,6,7的设置</p>
 </blockquote>
 
-<h4 id="下面列一些与datetolocalestring相关的一些配置">下面列一些与<code class="highlighter-rouge">date.toLocaleString</code>相关的一些配置</h4>
+<h4 id="下面列一些与datetolocalestring相关的一些配置">下面列一些与<code class="language-plaintext highlighter-rouge">date.toLocaleString</code>相关的一些配置</h4>
 <h5 id="locales">locales</h5>
-<p>date对象使用<code class="highlighter-rouge">toLocaleString</code>时，第一个参数表示不同时区对日期的表示方式</p>
+<p>date对象使用<code class="language-plaintext highlighter-rouge">toLocaleString</code>时，第一个参数表示不同时区对日期的表示方式</p>
 
 <p>不传会默认使用当前时区的展示规则</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date();
 
 // en-US(美利坚英语)使用 month-day-year 的顺序展示年月日
 date.toLocaleString("en-US") // 9/29/2020, 10:11:54 AM
@@ -164,9 +164,9 @@ date.toLocaleString() //2020/9/29 上午10:11:54
 </code></pre></div></div>
 <h5 id="options">options</h5>
 <ol>
-  <li><code class="highlighter-rouge">hour12</code> 是否使用12小时的时间（而不是24小时的时间）。可能的值是true和false; 默认值是语言环境相关的。</li>
-  <li><code class="highlighter-rouge">timeZone</code> 要使用的时区</li>
-  <li><code class="highlighter-rouge">formatMatcher</code> 要使用的格式匹配算法</li>
+  <li><code class="language-plaintext highlighter-rouge">hour12</code> 是否使用12小时的时间（而不是24小时的时间）。可能的值是true和false; 默认值是语言环境相关的。</li>
+  <li><code class="language-plaintext highlighter-rouge">timeZone</code> 要使用的时区</li>
+  <li><code class="language-plaintext highlighter-rouge">formatMatcher</code> 要使用的格式匹配算法</li>
 </ol>
 
 <p>除了第一个，其他感觉使用场景也不多。</p>

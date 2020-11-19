@@ -1,4 +1,4 @@
-I"�I<h3 id="arrayfrom">Array.from()</h3>
+I"�K<h3 id="arrayfrom">Array.from()</h3>
 <p>从一个类似数组或可迭代对象中创建一个新的，浅拷贝的数组实例</p>
 
 <h5 id="用途">用途：</h5>
@@ -9,7 +9,7 @@
   <li>生成一个数字序列</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--字符串转数组--&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--字符串转数组--&gt;
 Array.from('foo');// ["f", "o", "o"]
 
 &lt;!--去重--&gt;
@@ -26,7 +26,7 @@ Array.from({length: 5}, (v, i) =&gt; i);// [0, 1, 2, 3, 4]
 <h3 id="arrayisarray">Array.isArray()</h3>
 <p>用于确定传递的值是否是一个 Array</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array.isArray([1, 2, 3]); // true
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array.isArray([1, 2, 3]); // true
 
 Array.isArray({foo: 123});// false
 
@@ -35,7 +35,7 @@ Array.isArray(Array.prototype);// true
 <h3 id="arrayof">Array.of()</h3>
 <p>创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array.of(7);       // [7] 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Array.of(7);       // [7] 
 Array.of(1, 2, 3); // [1, 2, 3]
 
 Array(7);          // [ , , , , , , ]
@@ -48,7 +48,7 @@ Array(1, 2, 3);    // [1, 2, 3]
 </blockquote>
 
 <p>concat方法不会改变this或任何作为参数提供的数组，而是返回一个浅拷贝，它包含与原始数组相结合的相同元素的副本。 原始数组的元素将复制到新数组中</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr1 = [[1],2];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr1 = [[1],2];
 var arr2 = [].concat(arr1);
 arr1[0].push(2);
 
@@ -71,7 +71,7 @@ arr4 =&gt; [1, 2, 3];
 </blockquote>
 
 <h5 id="语法">语法</h5>
-<p><code class="highlighter-rouge">arr.copyWithin(target[, start[, end]])</code></p>
+<p><code class="language-plaintext highlighter-rouge">arr.copyWithin(target[, start[, end]])</code></p>
 
 <p>不常用，至少目前我没用过。详情可点击<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin">这里</a>了解。</p>
 
@@ -83,7 +83,7 @@ arr4 =&gt; [1, 2, 3];
   <p>Iterator对象的next方法可以遍历迭代器取得原数组的[key,value]</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--next方法获取键值--&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--next方法获取键值--&gt;
 var arr = ["a", "b", "c"]; 
 var iterator = arr.entries();
 console.log(iterator.next());
@@ -113,7 +113,7 @@ for (let e of iterator) {
 </code></pre></div></div>
 <h5 id="用于二维数组按行排序">用于二维数组按行排序</h5>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function sortArr(arr) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function sortArr(arr) {
     var goNext = true;
     var entries = arr.entries();
     while (goNext) {
@@ -143,14 +143,14 @@ sortArr(arr);
 
 <h3 id="arrayprototypeevery">Array.prototype.every()</h3>
 <p>测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[12, 5, 8, 130, 44].every(x =&gt; x &gt;= 10); // false
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[12, 5, 8, 130, 44].every(x =&gt; x &gt;= 10); // false
 [12, 54, 18, 130, 44].every(x =&gt; x &gt;= 10); // true
 </code></pre></div></div>
 <h3 id="arrayprototypefill">Array.prototype.fill()</h3>
 <p>用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
 <h5 id="语法-1">语法</h5>
 <p>arr.fill(value[, start[, end]])</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3].fill(4);               // [4, 4, 4]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3].fill(4);               // [4, 4, 4]
 [1, 2, 3].fill(4, 1);            // [1, 4, 4]
 [1, 2, 3].fill(4, 1, 2);         // [1, 4, 3]
 [1, 2, 3].fill(4, 1, 1);         // [1, 2, 3]
@@ -167,7 +167,7 @@ arr[0].hi = "hi"; // [{ hi: "hi" }, { hi: "hi" }, { hi: "hi" }]
 </code></pre></div></div>
 <h3 id="arrayprototypefilter">Array.prototype.filter()</h3>
 <p>创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
 
 /**
  * Array filters items based on search criteria (query)
@@ -194,7 +194,7 @@ console.log(filterItems('an')); // ['banana', 'mango', 'orange']
   <li>扁平化嵌套数组</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr1 = [1, 2, [3, 4]];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr1 = [1, 2, [3, 4]];
 arr1.flat(); 
 // [1, 2, 3, 4]
 
@@ -215,7 +215,7 @@ arr3.flat(Infinity);
   <li>移除数组中的空项</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr4 = [1, 2, , 4, 5];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr4 = [1, 2, , 4, 5];
 arr4.flat();
 // [1, 2, 4, 5]
 </code></pre></div></div>
@@ -229,7 +229,7 @@ arr4.flat();
 
 <h5 id="map--flatmap">Map &amp;&amp; flatMap</h5>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr1 = [1, 2, 3, 4];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr1 = [1, 2, 3, 4];
 
 arr1.map(x =&gt; [x * 2]); 
 // [[2], [4], [6], [8]]
@@ -274,7 +274,7 @@ arr1.flatMap(x =&gt; [[x * 2]]);
 <h3 id="arrayprototypekeys">Array.prototype.keys()</h3>
 <p>返回一个包含数组中每个索引键的Array Iterator对象。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr = ["a", , "c"];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var arr = ["a", , "c"];
 var sparseKeys = Object.keys(arr);
 var denseKeys = [...arr.keys()];
 console.log(sparseKeys); // ['0', '2']
@@ -285,7 +285,7 @@ console.log(denseKeys);  // [0, 1, 2]
 <h3 id="arrayprototypemap">Array.prototype.map()</h3>
 <p>创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var numbers = [1, 4, 9];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var numbers = [1, 4, 9];
 var roots = numbers.map(Math.sqrt);
 // roots的值为[1, 2, 3], numbers的值仍为[1, 4, 9]
 </code></pre></div></div>
@@ -305,7 +305,7 @@ var roots = numbers.map(Math.sqrt);
   <li>将二维数组转化为一维</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var flattened = [[0, 1], [2, 3], [4, 5]].reduce(
  ( acc, cur ) =&gt; acc.concat(cur),
  []
 );
@@ -315,7 +315,7 @@ var roots = numbers.map(Math.sqrt);
   <li>计算数组中每个元素出现的次数</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
 
 var countedNames = names.reduce(function (allNames, name) { 
   if (name in allNames) {
@@ -334,7 +334,7 @@ var countedNames = names.reduce(function (allNames, name) {
   <li>按属性对object分类</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var people = [
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var people = [
   { name: 'Alice', age: 21 },
   { name: 'Max', age: 20 },
   { name: 'Jane', age: 20 }
@@ -366,7 +366,7 @@ var groupedPeople = groupBy(people, 'age');
   <li>数组去重</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1,2,1,2,3,5,4,5,3,4,4,4,4];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [1,2,1,2,3,5,4,5,3,4,4,4,4];
 let result = arr.sort().reduce((init, current) =&gt; {
     if(init.length === 0 || init[init.length-1] !== current) {
         init.push(current);
@@ -382,7 +382,7 @@ console.log(result); //[1,2,3,4,5]
 <p>接受一个函数作为累加器（accumulator）和数组的每个值（从右到左）将其减少为单个值。</p>
 <h5 id="reduce-与-reduceright-之间的区别">reduce 与 reduceRight 之间的区别</h5>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var a = ['1', '2', '3', '4', '5']; 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var a = ['1', '2', '3', '4', '5']; 
 var left  = a.reduce(function(prev, cur)      { return prev + cur; }); 
 var right = a.reduceRight(function(prev, cur) { return prev + cur; }); 
 
@@ -410,7 +410,7 @@ console.log(right); // "54321"
 <h3 id="arrayprototypesome">Array.prototype.some()</h3>
 <p>测试是否至少有一个元素可以通过被提供的函数方法，该方法返回一个Boolean类型的值。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2, 5, 8, 1, 4].some(x =&gt; x &gt; 10);  // false
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2, 5, 8, 1, 4].some(x =&gt; x &gt; 10);  // false
 [12, 5, 8, 1, 4].some(x =&gt; x &gt; 10); // true
 </code></pre></div></div>
 
@@ -422,10 +422,10 @@ console.log(right); // "54321"
 
 <h5 id="对非-ascii-字符排序">对非 ASCII 字符排序</h5>
 <blockquote>
-  <p>一些非英语语言的字符串需要使用 <code class="highlighter-rouge">String.localeCompare</code>。这个函数可以将函数排序到正确的顺序</p>
+  <p>一些非英语语言的字符串需要使用 <code class="language-plaintext highlighter-rouge">String.localeCompare</code>。这个函数可以将函数排序到正确的顺序</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var items = ['réservé', 'premier', 'cliché', 'communiqué', 'café', 'adieu'];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var items = ['réservé', 'premier', 'cliché', 'communiqué', 'café', 'adieu'];
 items.sort(function (a, b) {
   return a.localeCompare(b);
 });
@@ -439,7 +439,7 @@ items.sort(function (a, b) {
   <p>此方法会改变原数组。</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--从第 2 位开始删除 0 个元素，插入“drum” 和 "guitar"--&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--从第 2 位开始删除 0 个元素，插入“drum” 和 "guitar"--&gt;
 var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
 var removed = myFish.splice(2, 0, 'drum', 'guitar');
 
@@ -456,7 +456,7 @@ var removed = myFish.splice(-2, 1);
 <h3 id="arrayprototypetolocalestring">Array.prototype.toLocaleString()</h3>
 <p>返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 “,”）隔开。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var prices = ['￥7', 500, 8123, 12];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var prices = ['￥7', 500, 8123, 12];
 prices.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' });
 
 // "￥7,￥500,￥8,123,￥12"
@@ -466,7 +466,7 @@ prices.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' });
 <h3 id="arrayprototypetostring">Array.prototype.toString()</h3>
 <p>返回一个字符串，表示指定的数组及其元素</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var array1 = [1, 2, 'a', '1a'];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var array1 = [1, 2, 'a', '1a'];
 
 console.log(array1.toString());
 //"1,2,a,1a"
@@ -478,7 +478,7 @@ console.log(array1.toString());
   <p>该方法修改原有数组</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [4,5,6];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [4,5,6];
 arr.unshift(1,2,3);
 console.log(arr); // [1, 2, 3, 4, 5, 6]
 </code></pre></div></div>
@@ -486,7 +486,7 @@ console.log(arr); // [1, 2, 3, 4, 5, 6]
 <h3 id="arrayprototypevalues">Array.prototype.values()</h3>
 <p>返回一个新的 Array Iterator 对象，该对象包含数组每个索引的值</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = ['w', 'y', 'k', 'o', 'p'];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = ['w', 'y', 'k', 'o', 'p'];
 let eArr = arr.values();
 // 您的浏览器必须支持 for..of 循环
 // 以及 let —— 将变量作用域限定在 for 循环中

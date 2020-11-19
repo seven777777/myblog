@@ -1,9 +1,9 @@
-I"5<p>经常会遇到一些开发场景需要我们按照一定的概率执行某件事，经常遇到的比如电商活动的抽奖，前段时间写一个类似头脑王者的答题小程序，如果没有玩家匹配时，需要与机器人，而机器人的答题正确率需要设定。</p>
+I"H<p>经常会遇到一些开发场景需要我们按照一定的概率执行某件事，经常遇到的比如电商活动的抽奖，前段时间写一个类似头脑王者的答题小程序，如果没有玩家匹配时，需要与机器人，而机器人的答题正确率需要设定。</p>
 
 <p>那么关于正确率具体实现的思路是什么呢，其实很简单，就是利用“随机数”</p>
 
 <p>实现代码如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//首先创建一个随机数n
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//首先创建一个随机数n
 let n = Math.floor(Math.random() * 100);
 //然后根据给定的正确率，进行判断，假设此处的正确率为20%
 let correct = 20

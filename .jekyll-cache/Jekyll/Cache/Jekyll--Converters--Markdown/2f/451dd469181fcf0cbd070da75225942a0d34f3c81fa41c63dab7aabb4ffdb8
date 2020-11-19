@@ -1,4 +1,4 @@
-I"�#<p>前言：</p>
+I"t$<p>前言：</p>
 
 <p>你是否在开发过程中随心所欲的进行变量命名？</p>
 
@@ -74,10 +74,10 @@ score[teamIndex][eventIndex]要比score[i][j]给出的信息更多。</p>
 e.g.</p>
 
 <p>bad:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(printFlag == 16)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(printFlag == 16)
 </code></pre></div></div>
 <p>good:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(reportType == ReportType_Annual)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if(reportType == ReportType_Annual)
 </code></pre></div></div>
 <h3 id="临时变量">临时变量</h3>
 <p>常用temp</p>
@@ -120,19 +120,19 @@ Five = 6.0 就显得很可笑了。</p>
 
 <h4 id="区分类和对象">区分类和对象</h4>
 <h5 id="方案一通过大写字母开头区分类型和变量">方案一：通过大写字母开头区分类型和变量</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Widget widget
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Widget widget
 </code></pre></div></div>
 <h5 id="方案二通过全部大写区分类型和变量">方案二：通过全部大写区分类型和变量</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WIDEGE widget
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WIDEGE widget
 </code></pre></div></div>
 <h5 id="方案三通过给类型加上t_前缀区分类型和变量">方案三：通过给类型加上t_前缀区分类型和变量</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>t_Widget widget
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>t_Widget widget
 </code></pre></div></div>
 <h5 id="方案四通过给变量加上a前缀区分类型和变量">方案四：通过给变量加上“a”前缀区分类型和变量</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Widget aWidget
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Widget aWidget
 </code></pre></div></div>
 <h5 id="方案五通过对变量采用更明确的名字区分类型和变量">方案五：通过对变量采用更明确的名字区分类型和变量</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Widget employeeWidget
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Widget employeeWidget
 </code></pre></div></div>
 
 <blockquote>

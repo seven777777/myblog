@@ -1,4 +1,4 @@
-I"�<h4 id="场景">场景：</h4>
+I"�<h4 id="场景">场景：</h4>
 
 <p>当项目中多处出现相同的模块时，此时的正常考虑是将其做成公共组建，通过传参不同，实现多处复用</p>
 
@@ -8,7 +8,7 @@
 
 <p>此处，多处出现的模块是select选择框，封装成组件后，传给它option的值，代码如下：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--组件文件 比如说这个组件叫 vSelect 下面会用--&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--组件文件 比如说这个组件叫 vSelect 下面会用--&gt;
 &lt;template&gt;
     &lt;el-select
     @change="handleChange"
@@ -42,7 +42,7 @@
 </code></pre></div></div>
 
 <p>使用时只需把文件import进来，代码如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
     &lt;vSelect :options="options" @my-event="select"&gt;&lt;/vSelect&gt;
 &lt;/template&gt;
 &lt;script&gt;
@@ -85,7 +85,7 @@
 <p>但是真正实施起来却发现会出现很多问题。</p>
 
 <p>其实解决方法很简单，就是一开始没转过来弯，还是花了一些时间，最终的解决方案就是使用回调函数：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;vSelect :options="options" @my-event="val=&gt;select(val,param)"&gt;&lt;/vSelect&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;vSelect :options="options" @my-event="val=&gt;select(val,param)"&gt;&lt;/vSelect&gt;
 
 select(value,param) {
    console.log(value,param)

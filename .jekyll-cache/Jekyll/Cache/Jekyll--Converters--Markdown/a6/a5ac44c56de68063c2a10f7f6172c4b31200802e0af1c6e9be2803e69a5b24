@@ -1,4 +1,4 @@
-I"I	<h2>小程序初涉——页面滑动以及canvas层级问题</h2>
+I"o	<h2>小程序初涉——页面滑动以及canvas层级问题</h2>
 <p>微信小程序采坑</p>
 
 <h3 id="关于canvas的层级问题">关于canvas的层级问题</h3>
@@ -13,7 +13,7 @@
 
 <p>==解决方法：可以通过禁止页面滑动，从而避免该现象。具体设置如下：==</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//page里面对应的的json文件
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//page里面对应的的json文件
 {
     "disableScroll": true
 }
@@ -26,7 +26,7 @@
 <p><img src="https://seven777777.github.io/myblog/images/post/xcx04.jpg" alt="image" /></p>
 
 <p>其实我遇到这个问题的场景还算是比较容易解决，如上图所示，无法隐藏的倒计时canvas空间所在的盒子其实此时透明度为0，为什么要将其设置为透明度为0而不是display为none，是因为我这边的需求是一个隐藏前一个盒子，显示后一个盒子的动画，所以解决方法就是==将控制动画的参数绑定到canvas的盒子上，控制canvas的show==</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--参考代码实例--&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--参考代码实例--&gt;
 &lt;!--wxml--&gt;
 &lt;view wx:if=""&gt;
     &lt;canvas&gt;&lt;/canvas&gt;

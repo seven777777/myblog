@@ -1,4 +1,4 @@
-I"<h2>小程序初涉——倒计时效果</h2>
+I"e<h2>小程序初涉——倒计时效果</h2>
 <p>微信小程序</p>
 
 <p>近期做的一个类似头脑王者小程序项目，其中需要实现一个倒计时圆环的效果，如下图：</p>
@@ -9,11 +9,11 @@
 
 <h3 id="canvas画圆环">canvas画圆环</h3>
 <p>话不多说直接贴代码,首先是wxml部分，需要定义canvas的canvas-id，也就是canvas的唯一标识</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//xxx.wxml
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//xxx.wxml
 &lt;canvas class="countDown_canvas" canvas-id="canvasCount"&gt;&lt;/canvas&gt;
 </code></pre></div></div>
-<p>可以给画布增加一个样式，以此处为例，增加一个<code class="highlighter-rouge">countDown_canvas</code>的样式,具体可根据需求调整</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//xxx.wxss
+<p>可以给画布增加一个样式，以此处为例，增加一个<code class="language-plaintext highlighter-rouge">countDown_canvas</code>的样式,具体可根据需求调整</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//xxx.wxss
 .countDown_canvas{
     width: 151rpx;
     height: 151rpx;
@@ -23,7 +23,7 @@
 <p>下面是重点JS的部分：因为之后还有倒计时的效果，所以这里的倒计时数字以及画圆的起止点都需要抽出来作为变量，方便之后操作。</p>
 
 <p>具体canvas的操作若还有不清楚的，可以查看官方文档，此处就不多做介绍了。</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//xxx.js
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//xxx.js
 
 //data部分
 data: {
@@ -76,7 +76,7 @@ drawRang(overTime){
 </ol>
 
 <p>所以，最终使用以下代码实现</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//xxx.js
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//xxx.js
 
 // 倒计时
 countdown(){

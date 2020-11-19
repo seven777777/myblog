@@ -1,4 +1,4 @@
-I"�<p>近两年因为公司的业务主要都是toB的，因此工作内容也都是偏定制，系统化的一些中小型产品，大多也都是一个产品一个仓库。</p>
+I"N<p>近两年因为公司的业务主要都是toB的，因此工作内容也都是偏定制，系统化的一些中小型产品，大多也都是一个产品一个仓库。</p>
 
 <p>年前写了一个小项目，当初构建项目的时候也是纯粹把它当成一个独立产品去做的，结果今年被产品告知，年前的那个项目，现在要追加几个子项目，最终集成一个系列项目，并且要求代码放在一起，统一管理。这就比较尴尬了，工期又比较紧，所以重构项目架构也不是太现实，最后权衡之下，也就只能采取配置路由的下策，虽然知道这样做，在代码层面来看是不规范的~</p>
 
@@ -7,16 +7,16 @@
 <p>下面详细说一下关于项目的创建：</p>
 
 <h3 id="1初始化">1.初始化</h3>
-<p>==说明：项目使用<code class="highlighter-rouge">Vue-cli4</code>初始化==</p>
+<p>==说明：项目使用<code class="language-plaintext highlighter-rouge">Vue-cli4</code>初始化==</p>
 
 <p>关于如何用vue脚手架快速搭建项目，可以自行搜索，网上相关的教程很多，在此就不赘述。</p>
 
 <h3 id="2vueconfigjs-配置">2.vue.config.js 配置</h3>
-<p>首先新建一个叫<code class="highlighter-rouge">vue.config.js</code>的文件</p>
+<p>首先新建一个叫<code class="language-plaintext highlighter-rouge">vue.config.js</code>的文件</p>
 
 <p>配置如下：（关于配置也参考了一些其他人的写法）</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const pages = {}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const pages = {}
 const titles = {
   'moduleA': '项目A',
   'moduleB': '项目B',
@@ -44,7 +44,7 @@ module.exports = {
     runtimeCompiler: true,
 }
 </code></pre></div></div>
-<p>其实就是配置了多个入口文件，先是手动配置了不同子项目的<code class="highlighter-rouge">title</code>，当然如果你需要不同的favicon，也可以在此配置。然后通过遍历设定存放模块代码的文件夹来配置不同page的入口及其他的配置。</p>
+<p>其实就是配置了多个入口文件，先是手动配置了不同子项目的<code class="language-plaintext highlighter-rouge">title</code>，当然如果你需要不同的favicon，也可以在此配置。然后通过遍历设定存放模块代码的文件夹来配置不同page的入口及其他的配置。</p>
 
 <h3 id="3单页面模块的相关配置">3.单页面模块的相关配置</h3>
 <p>其实就是把之前脚手架生成的main.js文件分别在每一个单页面模块里重新配置一下，其他的router，store也是同理。</p>
@@ -53,7 +53,7 @@ module.exports = {
 
 <p><img src="https://seven777777.github.io/myblog/images/post/2020-07-06-vue-multiple-single-pages/pic01.png" /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// moduleA-main.js
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// moduleA-main.js
 
 import Vue from 'vue'
 import App from './App.vue'
@@ -71,7 +71,7 @@ new Vue({
   render: h =&gt; h(App),
 }).$mount('#app')
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// moduleA-router.js
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// moduleA-router.js
 
 import Vue from "vue";
 import VueRouter from "vue-router";

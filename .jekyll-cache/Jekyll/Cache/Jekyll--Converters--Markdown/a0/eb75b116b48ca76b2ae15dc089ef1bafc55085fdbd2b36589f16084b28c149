@@ -1,21 +1,21 @@
-I"�<h4 id="前言">前言</h4>
+I"{<h4 id="前言">前言</h4>
 <p>ES6给我们带来便利的同时，也给我们带来了一下麻烦。当然自从chrome等浏览器对于ES6语法的全面支持以来，这种麻烦也已经降到了最低，如果你的项目完全不需要考虑兼容问题，现在你在项目中可以尽情的使用ES6，且不用做特殊处理。当然这是理想情况。</p>
 
-<p>前几年我主要做的都是H5方面的开发，所以对于浏览器的兼容问题关注也不是很多。近两年的开发也都是基于VUE框架，对于vue,如果需要使用ES6并且需要兼容一些低版本的浏览器，比如万恶的ie，我们可以安装<code class="highlighter-rouge">babel-polyfill</code>是代码正常运行。方法很简单：</p>
+<p>前几年我主要做的都是H5方面的开发，所以对于浏览器的兼容问题关注也不是很多。近两年的开发也都是基于VUE框架，对于vue,如果需要使用ES6并且需要兼容一些低版本的浏览器，比如万恶的ie，我们可以安装<code class="language-plaintext highlighter-rouge">babel-polyfill</code>是代码正常运行。方法很简单：</p>
 
 <ol>
-  <li>首先install<code class="highlighter-rouge">babel-polyfill</code>到你的项目中:</li>
+  <li>首先install<code class="language-plaintext highlighter-rouge">babel-polyfill</code>到你的项目中:</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--安装--&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--安装--&gt;
 npm install babel-polyfill --save-dev
 </code></pre></div></div>
 
 <ol>
-  <li>其次在你的代码头部加载<code class="highlighter-rouge">babel-polyfill</code>（注意：要在代码前，第一个js文件的顶部）</li>
+  <li>其次在你的代码头部加载<code class="language-plaintext highlighter-rouge">babel-polyfill</code>（注意：要在代码前，第一个js文件的顶部）</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--使用：vue项目的话就是在main.js的头部--&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--使用：vue项目的话就是在main.js的头部--&gt;
 import 'babel-polyfill';
 // 或者
 require('babel-polyfill');
@@ -34,7 +34,7 @@ gulp+babel将ES6转ES5。</p>
   <li>首先，相关依赖的安装（gulp的安装我就不说了）</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 安装依赖
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 安装依赖
 npm install gulp-babel --save-dev
 npm install babel-core --save-dev
 npm install @babel/preset-env --save-dev
@@ -51,7 +51,7 @@ npm install gulp-rename --save-dev
 如果你的项目已引入gulp，直接在gulpfile.js文件中增加即可，如果没有，就新建一个gulpfile.js的文件，然后加入下面代码</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// gulpfile.js
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// gulpfile.js
 const babel       = require('gulp-babel');
 const uglify      = require('gulp-uglify');
 const rename      = require('gulp-rename');
@@ -83,12 +83,12 @@ gulp.task('default',gulp.parallel('js','其他任务'));
 新建文件：.babelrc</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//.babelrc
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//.babelrc
 {
     "presets": [ "@babel/preset-env"]
 }
 </code></pre></div></div>
-<p>以上代码配置完成后，在git命令行工具中执行<code class="highlighter-rouge">gulp</code>，执行完成，你会发现js文件夹下多了一个common.min.js文件，在需要使用的地方引用该文件，然后就ok拉~</p>
+<p>以上代码配置完成后，在git命令行工具中执行<code class="language-plaintext highlighter-rouge">gulp</code>，执行完成，你会发现js文件夹下多了一个common.min.js文件，在需要使用的地方引用该文件，然后就ok拉~</p>
 
 <h4 id="尾">尾</h4>
 <p>最后还是想吐槽一句，ie真的是太恶心了，为什么现在还会有网站需要兼容ie，心累！</p>

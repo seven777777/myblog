@@ -1,8 +1,8 @@
-I"<p>Date对象用于处理日期和时间</p>
+I"�<p>Date对象用于处理日期和时间</p>
 
 <h4 id="一new-date">一、new Date()</h4>
 <p>默认状态下，new Date()会返回当前日期和时间，格式如下</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date() //Tue Sep 29 2020 16:38:00 GMT+0800 (中国标准时间)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date() //Tue Sep 29 2020 16:38:00 GMT+0800 (中国标准时间)
 </code></pre></div></div>
 <p>创建特定的时间，传参如下：</p>
 
@@ -33,7 +33,7 @@
 <h4 id="二new-date时间戳年月日等">二、new Date()——&gt;时间戳，年月日，等</h4>
 <h5 id="转时间戳">转时间戳</h5>
 <p>时间戳是指格林威治时间自1970年1月1日(00:00:00 GMT)至当前时间的总秒数</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
 
 date.valueOf() // 1601368680782
 date.getTime() // 1601368680782
@@ -45,7 +45,7 @@ Math.round(date.getTime()/1000) // 1601368681
 </code></pre></div></div>
 
 <h5 id="获取年月日">获取年月日</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
 
 // 年
 date.getFullYear() // 2020
@@ -58,7 +58,7 @@ date.getDay() // 2  返回结果为0~6，表示一周中的某一天，0表示�
 
 </code></pre></div></div>
 <h5 id="获取时分秒">获取时分秒</h5>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
 
 // 时
 date.getHours() // 16
@@ -76,7 +76,7 @@ date.getMilliseconds() // 782
 
 <h5 id="date-对象转换为字符串">Date 对象转换为字符串</h5>
 <p>常用于当前Date的更直观的显示。</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var date = new Date()
 
 date.toTimeString() // 16:38:00 GMT+0800 (中国标准时间)
 date.toDateString() // Tue Sep 29 2020
@@ -85,10 +85,10 @@ date.toLocaleTimeString()// 下午4:38:00
 date.toLocaleDateString()// 2020/9/29
 </code></pre></div></div>
 
-<p>关于<code class="highlighter-rouge">toLocaleString</code>,还有些有趣的应用，有兴趣的可以看我的这篇文章：<a href="https://seven777777.github.io/myblog/work/2020/09/29/toLocaleString/">toLocaleString也太好用了吧！（超方便转千分位，中文数字等）</a></p>
+<p>关于<code class="language-plaintext highlighter-rouge">toLocaleString</code>,还有些有趣的应用，有兴趣的可以看我的这篇文章：<a href="https://seven777777.github.io/myblog/work/2020/09/29/toLocaleString/">toLocaleString也太好用了吧！（超方便转千分位，中文数字等）</a></p>
 
 <h4 id="三时间戳普通时间">三、时间戳——&gt;普通时间</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var timestamp = 1601368681
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var timestamp = 1601368681
 
 new Date(timestamp * 1000).toLocaleString() // 2020/9/29 下午4:38:01
 new Date(timestamp * 1000).toLocaleDateString() // 2020/9/29
@@ -96,7 +96,7 @@ new Date(timestamp * 1000).toLocaleDateString() // 2020/9/29
 
 <p>实际上就是将时间戳转换成Date对象，然后就可以使用上面Date对象的所有方法</p>
 
-<p>而时间戳转Date对象说白了就是文章一开始列的创建特定时间的第五条方法：<code class="highlighter-rouge">new Date(ms)</code> 将时间戳乘以1000便得到了ms。</p>
+<p>而时间戳转Date对象说白了就是文章一开始列的创建特定时间的第五条方法：<code class="language-plaintext highlighter-rouge">new Date(ms)</code> 将时间戳乘以1000便得到了ms。</p>
 
 <p>以上，可以根据上面的方法进行时间格式化函数的封装，此处就只提供一些基础方法了，之后有空可能会在出一篇格式化时间的函数封装的文章。</p>
 :ET

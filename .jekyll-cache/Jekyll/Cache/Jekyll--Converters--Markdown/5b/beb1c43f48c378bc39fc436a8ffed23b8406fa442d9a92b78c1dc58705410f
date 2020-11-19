@@ -1,4 +1,4 @@
-I"�<h2>百度地图初始化中心点偏移问题</h2>
+I"	<h2>百度地图初始化中心点偏移问题</h2>
 
 <p>最近做的项目涉及到了很多数据可视化的操作，所以用到了大量的ECharts以及百度地图，记录一下前两天刚刚遇到的一个问题。</p>
 <blockquote>
@@ -10,7 +10,7 @@
 <h4 id="解决方案一">解决方案一</h4>
 <h5 id="定义地图加载完成事件">定义地图加载完成事件</h5>
 <p>但由于该事件会在每次拖动地图时触发，因此可以定义一个变量，控制其只触发一次，代码如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let loadCount=0;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let loadCount=0;
 mapName.addEventListener("tilesloaded",function(){//mapName是你的地图名称
     if(loadCount==1){
         mapName.setCenter(point);//point是设置的中心点

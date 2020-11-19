@@ -1,4 +1,4 @@
-I"U
+I"{
 <p>记录一个刚刚遇到的问题，以及解决方法。希望可以帮助之后遇到同样问题的小伙伴们！</p>
 
 <h3 id="问题描述">问题描述</h3>
@@ -6,7 +6,7 @@
 
 <p>先贴出相关核心代码如下：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;el-cascader
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;el-cascader
     ref="locationCascader"
     v-model="location"
     placeholder="省份/城市/区域"
@@ -46,7 +46,7 @@ data(){
 <p>最终在这里☞<a href="https://github.com/ElemeFE/element/issues/18669">https://github.com/ElemeFE/element/issues/18669</a>找到了解决方法！</p>
 
 <h3 id="解决方法">解决方法</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>methods:{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>methods:{
     &lt;!--重新赋值前先调用此方法--&gt;
     &lt;!--this.$refs.locationCascader：这个值基于你之前在dom上定义的ref--&gt;
     resetCasadeSelector() {

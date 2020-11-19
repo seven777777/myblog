@@ -1,4 +1,4 @@
-I"�-<p>本文主要回顾整理一下之前（大概一年前，:joy:，这一年实在比较忙 ）写的一个页面动画。</p>
+I"u.<p>本文主要回顾整理一下之前（大概一年前，:joy:，这一年实在比较忙 ）写的一个页面动画。</p>
 
 <p>之前其实写了两种方案，最终使用的如下的方案：</p>
 
@@ -18,7 +18,7 @@
 
 <h5 id="1关于实现原理">1.关于实现原理</h5>
 
-<p>其实想要实现这种滚动式数值变化原理非常简单，就是利用元素的位移，通常如果用css来实现元素的位移动画的话，我们很容易就会想到<code class="highlighter-rouge">animation</code>属性。那我们基本上思路就有了：</p>
+<p>其实想要实现这种滚动式数值变化原理非常简单，就是利用元素的位移，通常如果用css来实现元素的位移动画的话，我们很容易就会想到<code class="language-plaintext highlighter-rouge">animation</code>属性。那我们基本上思路就有了：</p>
 
 <ul>
   <li>将数值拆分</li>
@@ -32,15 +32,15 @@
 
 <p>首先，我们html部分只需要一个box来承载显示结果即可，细节部分我们下面通过JS来添加</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// html 部分
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// html 部分
 &lt;div id="valScrollAmt" class="valScrollAmt-box"&gt;&lt;/div&gt;
 </code></pre></div></div>
 
-<p>这里的 id 用于js中的标识，而 class 则用于样式的编辑。我们这里命名一个id：<code class="highlighter-rouge">valScrollAmt</code>，下面会使用到。</p>
+<p>这里的 id 用于js中的标识，而 class 则用于样式的编辑。我们这里命名一个id：<code class="language-plaintext highlighter-rouge">valScrollAmt</code>，下面会使用到。</p>
 
 <p>接下来，我们假设初始值为 0，首先将其转换成数组。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const startNum = 0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const startNum = 0
 //将number转换成string，从而计算长度，如果需要展示千分位符号的，也可以转换后（转换后即为字符串）直接计算长度
 const numStr = (startNum + '').length;
 
@@ -50,7 +50,7 @@ for(var i = 0;i&lt;numStr.length;i++){
 }
 </code></pre></div></div>
 <p>转换成数组后，接下来就是生成dom,并将其插入最外层的容器中</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--封装一个将数组转换成dom的函数--&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--封装一个将数组转换成dom的函数--&gt;
 function amtDom(arr){
     var str = '';
     for(var i = 0;i&lt;arr.length;i++){
@@ -86,7 +86,7 @@ $("#valScrollAmt").html(amtDom(numArr));
 
 <p>下面我们就增加一些样式，这一步不仅仅是美化，而是必要的，这种实现方式对dom的排版是有固定要求的</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//css
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//css
 .valScrollAmt-box{
     display: flex;
     height: 28px;
@@ -111,7 +111,7 @@ $("#valScrollAmt").html(amtDom(numArr));
 
 <p>最后就是让他动起来了</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//首先要定好差值为1的位移高度
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//首先要定好差值为1的位移高度
 let height = $("#valScrollAmt").height();
 
 // 这里需要注意的是，如果你是需要累计持续增长 那么就需要将每次的变化前的数值数组缓存下来
@@ -154,7 +154,7 @@ $(".scrollItem").each(function(i){
 <h4 id="二动态变化">二、动态变化</h4>
 <p>这种方法比较简单，就不做详细分解了
 ，直接上代码：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 将数字转换为逗号隔开的千分位格式
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 将数字转换为逗号隔开的千分位格式
 function num2qfw(num){
     num += '';
     if (!num.includes('.')) num += '.';
@@ -189,7 +189,7 @@ setInterval(update, 3000); //3秒钟执行一次 update();
 <p><img src=" https://seven777777.github.io/myblog/images/post/2020-06-02-valchange/valchange4.gif" /></p>
 
 <h4 id="三滚动式变化完整代码">三、滚动式变化完整代码</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// css部分
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// css部分
 .valScrollAmt-box{
     display: flex;
     height: 28px;

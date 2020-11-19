@@ -1,10 +1,10 @@
-I"�"<h2>页面Tab切点击切换</h2>
+I"#<h2>页面Tab切点击切换</h2>
 <p>页面效果CSS</p>
 
 <p>一直对于JS、jquery比较生疏，苦于在前端路上一直是孤军奋斗，没人学习交流，全靠自己琢磨。上家公司时抽了一些空余时间对于js、jquery的基本知识进行了一些系统的自学，并没有实际去写一些相关的项目，但自我感觉已经掌握了不少了，在这种自我感觉良好的情况下跳槽到了现在的公司：有货，主要工作内容就是活动pc及app页面的是制作，添加链接，基础到不行的工作。上次的活动需要写个Tab切，心想还是有点自学基础的我就开始动手写了，结果，挫败感很强啊，一个简单的tab切换效果写起来错误百出，下面是我一开始的代码：
 CSS部分：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.tab_head{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.tab_head{
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -24,7 +24,7 @@ CSS部分：</p>
 </code></pre></div></div>
 <p>HTML部分：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div&gt;
 	&lt;!--tab头部--&gt;
 	&lt;div class="tab_head"&gt;
 		&lt;a class="tab1" style="width: 23.5%; height: 100%; left: 3%; top: 0;"&gt;&lt;/a&gt;
@@ -66,7 +66,7 @@ CSS部分：</p>
 </code></pre></div></div>
 <p>JS部分</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$(function(){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$(function(){
 	$('.tab1').click(function () {
 		$('.imgclass').attr('src','bg_09.jpg')
 		$('.bg1').css('display','block');
@@ -101,7 +101,7 @@ CSS部分：</p>
 下面是改良版：
 CSS部分：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.tab_head{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.tab_head{
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -124,7 +124,7 @@ CSS部分：</p>
 </code></pre></div></div>
 <p>HTML部分：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div&gt;
 	&lt;!--tab头部--&gt;
 	&lt;div class="tab_head"&gt;
 		&lt;a class="tab1" style="width: 23.5%; height: 100%; left: 3%; top: 0;"onClick="return false;"&gt;&lt;/a&gt;
@@ -168,7 +168,7 @@ CSS部分：</p>
 </code></pre></div></div>
 <p>JS部分：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$(function(){
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$(function(){
 	var $div_li =$("div.tab_head a");
 	$div_li.click(function(){
 		var tab_index =$div_li.index(this);

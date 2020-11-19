@@ -1,4 +1,4 @@
-I"�9<h2>ECharts 使用小计</h2>
+I"�:<h2>ECharts 使用小计</h2>
 
 <h3 id="使用">使用：</h3>
 <ol>
@@ -6,7 +6,7 @@
   <li>封装方法</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let ecExt = {};
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let ecExt = {};
 ecExt.circleSp = (echarts, obj) =&gt; {
     return ((e,obj)=&gt;{
         // 基于准备好的dom，初始化echarts实例
@@ -23,7 +23,7 @@ ecExt.circleSp = (echarts, obj) =&gt; {
 </code></pre></div></div>
 <ol>
   <li>页面使用
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let obj = {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let obj = {
  id:'domid',//用于承载图形的div
  //obj是在页面内封装好的用于设置option的对象
  //内容就是ECharts的一些属性配置
@@ -42,7 +42,7 @@ ecExt.circleSp(echarts,obj);
 
 <p>写到一半发现一篇博客统计的挺完整的，所以拿来参考了，由于是16年的博客，所以可能现在会有些属性改变，所以就参照最新的ECharts配置文档进行了修改，参照博客地址如下：
 https://blog.csdn.net/she_lover/article/details/51448967</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option = {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option = {
     //图表标题
     title:{
         text:'',//主标题文字
@@ -194,7 +194,7 @@ https://blog.csdn.net/she_lover/article/details/51448967</p>
 }
 </code></pre></div></div>
 <h4 id="折线图">折线图</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
     tooltip:{},//可选，取决于有无提示框
     legend:{},//可选，取决于有无图例
     xAxis:{},//x轴设置
@@ -232,7 +232,7 @@ https://blog.csdn.net/she_lover/article/details/51448967</p>
 }
 </code></pre></div></div>
 <h4 id="柱状条形图">柱状/条形图</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
     tooltip:{},//可选，取决于有无提示框
     legend:{},//可选，取决于有无图例
     xAxis:{},//x轴设置
@@ -257,7 +257,7 @@ https://blog.csdn.net/she_lover/article/details/51448967</p>
 }
 </code></pre></div></div>
 <h4 id="饼图">饼图</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
     series:{
         name:'',//系列名称，用于tooltip的显示，legend 的图例筛选
         type:'pie',
@@ -281,7 +281,7 @@ https://blog.csdn.net/she_lover/article/details/51448967</p>
 }
 </code></pre></div></div>
 <h4 id="极坐标系下的柱状图">极坐标系下的柱状图</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
     angleAxis: {//极坐标系的角度轴
         type: 'category',
         data: [],
@@ -315,7 +315,7 @@ https://blog.csdn.net/she_lover/article/details/51448967</p>
 }
 </code></pre></div></div>
 <h4 id="雷达图">雷达图</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
     radar: [],//雷达图坐标系组件设置
     series:{
         type: 'radar',
@@ -327,7 +327,7 @@ https://blog.csdn.net/she_lover/article/details/51448967</p>
 }
 </code></pre></div></div>
 <h4 id="地图散点图">地图散点图</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>option={
     backgroundColor: '#fff',//背景色
     tooltip: {},//提示框
     geo:{},//地理坐标系组件

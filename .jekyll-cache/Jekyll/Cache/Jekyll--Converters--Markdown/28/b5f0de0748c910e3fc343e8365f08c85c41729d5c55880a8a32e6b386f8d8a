@@ -1,4 +1,4 @@
-I"<h2>swiper loop：true引发的问题</h2>
+I"4<h2>swiper loop：true引发的问题</h2>
 
 <p>最近在准备面试，想到之前面试总是会被问到：遇到过哪些坑，都是怎么解决的。每每遇到这种问题我都很尴尬，因为一下子让你去想踩过的坑还真不太想的起来，一般我只有再次遇到同样的坑的时候才会记起，所以决定以这篇文章开始，认真记录自己遇到过的坑，以备不时之需！</p>
 
@@ -16,7 +16,7 @@
 
 <p>下面贴上部分代码，有助于理解（因为直接从项目中拷过来，所以忽略无关代码）</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template&gt;
   &lt;div class="main-swiper"&gt;
     &lt;swiper v-if="bannerDetails &amp;&amp; bannerDetails.length&gt;1" :options="swiperOption" ref="mySwiper"&gt;
       &lt;!-- 幻灯内容 --&gt;
@@ -33,7 +33,7 @@
 &lt;/template&gt;
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
 import { swiper, swiperSlide, swiperPlugins } from 'vue-awesome-swiper';
 import {controller} from 'common/torlax/controller';
 export default {
