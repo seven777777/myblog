@@ -1,0 +1,15 @@
+I"Q<div id="book-chart" style="width: 100%;height:740px;"></div>
+<script type="text/javascript" src="http://localhost:4001/myblog/js/echarts.min-4.8.0.js"></script>
+
+<script type="text/javascript" src="http://localhost:4001/myblog/js/bookList.js"></script>
+
+<script type="text/javascript" src="http://localhost:4001/myblog/js/chartsCommon.js"></script>
+
+<script type="text/javascript">
+var myChart = echarts.init(document.getElementById('book-chart'));
+var baseData = bookData['2019']
+let opt = getReadSummaryChartOpt(baseData,{title:'2021年度读书统计'})
+myChart.setOption(opt);
+</script>
+
+:ET

@@ -22,6 +22,9 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        .title-txt{
+            white-space: normal;
+        }
     }
 
     .home-navbar {
@@ -41,6 +44,9 @@
         }
         .description{
             display: none;
+        }
+        .home{
+            display: block !important;            
         }
     }
 

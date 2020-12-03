@@ -1,8 +1,8 @@
 /*
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
- * @Last Modified by: seven
- * @Last Modified time: 2020-10-20 16:49:32
+ * @Last Modified by: seven.zhang
+ * @Last Modified time: 2020-12-03 16:44:55
  */
 /*------------------------------------*\
     #common
@@ -33,6 +33,14 @@ nav.navbar{
         color: $clr-def-dark;
         font-size: 12px;
         font-family: $ft-fm--cn;
+    }
+    .home{
+        color: $clr-def-dark;
+        font-weight: bold;
+        display: none;
+        padding: 0 8px;
+        font-size: 12px;
+        border-radius: 4px;
     }
     .tab{
         float:right;
@@ -369,6 +377,13 @@ footer{
     align-items: center;
     border-bottom: 8px double $clr-dark;
     margin-bottom: 20px;
+    .title-txt{
+        flex: 1;
+        margin-right: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }
 
 .postlist-wrap{
