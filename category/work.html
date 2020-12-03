@@ -7,6 +7,7 @@ layout: default
         {% assign type = category %}
         {% if post.category == 'work' %}
             <div class="artical_wrap">
+                <span class="time">{{ post.date | date: "%Y年%m月%d日" }}</span>
                 <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </div>
         {% endif %}
