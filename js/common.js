@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-18 14:22:14 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2019-11-07 14:16:24
+ * @Last Modified time: 2020-12-03 17:00:36
  */
 $('.timeago').timeago().show()
 
@@ -55,6 +55,12 @@ function setPostList(){
     }
 }
 setPostList()
+
+// img点击事件
+$('img').on('click',function(e){
+    let url = e.currentTarget.getAttribute('src')
+    window.open(url)
+})
 
 // 页面滚动事件
 // let toTop=0,toTopAfter=0;
