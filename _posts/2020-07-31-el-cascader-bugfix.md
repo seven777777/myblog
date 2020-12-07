@@ -1,8 +1,8 @@
 ---
 layout: post
-title: elementUI的cascader级联选择控件使用采坑：设置默认值回显问题解决方案（亲测有效！）
+title: elementUI的cascader级联选择控件使用踩坑：设置默认值回显问题解决方案（亲测有效！）
 time: 2020.07.31 16:44:05
-tags: Vue 采坑
+tags: Vue 踩坑
 category: work
 excerpt : 记录一个刚刚遇到的问题，以及解决方法。希望可以帮助之后遇到同样问题的小伙伴们！
 ---
