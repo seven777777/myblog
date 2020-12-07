@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2020-12-02 17:27:38 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2020-12-03 15:47:40
+ * @Last Modified time: 2020-12-07 10:12:48
  */
 const bookData = {
     '2017':[
@@ -489,6 +489,18 @@ const bookData = {
     //                 name:'东京老铺',
     //                 author:'Mateusz Urbanowicz',
     //                 type:'插画集',
+    //                 star:'4',
+    //                 kind:'非虚构'
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         month:'12月',
+    //         book:[
+    //             {
+    //                 name:皮囊,
+    //                 author:'蔡崇达',
+    //                 type:'散文',
     //                 star:'4',
     //                 kind:'非虚构'
     //             }
