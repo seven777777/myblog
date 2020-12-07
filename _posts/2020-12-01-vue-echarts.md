@@ -2,7 +2,7 @@
 layout: post
 title: echart实例仓库（基于vue）
 time: 2020.12.01 16:36:36
-tags: Echarts 干货
+tags: ECharts 干货
 category: work
 excerpt : 对于一个在大数据公司搬砖的前端，这几年除了地图，遇到最多的就是各种图表的需求了。基本上Echart作为一个图表库，已经能满足绝大多数项目中的图表需求了。BUT～常规的配置基本是无法满足产品大大们高端的品味的，So～难免也会遇到一些个性化的配置需求。
 ---
