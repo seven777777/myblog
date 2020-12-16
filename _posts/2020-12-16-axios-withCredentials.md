@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 获取渐变色的中间色值
+title: axios跨域问题小记
 time: 2020.12.16 14:58:00
 tags: 干货 踩坑
 category: work
