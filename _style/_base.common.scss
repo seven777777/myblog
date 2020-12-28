@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2020-12-03 17:14:55
+ * @Last Modified time: 2020-12-28 17:14:45
  */
 /*------------------------------------*\
     #common
@@ -320,18 +320,24 @@ footer{
 .module_wrap{
     font-size: 0.9em;
     line-height: 2;
+    color: $clr-text;
     // 二级标题
-    h4{
-        padding-left: 15px;
-        position: relative;
-        margin: 20px 0 10px 0;
-        font-size: $ft-sz-h4;
+    h1{ font-size: $ft-sz-h1;}
+    h2{ font-size: $ft-sz-h2;}
+    h3{ font-size: $ft-sz-h3;}
+    h4{ font-size: $ft-sz-h4;}
+    h5{ font-size: $ft-sz-h5;}
+    h2{
+        color: $clr-h2;
     }
-    h5{
-        padding-left: 15px;
-        position: relative;
-        margin: 20px 0 10px 0;
-        font-size: $ft-sz-h5;
+    h3,h4,h5,h6{
+        color: $clr-h3-6;
+    }
+    h2{
+        margin: 20px -50px 10px -50px;
+        padding: 20px 50px 0 50px;
+        border-top: 2px dashed $clr-contrast-dark;
+        text-shadow: 1px 1px $clr-def-light;
     }
 
     .emoji{
@@ -499,15 +505,16 @@ blockquote {
     margin: 20px 0;
     padding: 1em 1.5em;
     border-style: solid;
-    border-color: $clr-primary;
+    border-color: $clr-qt-border;
     border-width: 0px 1px 0px 7px;
     color: $clr-qt;
     font-size: $ft-sz-qt;
     position: relative;
+    box-shadow: 1px 1px 5px rgba(200, 200, 200, 0.5);
 
     &::before {
         // display: block;
-        content: '“';
+        // content: '“';
         // width: 20px;
         // padding: 0 10px 10px;
         // height: 30px;
@@ -516,6 +523,7 @@ blockquote {
         position: absolute;
         left: -1.2em;
         top: -0.5em;
+        color: $clr-qt-border;
         // background-color: white;
         // box-shadow: 0px 0px 5px 1px rgba(200, 200, 200, 0.5);
         z-index: -10;
@@ -536,6 +544,12 @@ blockquote {
         }
     }
 
+}
+.blockquote-desc{
+    text-align: right;
+    color: #d5d5d5;
+    font-size: 0.7rem;
+    margin-top: -10px;
 }
 
 .cn blockquote p {
@@ -577,5 +591,5 @@ h1>code {
 }
 
 h2>code, h3>code, h4>code, h5>code, h6>code {
-  color: $clr-h2-6;
+  color: $clr-h3-6;
 }

@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2020-12-02 17:09:02 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2020-12-03 16:07:23
+ * @Last Modified time: 2020-12-28 16:54:03
  */
 var baseColors = ['#81b214', '#FF8700', '#FFa540', '#fadcac', '#ffbd73'];
 var baseBgColor = '#206a5d';
@@ -341,7 +341,8 @@ function getReadSummaryChartOpt(baseData = [],chartData = {}){
                         return {
                             value: item,
                             itemStyle: {
-                                color: '#ec5858'
+                                // color: '#ec5858'
+                                color: colors[0]
                             }
                         }
                     }else{

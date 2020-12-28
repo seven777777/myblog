@@ -17,10 +17,10 @@ $clr-contrast-dark:    #cb5a29;
 $clr-contrast-darkest: #8e3108;   
 $clr-contrast-lighter: #efc9ad;   
 $clr-def-lightest:     #FFF;
-$clr-def-lighter:      #EFEFEF;
-$clr-def-light:        #bbbbbb;
-$clr-def:              #999;
-$clr-def-dark:         #676972;
+$clr-def-lighter:      #f1f1f1;
+$clr-def-light:        #999;
+$clr-def:              #666;
+$clr-def-dark:         #444;
 $clr-def-darker:       #333;
 $clr-def-darkest:      #000;
 
@@ -56,14 +56,16 @@ $clr-text: $clr-def;
 
 // Title
 $clr-h1: $clr-primary;
-$clr-h2-6: $clr-def-dark;
+$clr-h2: $clr-dark;
+$clr-h3-6: $clr-primary;
 
 
 
 
 // Quotes
-$clr-qt:            $clr-dark;
-$clr-qt-back:       $clr-contrast;
+$clr-qt:            $clr-def-light;
+$clr-qt-border:     $clr-light;
+$clr-qt-back:       $clr-def-lighter;
 $clr-license-back:  $clr-lighter;
 $clr-code-back:     $clr-lighter;
 

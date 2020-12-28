@@ -1,0 +1,27 @@
+I"R<h2 id="问题描述">问题描述：</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>后端设置了允许跨域，前端访问接口时依旧提示跨域
+</code></pre></div></div>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/2020-12-16-axios-withCredentials/pic01.png" /></p>
+
+<h2 id="原因">原因：</h2>
+<p>设置axios实例时，设置了<code class="language-plaintext highlighter-rouge">withCredentials</code>:<code class="language-plaintext highlighter-rouge">true</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let myHttp = axios.create({
+    baseURL: env.apiPath,
+    timeout: 30000,
+    headers: {
+        'Content-Type': `application/json; charset=utf-8`
+    },
+    withCredentials: true//主要因为这个设置
+});
+</code></pre></div></div>
+<h2 id="解决如何避免之后踩坑">解决：如何避免之后踩坑</h2>
+<p>对于不需要发送cookie的请求，只需将<code class="language-plaintext highlighter-rouge">withCredentials</code>设为<code class="language-plaintext highlighter-rouge">false</code>即可。</p>
+
+<p>否则：如果前端配置了<code class="language-plaintext highlighter-rouge">withCredentials</code>:<code class="language-plaintext highlighter-rouge">true</code>，后端在增加 <code class="language-plaintext highlighter-rouge">response</code> 头信息<code class="language-plaintext highlighter-rouge">Access-Control-Allow-Origin</code>时必须指定域名，且不能为<code class="language-plaintext highlighter-rouge">*</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>header("Access-Control-Allow-Origin","指定域名");
+header("Access-Control-Allow-Credentials", "true");
+</code></pre></div></div>
+:ET
