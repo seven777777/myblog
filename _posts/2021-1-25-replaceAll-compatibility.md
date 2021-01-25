@@ -15,15 +15,15 @@ excerpt : 之前在项目中维护同事代码，发现部分浏览器及低版�
 <img src="https://seven777777.github.io/myblog/images/post/2021-1-25-replaceAll-compatibility/pic02.png" />
 
 ### 解决方案
-1. 利用`splite()`和`join()`
+
+1.利用`splite()`和`join()`
 
 ```
 let str = '2021.01.25'//要将其转换成2021-01-25
 console.log(str.split('.').join('-'))//2021-01-25
 ```
 
-
-2. 使用`replace()`代替
+2.使用`replace()`代替
 
  ```
 let str = '2021.01.25'//要将其转换成2021-01-25
