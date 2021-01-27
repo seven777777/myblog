@@ -2,7 +2,7 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2020-12-28 17:14:45
+ * @Last Modified time: 2021-01-27 10:25:53
  */
 /*------------------------------------*\
     #common
@@ -155,7 +155,8 @@ footer{
                 height: auto;
                 position: relative;
                 top: 50%;
-                transform: translateY(-50%);
+                left:50%;
+                transform: translateX(-50%) translateY(-50%);
             }
         }
     }
