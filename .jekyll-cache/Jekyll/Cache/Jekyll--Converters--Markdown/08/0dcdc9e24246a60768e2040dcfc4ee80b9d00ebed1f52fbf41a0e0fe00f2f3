@@ -1,0 +1,27 @@
+I"~<p>之前在项目中维护同事代码，发现部分浏览器及低版本Chrome浏览器都出现报错情况。</p>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/2021-1-25-replaceAll-compatibility/pic01.png" /></p>
+
+<p>排查发现是由于<code class="language-plaintext highlighter-rouge">replaceAll()</code>函数兼容性问题所导致</p>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/2021-1-25-replaceAll-compatibility/pic02.png" /></p>
+
+<h3 id="解决方案">解决方案</h3>
+
+<p>1.利用<code class="language-plaintext highlighter-rouge">splite()</code>和<code class="language-plaintext highlighter-rouge">join()</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let str = '2021.01.25'//要将其转换成2021-01-25
+console.log(str.split('.').join('-'))//2021-01-25
+</code></pre></div></div>
+
+<p>2.使用<code class="language-plaintext highlighter-rouge">replace()</code>代替</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let str = '2021.01.25'//要将其转换成2021-01-25
+console.log(str.replace(/\./g,'-'))//2021-01-25
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">replace()</code>接受两个参数，第一个参数是需要替换的字符，支持正则，如果不增加正则的<code class="language-plaintext highlighter-rouge">g</code>关键字，则表示提换第一个匹配的字符串。</p>
+
+<p>兼容性很好，如下：
+<img src="https://seven777777.github.io/myblog/images/post/2021-1-25-replaceAll-compatibility/pic03.png" /></p>
+:ET

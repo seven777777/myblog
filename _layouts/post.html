@@ -20,7 +20,10 @@
                 <div class="tag-time mr_5">{{ time | date: "%Y年%m月%d日" }}</div>
                 <!-- <div class="tag-time timeago cn mr_5" title="{{ time | replace: '.', '-' | replace: ' ', 'T' }}+08:00">{{ time }}</div> -->
                 <i class="iconfont iconliulan mr_5"></i>
-                <span class="tag-time" id="busuanzi_value_page_pv">0</span>
+                <!-- <span class="tag-time" id="busuanzi_value_page_pv">0</span> -->
+                <span class="tag-time" id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span>次
+                  </span>
             </div>
             {% endif %}
         </h1>
