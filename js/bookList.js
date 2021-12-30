@@ -2,7 +2,7 @@
  * @Author: seven.zhang
  * @Date: 2020-12-02 17:27:38
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2021-11-18 12:15:53
+ * @Last Modified time: 2021-12-20 10:32:02
  */
 const bookData = {
     2017: [
@@ -534,319 +534,319 @@ const bookData = {
                 }
             ]
         }
+    ],
+    2021: [
+        {
+            month: '1月',
+            book: [
+                {
+                    name: '走夜路请放声歌唱',
+                    author: '李娟',
+                    type: '散文',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '乱时候,穷时候',
+                    author: '姜淑梅',
+                    type: '回忆录',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '九篇雪',
+                    author: '李娟',
+                    type: '散文',
+                    star: '3',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '2月',
+            book: [
+                {
+                    name: '牧羊少年奇幻之旅',
+                    author: '保罗科埃略',
+                    type: '长篇小说',
+                    star: '5',
+                    kind: '虚构'
+                },
+                {
+                    name: '野草',
+                    author: '鲁迅',
+                    type: '散文诗',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '蛤蟆先生去看心理医生',
+                    author: '罗伯特·戴博德',
+                    type: '心理学',
+                    star: '4',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '3月',
+            book: [
+                {
+                    name: '神的孩子全跳舞',
+                    author: '村上春树',
+                    type: '短篇小说集',
+                    star: '4',
+                    kind: '虚构'
+                },
+                {
+                    name: '上帝的骰子：量子物理趣画',
+                    author: '罗金海',
+                    type: '物理漫画',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '被讨厌的勇气',
+                    author: '岸见一郎/古贺史健',
+                    type: '心理学',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '十月国度',
+                    author: '雷·布拉德伯里',
+                    type: '科幻',
+                    star: '4',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '4月',
+            book: [
+                {
+                    name: '羊道 · 春牧场',
+                    author: '李娟',
+                    type: '散文',
+                    star: '5',
+                    kind: '非虚构'
+                },
+                {
+                    name: '羊道 · 前山夏牧场',
+                    author: '李娟',
+                    type: '散文',
+                    star: '5',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '5月',
+            book: [
+                {
+                    name: '羊道 · 深山夏牧场',
+                    author: '李娟',
+                    type: '散文',
+                    star: '5',
+                    kind: '非虚构'
+                },
+                {
+                    name: '论自由',
+                    author: '约翰·斯图亚特·穆勒',
+                    type: '政治哲学',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '6月',
+            book: [
+                {
+                    name: '2001：太空漫游',
+                    author: '阿瑟•克拉克',
+                    type: '科幻小说',
+                    star: '5',
+                    kind: '虚构'
+                },
+                {
+                    name: '钝感力',
+                    author: '渡边淳一',
+                    type: '日本文学',
+                    star: '3',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '7月',
+            book: [
+                {
+                    name: '额尔古纳河右岸',
+                    author: '迟子建',
+                    type: '小说',
+                    star: '5',
+                    kind: '虚构'
+                },
+                {
+                    name: '鲜衣怒马少年时',
+                    author: '少年怒马',
+                    type: '历史',
+                    star: '3',
+                    kind: '非虚构'
+                },
+                {
+                    name: '人性的因素',
+                    author: '毛姆',
+                    type: '短篇小说',
+                    star: '3',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '8月',
+            book: [
+                {
+                    name: '而已集',
+                    author: '鲁迅',
+                    type: '杂文',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '9月',
+            book: [
+                {
+                    name: '冬牧场',
+                    author: '李娟',
+                    type: '散文',
+                    star: '5',
+                    kind: '非虚构'
+                },
+                {
+                    name: '我的阿勒泰',
+                    author: '李娟',
+                    type: '散文',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '掌中之物',
+                    author: '贝昕',
+                    type: '网文小说',
+                    star: '3',
+                    kind: '虚构'
+                },
+                {
+                    name: '遥远的向日葵地',
+                    author: '李娟',
+                    type: '散文',
+                    star: '5',
+                    kind: '非虚构'
+                },
+                {
+                    name: '边疆动物小说：索勒索勒',
+                    author: '李娟',
+                    type: '散文',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '10月',
+            book: [
+                {
+                    name: '呼兰河传',
+                    author: '萧红',
+                    type: '长篇小说',
+                    star: '5',
+                    kind: '虚构'
+                },
+                {
+                    name: '树犹如此',
+                    author: '白先勇',
+                    type: '散文',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '顾城的诗 顾城的画',
+                    author: '顾城',
+                    type: '诗集',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '11月',
+            book: [
+                {
+                    name: '面纱',
+                    author: '毛姆',
+                    type: '小说',
+                    star: '4',
+                    kind: '虚构'
+                },
+                {
+                    name: '我喜欢生命本来的样子',
+                    author: '周国平',
+                    type: '杂文',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '飞鸟集',
+                    author: '泰戈尔',
+                    type: '诗集',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '知道分子',
+                    author: '王朔',
+                    type: '杂文',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '12月',
+            book: [
+                {
+                    name: '夏天只是西瓜做的一个梦',
+                    author: '鱼山',
+                    type: '绘本',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '秋园',
+                    author: '杨本芬',
+                    type: '自传体小说',
+                    star: '5',
+                    kind: '非虚构'
+                },
+                {
+                    name: '漂流船',
+                    author: '杰罗姆',
+                    type: '小说',
+                    star: '4',
+                    kind: '虚构'
+                },
+                {
+                    name: '呐喊',
+                    author: '鲁迅',
+                    type: '短篇小说集',
+                    star: '4',
+                    kind: '虚构'
+                }
+            ]
+        }
     ]
-    // 2021: [
-    //     {
-    //         month: '1月',
-    //         book: [
-    //             {
-    //                 name: '走夜路请放声歌唱',
-    //                 author: '李娟',
-    //                 type: '散文',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '乱时候,穷时候',
-    //                 author: '姜淑梅',
-    //                 type: '回忆录',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '九篇雪',
-    //                 author: '李娟',
-    //                 type: '散文',
-    //                 star: '3',
-    //                 kind: '非虚构'
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         month: '2月',
-    //         book: [
-    //             {
-    //                 name: '牧羊少年奇幻之旅',
-    //                 author: '保罗科埃略',
-    //                 type: '长篇小说',
-    //                 star: '5',
-    //                 kind: '虚构'
-    //             },
-    //             {
-    //                 name: '野草',
-    //                 author: '鲁迅',
-    //                 type: '散文诗',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '蛤蟆先生去看心理医生',
-    //                 author: '罗伯特·戴博德',
-    //                 type: '心理学',
-    //                 star: '4',
-    //                 kind: '虚构'
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         month: '3月',
-    //         book: [
-    //             {
-    //                 name: '神的孩子全跳舞',
-    //                 author: '村上春树',
-    //                 type: '短篇小说集',
-    //                 star: '4',
-    //                 kind: '虚构'
-    //             },
-    //             {
-    //                 name: '上帝的骰子：量子物理趣画',
-    //                 author: '罗金海',
-    //                 type: '物理漫画',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '被讨厌的勇气',
-    //                 author: '岸见一郎/古贺史健',
-    //                 type: '心理学',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '十月国度',
-    //                 author: '雷·布拉德伯里',
-    //                 type: '科幻',
-    //                 star: '4',
-    //                 kind: '虚构'
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         month: '4月',
-    //         book: [
-    //             {
-    //                 name: '羊道 · 春牧场',
-    //                 author: '李娟',
-    //                 type: '散文',
-    //                 star: '5',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '羊道 · 前山夏牧场',
-    //                 author: '李娟',
-    //                 type: '散文',
-    //                 star: '5',
-    //                 kind: '非虚构'
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         month: '5月',
-    //         book: [
-    //             {
-    //                 name: '羊道 · 深山夏牧场',
-    //                 author: '李娟',
-    //                 type: '散文',
-    //                 star: '5',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '论自由',
-    //                 author: '约翰·斯图亚特·穆勒',
-    //                 type: '政治哲学',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         month: '6月',
-    //         book: [
-    //             {
-    //                 name: '2001：太空漫游',
-    //                 author: '阿瑟•克拉克',
-    //                 type: '科幻小说',
-    //                 star: '5',
-    //                 kind: '虚构'
-    //             },
-    //             {
-    //                 name: '钝感力',
-    //                 author: '渡边淳一',
-    //                 type: '日本文学',
-    //                 star: '3',
-    //                 kind: '非虚构'
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         month: '7月',
-    //         book: [
-    //             {
-    //                 name: '额尔古纳河右岸',
-    //                 author: '迟子建',
-    //                 type: '小说',
-    //                 star: '5',
-    //                 kind: '虚构'
-    //             },
-    //             {
-    //                 name: '鲜衣怒马少年时',
-    //                 author: '少年怒马',
-    //                 type: '历史',
-    //                 star: '3',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '人性的因素',
-    //                 author: '毛姆',
-    //                 type: '短篇小说',
-    //                 star: '3',
-    //                 kind: '虚构'
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         month: '8月',
-    //         book: [
-    //             {
-    //                 name: '而已集',
-    //                 author: '鲁迅',
-    //                 type: '杂文',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         month: '9月',
-    //         book: [
-    //             {
-    //                 name: '冬牧场',
-    //                 author: '李娟',
-    //                 type: '散文',
-    //                 star: '5',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '我的阿勒泰',
-    //                 author: '李娟',
-    //                 type: '散文',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '掌中之物',
-    //                 author: '贝昕',
-    //                 type: '网文小说',
-    //                 star: '3',
-    //                 kind: '虚构'
-    //             },
-    //             {
-    //                 name: '遥远的向日葵地',
-    //                 author: '李娟',
-    //                 type: '散文',
-    //                 star: '5',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '边疆动物小说：索勒索勒',
-    //                 author: '李娟',
-    //                 type: '散文',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         month: '10月',
-    //         book: [
-    //             {
-    //                 name: '呼兰河传',
-    //                 author: '萧红',
-    //                 type: '长篇小说',
-    //                 star: '5',
-    //                 kind: '虚构'
-    //             },
-    //             {
-    //                 name: '树犹如此',
-    //                 author: '白先勇',
-    //                 type: '散文',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             },
-    //             {
-    //                 name: '顾城的诗 顾城的画',
-    //                 author: '顾城',
-    //                 type: '诗集',
-    //                 star: '4',
-    //                 kind: '非虚构'
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         month: '11月',
-    //         book: [
-    //             {
-    //                 name: '面纱',
-    //                 author: '毛姆',
-    //                 type: '小说',
-    //                 star: '4',
-    //                 kind: '虚构'
-    //             },
-    //             {
-    //                 name: '我喜欢生命本来的样子',
-    //                 author: '周国平',
-    //                 type: '杂文',
-    //                 star: '3',
-    //                 kind: '非虚构'
-    //             }
-    //             // {
-    //             //     name: '东京老铺',
-    //             //     author: 'Mateusz Urbanowicz',
-    //             //     type: '插画集',
-    //             //     star: '4',
-    //             //     kind: '非虚构'
-    //             // }
-    //         ]
-    //     },
-    //     {
-    //         month: '12月',
-    //         book: [
-    //             // {
-    //             //     name: '皮囊',
-    //             //     author: '蔡崇达',
-    //             //     type: '散文',
-    //             //     star: '4',
-    //             //     kind: '非虚构'
-    //             // },
-    //             // {
-    //             //     name: '时间的秩序',
-    //             //     author: '卡洛·罗韦利',
-    //             //     type: '科普',
-    //             //     star: '5',
-    //             //     kind: '非虚构'
-    //             // },
-    //             // {
-    //             //     name: '城南旧事',
-    //             //     author: '林海音',
-    //             //     type: '半自传小说',
-    //             //     star: '5',
-    //             //     kind: '虚构'
-    //             // },
-    //             // {
-    //             //     name: '难民',
-    //             //     author: '阮清越',
-    //             //     type: '半自传小说',
-    //             //     star: '4',
-    //             //     kind: '虚构'
-    //             // },
-    //             // {
-    //             //     name: '笑场',
-    //             //     author: '李诞',
-    //             //     type: '其他',
-    //             //     star: '3',
-    //             //     kind: '虚构'
-    //             // }
-    //         ]
-    //     }
-    // ]
 }
