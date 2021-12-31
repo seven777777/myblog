@@ -11,13 +11,17 @@
     <div class="swiper-container" id="bannerSwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <a class="banner-img" target="_blank" href="https://seven777777.github.io/myblog/life/2020/12/30/read-summary-2020/"><img src="{{site.imgPath}}/banner/banner04.png"></a>
+                <a class="banner-img" target="_blank"
+                    href="https://seven777777.github.io/myblog/life/2021/12/30/read-summary-2021/"><img
+                        src="{{site.imgPath}}/banner/banner05.png"></a>
             </div>
             <div class="swiper-slide">
-                <a class="banner-img" target="_blank" href="http://www.mafengwo.cn/i/17724604.html"><img src="{{site.imgPath}}/banner/banner01.jpg"></a>
+                <a class="banner-img" target="_blank" href="http://www.mafengwo.cn/i/17724604.html"><img
+                        src="{{site.imgPath}}/banner/banner01.jpg"></a>
             </div>
             <div class="swiper-slide">
-                <a class="banner-img" target="_blank" href="http://www.mafengwo.cn/i/17724604.html"><img src="{{site.imgPath}}/banner/banner02.jpg"></a>
+                <a class="banner-img" target="_blank" href="http://www.mafengwo.cn/i/17724604.html"><img
+                        src="{{site.imgPath}}/banner/banner02.jpg"></a>
             </div>
             <!-- <div class="swiper-slide">
                 <a class="banner-img" target="_blank" href="http://www.mafengwo.cn/i/17724604.html"><img src="{{site.imgPath}}/banner/banner03.jpg"></a>
@@ -35,7 +39,7 @@
         </div>
         <div class="wb-follow">
             <p class="abname mr_10">seven | 张敏</p>
-            <wb:follow-button uid="1984078467" type="red_1" width="62" height="26" ></wb:follow-button>
+            <wb:follow-button uid="1984078467" type="red_1" width="62" height="26"></wb:follow-button>
         </div>
         <p class="abdesc"><span class="iconfont iconxiazai19 mr_10">上海</span> 前端开发工程师</p>
         <p class="abtext">
@@ -46,7 +50,8 @@
     </div>
     <div class="introduce-box introduce-category" data-name="{{ category | first }}">
         {% for category in site.categories %}
-        <a class="category-list" data-name="{{ category | first }}" href="{{ site.baseurl}}/category/{{ category | first }}">
+        <a class="category-list" data-name="{{ category | first }}"
+            href="{{ site.baseurl}}/category/{{ category | first }}">
             <span class="list-icon iconfont"></span>
             <div>
                 <p class="list-head">
@@ -60,7 +65,7 @@
     </div>
     <div class="introduce-box introduce-link">
         <div class="link-gzh">
-            <img src="{{ site.baseurl}}/images/gzh.jpg" alt="搴芳拾梦公众号"/>
+            <img src="{{ site.baseurl}}/images/gzh.jpg" alt="搴芳拾梦公众号" />
             <p class="text">扫码订阅公众号<br>不定期推送本站优质非技术文章哦！</p>
         </div>
     </div>
@@ -94,7 +99,8 @@
         <div class="postlist-block">
             <div class="flex_align">
                 {% assign time = post.time %}
-                <div class="timeago tag-time cn" title="{{ time | replace: '.', '-' | replace: ' ', 'T' }}+08:00">{{ time }}</div>
+                <div class="timeago tag-time cn" title="{{ time | replace: '.', '-' | replace: ' ', 'T' }}+08:00">{{
+                    time }}</div>
                 <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </div>
             <ul class="postlist-subDes">
@@ -118,19 +124,19 @@
 
     <div class="pagination">
         {% if paginator.previous_page %}
-            <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="paginationItem">
-                <i class="iconfont iconshangyiye"></i>
-            </a>
+        <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="paginationItem">
+            <i class="iconfont iconshangyiye"></i>
+        </a>
         {% else %}
-            <span class="paginationItem-notallowed"><i class="iconfont iconshangyiye"></i></span>
+        <span class="paginationItem-notallowed"><i class="iconfont iconshangyiye"></i></span>
         {% endif %}
-            <span class="paginationItem">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+        <span class="paginationItem">{{ paginator.page }} / {{ paginator.total_pages }}</span>
         {% if paginator.next_page %}
-            <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="paginationItem">
-                <i class="iconfont iconxiayiye"></i>
-            </a>
+        <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="paginationItem">
+            <i class="iconfont iconxiayiye"></i>
+        </a>
         {% else %}
-            <span class="paginationItem-notallowed next"><i class="iconfont iconxiayiye"></i></span>
+        <span class="paginationItem-notallowed next"><i class="iconfont iconxiayiye"></i></span>
         {% endif %}
         <a href="{{ site.baseurl }}/list" class="paginationItem">All Posts</a>
     </div>
@@ -138,9 +144,9 @@
     <!-- ························Gitalk评论系统·························· -->
     <div id="gitalk-container"></div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
     <script>
-        var gitalk  = new Gitalk ({
+        var gitalk = new Gitalk({
             id: location.pathname,   // Ensure uniqueness and length less than 50
             clientID: '6140c3098c5e95fcf6a9',
             clientSecret: '4c660ac4037d51cfd8edbccadac4c8cb8a611425',
@@ -152,48 +158,48 @@
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
         gitalk.render('gitalk-container')
-    </script> 
-    
+    </script>
+
 </div>
 
 
 {% include footer.html %}
 
 <script>
-var mySwiper = new Swiper('#bannerSwiper', {
-	autoplay: {
-        delay:5000
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-})
+    var mySwiper = new Swiper('#bannerSwiper', {
+        autoplay: {
+            delay: 5000
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    })
 
-// 初始化category列表文字显示
-function initCategory(){
-    // console.log(categoryConfig,$('.introduce-category .category-list').length)
-    let categoryItem = $('.introduce-category .category-list')
-    const n = categoryItem.length;
-    const m = categoryConfig.length
-    for(var i=0; i<n;i++){
-        let _name = $(categoryItem[i]).data('name')
-        for(var s=0; s<m;s++){
-            if(_name == categoryConfig[s].name){
-                $(categoryItem[i]).find('.list-icon').addClass(categoryConfig[s].icon)
-                $(categoryItem[i]).find('.title').text(categoryConfig[s].title)
-                $(categoryItem[i]).find('.desc').text(categoryConfig[s].desc)
-                break;
+    // 初始化category列表文字显示
+    function initCategory() {
+        // console.log(categoryConfig,$('.introduce-category .category-list').length)
+        let categoryItem = $('.introduce-category .category-list')
+        const n = categoryItem.length;
+        const m = categoryConfig.length
+        for (var i = 0; i < n; i++) {
+            let _name = $(categoryItem[i]).data('name')
+            for (var s = 0; s < m; s++) {
+                if (_name == categoryConfig[s].name) {
+                    $(categoryItem[i]).find('.list-icon').addClass(categoryConfig[s].icon)
+                    $(categoryItem[i]).find('.title').text(categoryConfig[s].title)
+                    $(categoryItem[i]).find('.desc').text(categoryConfig[s].desc)
+                    break;
+                }
             }
         }
-    }
-    
-}
-initCategory()
 
-window.onload = function () {
-    new Image().src = '{{site.imgPath}}/banner/banner01.jpg';
-    new Image().src = '{{site.imgPath}}/banner/banner02.jpg';
-    new Image().src = '{{site.imgPath}}/banner/banner03.jpg';
-}
+    }
+    initCategory()
+
+    window.onload = function () {
+        new Image().src = '{{site.imgPath}}/banner/banner01.jpg';
+        new Image().src = '{{site.imgPath}}/banner/banner02.jpg';
+        new Image().src = '{{site.imgPath}}/banner/banner03.jpg';
+    }
 </script>
