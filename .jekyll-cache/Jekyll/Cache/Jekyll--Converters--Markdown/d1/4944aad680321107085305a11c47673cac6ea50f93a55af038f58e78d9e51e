@@ -1,0 +1,36 @@
+I"�<p>实现思路：</p>
+
+<p>渐变背景色+与背景色相同的边框虚点线+<code class="language-plaintext highlighter-rouge">background-origin</code>设置背景图定位</p>
+
+<p>效果图：
+<img src="https://seven777777.github.io/myblog/images/post/2022-01-25-dottedGradient/pic01.png" /></p>
+
+<p>代码：</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nt">--</span><span class="err">虚点线元素容器</span><span class="nt">--</span><span class="o">&gt;</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#636465</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.demo</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="err">&lt;!--设置需要呈现的虚点线的渐变色--&gt;</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="m">46deg</span><span class="p">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span> <span class="m">0%</span><span class="p">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">0.04</span><span class="p">)</span> <span class="m">100%</span><span class="p">);</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translateX</span><span class="p">(</span><span class="m">-50%</span><span class="p">)</span> <span class="n">translateY</span><span class="p">(</span><span class="m">-50%</span><span class="p">);</span>
+    <span class="err">&lt;!--背景色从边框开始填充--&gt;</span>
+    <span class="nl">background-origin</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+    <span class="err">&lt;!--边框颜色与容器背景色一致--&gt;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">dotted</span> <span class="m">#636465</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>总结：</p>
+
+<p>本来觉得渐变的虚点线肯定是实现不了的，网上查资料时一些方案给了灵感，所以脑洞大开了一下，投机取巧最终实现了这个效果。</p>
+:ET
