@@ -2,39 +2,43 @@
  * @Author: seven.zhang 
  * @Date: 2018-05-31 10:33:36 
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2021-01-27 10:25:53
+ * @Last Modified time: 2023-01-28 13:07:25
  */
 /*------------------------------------*\
     #common
 \*------------------------------------*/
 
 // ========  全局布局 start  ========
-.pageWrap{
+.pageWrap {
     width: 100%;
     min-width: 1200px;
     min-height: 100vh;
 }
 
-.content-wrap{
+.content-wrap {
     width: 960px;
     margin: 0 auto;
 }
-nav.navbar{
+
+nav.navbar {
     background: rgba($color: white, $alpha: 0.8);
     width: 100%;
     height: 100%;
     padding: 0 20px;
     @extend .flex_justify_between;
-    .logo{
+
+    .logo {
         font-size: 20px;
         color: $clr-nav-logo;
     }
-    .description{
+
+    .description {
         color: $clr-def-dark;
         font-size: 12px;
         font-family: $ft-fm--cn;
     }
-    .home{
+
+    .home {
         color: $clr-def-dark;
         font-weight: bold;
         display: none;
@@ -42,41 +46,48 @@ nav.navbar{
         font-size: 12px;
         border-radius: 4px;
     }
-    .tab{
-        float:right;
-        a.tab-box{
+
+    .tab {
+        float: right;
+
+        a.tab-box {
             display: inline-block;
             padding: 0 10px;
-            color:$clr-def-dark;
+            color: $clr-def-dark;
             font-size: 16px;
             height: 60px;
             line-height: 60px;
             box-sizing: border-box;
-            &.active{
+
+            &.active {
                 border-bottom: 2px solid $clr-primary;
             }
         }
     }
 }
-footer{
+
+footer {
     width: 100%;
     height: 150px;
     background: $clr-def-darker;
     margin-top: 20px;
-    color:#999;
-    font-size:12px;
+    color: #999;
+    font-size: 12px;
     line-height: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    .link-gzh{
+
+    .link-gzh {
         @extend .flex_column_center;
         margin-left: 40px;
-        img{
+
+        img {
             width: 60px;
             height: auto;
         }
-        .text{
+
+        .text {
             font-size: 12px;
             color: $clr-def;
             text-align: center;
@@ -84,12 +95,14 @@ footer{
             white-space: nowrap;
         }
     }
-    .toTop{
+
+    .toTop {
         line-height: 1.5;
         margin-left: 40px;
     }
 }
-.scrollBox{
+
+.scrollBox {
     width: 40px;
     height: 40px;
     background: $clr-contrast;
@@ -102,21 +115,23 @@ footer{
     margin-left: 500px;
 }
 
-.followBox{
+.followBox {
     @extend .flex_center;
-    .item{
+
+    .item {
         font-size: 18px;
         color: #999;
         cursor: pointer;
         margin-right: 10px;
-        &:hover{
+
+        &:hover {
             color: #666;
         }
     }
 }
 
 // 版权
-.copyright{
+.copyright {
     border: 2px dashed #333;
     padding: 15px;
     border-radius: 10px;
@@ -124,13 +139,15 @@ footer{
     color: #666;
     margin: 30px auto;
     @extend .flex_align;
-    a{
+
+    a {
         color: $clr-contrast;
         font-weight: bold;
         display: inline-block;
         margin: 0 5px;
     }
-    .con{
+
+    .con {
         margin-left: 15px;
     }
 }
@@ -138,31 +155,34 @@ footer{
 // ========  全局布局 end  ========
 
 // ========  首页相关 start  ========
-.home-banner-warp{
+.home-banner-warp {
     width: 100%;
     height: 666px;
     position: relative;
     background: $clr-light;
-    .swiper-container{
+
+    .swiper-container {
         width: 100%;
         height: 100%;
-        .banner-img{
+
+        .banner-img {
             display: block;
             width: 100%;
             height: 100%;
-            img{
+
+            img {
                 width: 100%;
                 height: auto;
                 position: relative;
                 top: 50%;
-                left:50%;
+                left: 50%;
                 transform: translateX(-50%) translateY(-50%);
             }
         }
     }
 }
 
-.home-navbar{
+.home-navbar {
     width: 940px;
     height: 74px;
     position: absolute;
@@ -173,7 +193,7 @@ footer{
     @extend .default-shadow;
 }
 
-.home-introduce{
+.home-introduce {
     background: white;
     height: 320px;
     margin-top: -80px;
@@ -182,15 +202,17 @@ footer{
     display: flex;
     @extend .default-shadow;
 
-    .introduce-box{
+    .introduce-box {
         flex: 1;
         flex-shrink: 0;
         display: flex;
         flex-direction: column;
-        &.introduce-blog{
+
+        &.introduce-blog {
             align-items: center;
             padding: 20px;
-            .avatar{
+
+            .avatar {
                 flex-shrink: 0;
                 width: 100px;
                 height: 100px;
@@ -198,37 +220,44 @@ footer{
                 background: $clr-def-light;
                 border: 4px solid white;
                 overflow: hidden;
-                img{
+
+                img {
                     width: 100%;
                     height: 100%;
                 }
             }
-            .abname{
+
+            .abname {
                 color: #3f3f3f;
                 font-weight: bold;
                 font-size: 16px;
                 margin-bottom: 10px;
             }
-            .abdesc{
+
+            .abdesc {
                 color: #1abc9c;
                 font-size: 14px;
             }
-            .abtext{
+
+            .abtext {
                 padding: 15px 35px;
                 color: #9a9a9a;
                 line-height: 26px;
                 font-size: 14px;
                 text-align: center;
             }
-            .wb-follow{
+
+            .wb-follow {
                 @extend .flex_center;
             }
         }
-        &.introduce-category{
+
+        &.introduce-category {
             overflow: hidden;
             border-left: 2px solid #ffea00;
             border-right: 2px solid #ffea00;
-            .category-list{
+
+            .category-list {
                 background: #ffea00;
                 flex: 1;
                 padding: 20px;
@@ -236,43 +265,52 @@ footer{
                 transition: all .5s;
                 display: flex;
                 align-items: center;
-                &:nth-child(2){
+
+                &:nth-child(2) {
                     background: #edda06;
                 }
-                &:hover{
-                    transform:scale(1.1);
+
+                &:hover {
+                    transform: scale(1.1);
                     background: white;
                 }
 
-                .list-icon{
+                .list-icon {
                     font-size: 50px;
                     margin-right: 15px;
                 }
-                .list-head{
+
+                .list-head {
                     font-size: 20px;
                     color: $clr-def-darker;
                 }
-                .list-num{
+
+                .list-num {
                     font-size: 14px;
                     color: $clr-def-dark;
                     line-height: 2;
                 }
-                .desc{
+
+                .desc {
                     font-size: 14px;
                     color: $clr-def-dark;
                 }
             }
         }
-        &.introduce-link{
+
+        &.introduce-link {
             padding: 20px;
             align-items: center;
-            .link-gzh{
+
+            .link-gzh {
                 width: 220px;
-                img{
+
+                img {
                     width: 100%;
                     height: auto;
                 }
-                .text{
+
+                .text {
                     font-size: 12px;
                     color: $clr-def;
                     text-align: center;
@@ -286,9 +324,10 @@ footer{
 // ========  首页相关 end  ========
 
 // ========  default页面 start  ========
-.default-nav-wrap{
+.default-nav-wrap {
     height: 60px;
-    .default-nav{
+
+    .default-nav {
         width: 100%;
         height: 60px;
         background: $clr-def-lightest;
@@ -300,14 +339,15 @@ footer{
         @extend .default-shadow;
     }
 }
-.default-con{
+
+.default-con {
     @extend .content-wrap;
     @extend .con-min-height;
     @extend .default-shadow;
     padding: 30px 50px;
     margin-top: 20px;
 
-    p>img{
+    p>img {
         display: block;
         margin: 10px auto;
         max-width: 100%;
@@ -319,64 +359,87 @@ footer{
 
 
 // ========  post布局相关 start  ========
-.module_wrap{
+.module_wrap {
     font-size: 0.9em;
     line-height: 2;
     color: $clr-text;
+
     // 二级标题
-    h1{ font-size: $ft-sz-h1;}
-    h2{ font-size: $ft-sz-h2;}
-    h3{ font-size: $ft-sz-h3;}
-    h4{ font-size: $ft-sz-h4;}
-    h5{ font-size: $ft-sz-h5;}
-    h2{
+    h1 {
+        font-size: $ft-sz-h1;
+    }
+
+    h2 {
+        font-size: $ft-sz-h2;
+    }
+
+    h3 {
+        font-size: $ft-sz-h3;
+    }
+
+    h4 {
+        font-size: $ft-sz-h4;
+    }
+
+    h5 {
+        font-size: $ft-sz-h5;
+    }
+
+    h2 {
         color: $clr-h2;
     }
-    h3,h4,h5,h6{
+
+    h3,
+    h4,
+    h5,
+    h6 {
         color: $clr-h3-6;
     }
-    h2{
+
+    h2 {
         margin: 20px -50px 10px -50px;
         padding: 20px 50px 0 50px;
         border-top: 2px dashed $clr-contrast-dark;
         text-shadow: 1px 1px $clr-def-light;
     }
 
-    .emoji{
+    .emoji {
         display: inline-block;
         margin: 0;
     }
 
-    p{
+    p {
         // display: flex;
         // align-items: center;
-        text-indent:2em
+        text-indent: 2em
     }
 
-    ul>li{
-        &:not(.postlist-tag){
+    ul>li {
+        &:not(.postlist-tag) {
             list-style: circle;
             margin-left: 2em;
             color: $clr-dark;
             font-weight: bold;
         }
-        p{
+
+        p {
             text-indent: 0;
         }
     }
 
-    blockquote{
-        p{
+    blockquote {
+        p {
             text-indent: 0;
         }
     }
 
-    p > a{
+    p>a {
         font-style: italic;
         color: $clr-contrast-darkest;
     }
 }
-.module-title{
+
+.module-title {
     font-size: 1.2em;
     color: $clr-h1;
     height: 2.8em;
@@ -385,7 +448,8 @@ footer{
     align-items: center;
     border-bottom: 8px double $clr-dark;
     margin-bottom: 20px;
-    .title-txt{
+
+    .title-txt {
         flex: 1;
         margin-right: 10px;
         overflow: hidden;
@@ -394,7 +458,7 @@ footer{
     }
 }
 
-.postlist-wrap{
+.postlist-wrap {
     // display: flex;
     // &.layout-block{
     //     flex-wrap: wrap;
@@ -404,45 +468,53 @@ footer{
     //     }
     // }
 }
-.tag-time{
+
+.tag-time {
     color: $clr-def;
     margin-right: 10px;
     font-size: 12px;
     white-space: nowrap;
     @extend .flex_align;
 }
-.postlist-block{
+
+.postlist-block {
     margin-bottom: 20px;
     padding-bottom: 10px;
     // border-bottom: 1px dashed $clr-primary;
-    
+
 }
-.postlist-title{
+
+.postlist-title {
     font-size: 18px;
     font-weight: bold;
     color: $clr-link;
     line-height: 1.6;
     @extend .wavelink;
-    &:hover{
+
+    &:hover {
         color: rgba($color: $clr-link, $alpha: 0.7);
     }
 }
-.postlist-subDes{
-    color:$clr-def-light;
+
+.postlist-subDes {
+    color: $clr-def-light;
     font-size: 14px;
     line-height: 1.8;
     margin-bottom: 10px;
     @extend .flex_align;
 }
-.postlist-tag-wrap{
-    color:$clr-def-light;
+
+.postlist-tag-wrap {
+    color: $clr-def-light;
     margin-bottom: 10px;
     @extend .flex_align;
 }
-.postlist-tag{
-    @include base_btn($clr-contrast-darkest,small)
+
+.postlist-tag {
+    @include base_btn($clr-contrast-darkest, small)
 }
-.postlist-excerpt{
+
+.postlist-excerpt {
     font-size: 14px;
     color: $clr-def-dark;
     line-height: 2;
@@ -452,21 +524,25 @@ footer{
     margin: 15px 0;
     overflow: hidden;
     word-break: break-all;
-    .emoji{
+
+    .emoji {
         display: inline-block;
         margin: 0;
     }
+
     vertical-align: middle;
 }
 
-.pagination{
+.pagination {
     padding: 20px 0;
     @extend .flex_center;
-    .paginationItem{
+
+    .paginationItem {
         @include base_btn($clr-contrast-darkest);
     }
-    .paginationItem-notallowed{
-        @include base_btn($clr-def-dark,normal,false)
+
+    .paginationItem-notallowed {
+        @include base_btn($clr-def-dark, normal, false)
     }
 }
 
@@ -474,10 +550,11 @@ footer{
 
 
 // ========  category布局相关 start  ========
-.artical_wrap{
+.artical_wrap {
     display: flex;
     align-items: center;
-    .time{ 
+
+    .time {
         font-size: 12px;
         color: $clr-def;
         margin-right: 10px;
@@ -486,14 +563,16 @@ footer{
 
 // ========  category布局相关 end  ========
 
-.wavelink{
+.wavelink {
     text-decoration: none;
     position: relative;
-    &:hover{
+
+    &:hover {
         @include svg-wave('f29653');
-        &::before{
+
+        &::before {
             content: '#';
-            position: absolute;            
+            position: absolute;
             left: -12px;
             top: -5px;
             font-size: 12px;
@@ -540,14 +619,16 @@ blockquote {
         font-size: $ft-sz-qt;
         word-wrap: break-word;
         font-weight: bold;
-        a{
+
+        a {
             font-style: italic;
             color: $clr-contrast-darkest;
         }
     }
 
 }
-.blockquote-desc{
+
+.blockquote-desc {
     text-align: right;
     color: #d5d5d5;
     font-size: 0.7rem;
@@ -555,27 +636,27 @@ blockquote {
 }
 
 .cn blockquote p {
-  text-indent: 0;
+    text-indent: 0;
 }
 
 
 
 code {
-//   border: dashed 1px $clr-primary;
-  color: $clr-def-darker;
-  padding: 2px 8px;
-  margin: 5px 0;
-  font-size: 0.9em;
-  border-radius: 5px;
-  font-family: $ft-fm-code;
-  text-shadow: none;
-  background-color: $clr-code-back;
-  word-wrap: break-word;
-  white-space: pre;
-  line-height: 1.8;
+    //   border: dashed 1px $clr-primary;
+    color: $clr-def-darker;
+    padding: 2px 8px;
+    margin: 5px 0;
+    font-size: 0.9em;
+    border-radius: 5px;
+    font-family: $ft-fm-code;
+    text-shadow: none;
+    background-color: $clr-code-back;
+    word-wrap: break-word;
+    white-space: pre;
+    line-height: 1.8;
 }
 
-pre > code {
+pre>code {
     display: block;
     padding: 10px 15px;
     margin: 10px 0;
@@ -584,14 +665,23 @@ pre > code {
     word-wrap: normal;
     white-space: inherit;
 }
-p > code {
+
+p>code {
     margin: 0 5px;
 }
 
 h1>code {
-  color: $clr-h1;
+    color: $clr-h1;
 }
 
-h2>code, h3>code, h4>code, h5>code, h6>code {
-  color: $clr-h3-6;
+h2>code,
+h3>code,
+h4>code,
+h5>code,
+h6>code {
+    color: $clr-h3-6;
+}
+
+img {
+    max-width: 90%;
 }
