@@ -2,7 +2,7 @@
  * @Author: seven.zhang
  * @Date: 2020-12-02 17:27:38
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2021-12-20 10:32:02
+ * @Last Modified time: 2023-02-06 16:54:19
  */
 const bookData = {
     2017: [
@@ -848,5 +848,315 @@ const bookData = {
                 }
             ]
         }
+    ],
+    2022: [
+        {
+            month: '1月',
+            book: []
+        },
+        {
+            month: '2月',
+            book: [
+                {
+                    name: '高数基础',
+                    author: '开课吧',
+                    type: '数学',
+                    star: '3',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '3月',
+            book: [
+                {
+                    name: '高数',
+                    author: '开课吧',
+                    type: '数学',
+                    star: '3',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '4月',
+            book: [
+                {
+                    name: '线性代数',
+                    author: '开课吧',
+                    type: '数学',
+                    star: '3',
+                    kind: '非虚构'
+                },
+                {
+                    name: 'C语言基础',
+                    author: '开课吧',
+                    type: '计算机',
+                    star: '3',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '5月',
+            book: [
+                {
+                    name: '计算机数据结构',
+                    author: '王道',
+                    type: '计算机',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '6月',
+            book: [
+                {
+                    name: '计算机组成原理',
+                    author: '王道',
+                    type: '计算机',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '7月',
+            book: [
+                {
+                    name: '计算机网络',
+                    author: '王道',
+                    type: '计算机',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '8月',
+            book: [
+                {
+                    name: '计算机操作系统',
+                    author: '王道',
+                    type: '计算机',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '9月',
+            book: [
+                {
+                    name: '毛泽东思想和中国特色社会主义理论体系',
+                    author: '徐涛',
+                    type: '教材',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '中国近代史纲要',
+                    author: '徐涛',
+                    type: '政治',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '10月',
+            book: [
+                {
+                    name: '马克思主义基本原理',
+                    author: '徐涛',
+                    type: '政治',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '11月',
+            book: [
+                {
+                    name: '思想道德与法治',
+                    author: '徐涛',
+                    type: '教材',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '12月',
+            book: []
+        }
+    ],
+    2023: [
+        {
+            month: '1月',
+            book: [
+                {
+                    name: '三体：地球往事',
+                    author: '刘慈欣',
+                    type: '科幻',
+                    star: '4',
+                    kind: '虚构'
+                },
+                {
+                    name: '三体：黑暗森林',
+                    author: '刘慈欣',
+                    type: '科幻',
+                    star: '5',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '2月',
+            book: [
+                {
+                    name: '三体：死神永生',
+                    author: '刘慈欣',
+                    type: '科幻',
+                    star: '5',
+                    kind: '虚构'
+                }
+            ]
+        }
+        // {
+        //     month: '3月',
+        //     book: [
+        //         {
+        //             name: '三体：黑暗森林',
+        //             author: '',
+        //             type: '数学',
+        //             star: '',
+        //             kind: '非虚构'
+        //         }
+        //     ]
+        // },
+        // {
+        //     month: '4月',
+        //     book: [
+        //         {
+        //             name: '线性代数',
+        //             author: '',
+        //             type: '数学',
+        //             star: '',
+        //             kind: '非虚构'
+        //         },
+        //         {
+        //             name: 'C语言基础',
+        //             author: '',
+        //             type: '计算机',
+        //             star: '',
+        //             kind: '非虚构'
+        //         }
+        //     ]
+        // },
+        // {
+        //     month: '5月',
+        //     book: [
+        //         {
+        //             name: '计算机网络',
+        //             author: '',
+        //             type: '计算机',
+        //             star: '',
+        //             kind: '非虚构'
+        //         }
+        //     ]
+        // },
+        // {
+        //     month: '6月',
+        //     book: [
+        //         {
+        //             name: '计算机组成原理',
+        //             author: '',
+        //             type: '计算机',
+        //             star: '',
+        //             kind: '非虚构'
+        //         }
+        //     ]
+        // },
+        // {
+        //     month: '7月',
+        //     book: [
+        //         {
+        //             name: '计算机网络',
+        //             author: '',
+        //             type: '计算机',
+        //             star: '',
+        //             kind: '非虚构'
+        //         }
+        //     ]
+        // },
+        // {
+        //     month: '8月',
+        //     book: [
+        //         {
+        //             name: '计算机操作系统',
+        //             author: '',
+        //             type: '计算机',
+        //             star: '',
+        //             kind: '非虚构'
+        //         }
+        //     ]
+        // },
+        // {
+        //     month: '9月',
+        //     book: [
+        //         {
+        //             name: '计算机数据结构',
+        //             author: '',
+        //             type: '计算机',
+        //             star: '',
+        //             kind: '非虚构'
+        //         }
+        //     ]
+        // },
+        // {
+        //     month: '10月',
+        //     book: [
+        //         {
+        //             name: '中国近代史纲要',
+        //             author: '',
+        //             type: '政治',
+        //             star: '',
+        //             kind: '非虚构'
+        //         },
+        //         {
+        //             name: '马克思主义基本原理',
+        //             author: '',
+        //             type: '政治',
+        //             star: '',
+        //             kind: '非虚构'
+        //         }
+        //     ]
+        // },
+        // {
+        //     month: '11月',
+        //     book: [
+        //         {
+        //             name: '毛泽东思想和中国特色社会主义理论体系',
+        //             author: '',
+        //             type: '教材',
+        //             star: '',
+        //             kind: '非虚构'
+        //         },
+        //         {
+        //             name: '思想道德与法治',
+        //             author: '',
+        //             type: '教材',
+        //             star: '',
+        //             kind: '非虚构'
+        //         }
+        //     ]
+        // },
+        // {
+        //     month: '12月',
+        //     book: []
+        // }
     ]
 }

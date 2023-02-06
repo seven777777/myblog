@@ -2,7 +2,7 @@
  * @Author: seven.zhang
  * @Date: 2020-12-02 17:09:02
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2021-11-18 12:13:55
+ * @Last Modified time: 2023-02-06 15:41:10
  */
 var baseColors = ['#81b214', '#FF8700', '#FFa540', '#fadcac', '#ffbd73']
 var baseBgColor = '#206a5d'
@@ -237,12 +237,13 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
                 splitLine: { show: false },
                 position: 'right',
                 axisLabel: {
-                    color: txtColor
+                    color: txtColor,
+                    interval: 0
                 },
                 gridIndex: 1
             }
         ],
-        grid: [{ top: '85%' }, { bottom: '80%', left: '80%', right: '8%' }],
+        grid: [{ top: '85%' }, { bottom: '75%', left: '80%', right: '8%' }],
         toolbox: {
             // feature: {
             //     saveAsImage: {}
