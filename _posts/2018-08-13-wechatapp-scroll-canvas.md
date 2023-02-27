@@ -7,9 +7,6 @@ category: work
 excerpt : 在小程序里，map、canvas、video、textarea等 组件是由客户端创建的原生组件，它们的层级是最高的，不能通过 z-index 控制层级，因此在实际开发过程中就会遇到很多由此产生的问题。
 ---
 
-<h2>{{ page.title }}</h2>
-<p>{{ page.tags }}</p>
-
 ### 关于canvas的层级问题
 在小程序里，map、canvas、video、textarea等 组件是由客户端创建的原生组件，它们的层级是最高的，不能通过 z-index 控制层级，因此在实际开发过程中就会遇到很多由此产生的问题。
 

@@ -1,0 +1,43 @@
+I"	<h3 id="关于canvas的层级问题">关于canvas的层级问题</h3>
+<p>在小程序里，map、canvas、video、textarea等 组件是由客户端创建的原生组件，它们的层级是最高的，不能通过 z-index 控制层级，因此在实际开发过程中就会遇到很多由此产生的问题。</p>
+
+<p>最近在做一个小程序的项目，就这个现象遇到了以下问题：</p>
+<h4 id="问题一浮动问题联动的页面滑动问题">问题一：浮动问题联动的页面滑动问题</h4>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/xcx01.jpg" alt="image" /></p>
+
+<p>如上图，页面只有一屏，在开发工具中都可以正常展示，但在真机环境下，用手指滑动页面时，canvas元素会随着手指的滑动而出现位置偏移。</p>
+
+<p>==解决方法：可以通过禁止页面滑动，从而避免该现象。具体设置如下：==</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//page里面对应的的json文件
+{
+    "disableScroll": true
+}
+</code></pre></div></div>
+
+<p>值得注意的是，这个属性一定要在page对应的页面的json文件加上才会生效，在app.json中添加并没有效果</p>
+
+<h4 id="问题二canvas层级过高当他的外层盒子透明度为0时并不能隐藏canvas">问题二：canvas层级过高，当他的外层盒子透明度为0时，并不能隐藏canvas</h4>
+
+<p><img src="https://seven777777.github.io/myblog/images/post/xcx04.jpg" alt="image" /></p>
+
+<p>其实我遇到这个问题的场景还算是比较容易解决，如上图所示，无法隐藏的倒计时canvas空间所在的盒子其实此时透明度为0，为什么要将其设置为透明度为0而不是display为none，是因为我这边的需求是一个隐藏前一个盒子，显示后一个盒子的动画，所以解决方法就是==将控制动画的参数绑定到canvas的盒子上，控制canvas的show==</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--参考代码实例--&gt;
+&lt;!--wxml--&gt;
+&lt;view wx:if=""&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+&lt;/view&gt;
+
+
+&lt;!--xxx.js--&gt;
+Page({
+    data:{
+        gameover:false
+    },
+    //...
+})
+</code></pre></div></div>
+
+<p>13 Aug 2018</p>
+:ET

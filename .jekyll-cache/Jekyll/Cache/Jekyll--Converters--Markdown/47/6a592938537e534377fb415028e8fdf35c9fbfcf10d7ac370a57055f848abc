@@ -1,0 +1,119 @@
+I"	<p>最近在做百度地图添加自定义覆盖物时，遇到一个问题。起先参照api都很顺利，但是当我在给自定义的覆盖物添加点击事件时，问题来了：无法触发。</p>
+
+<p>去网上找了一些解决方案，包括注册点击事件之类的，都没有解决。</p>
+
+<p>之后无意发现，当把调试模式切出手机模式时，点击事件就能够正确的触发，由此得出结论，问题点在于页面是在手机端运行，所以尝试写入了手机端的常见事件，如touch，touchstart…，依旧无法解决，查了下发现是由于百度地图手机端默认的事件是拖动事件，屏蔽其他事件。</p>
+
+<p>说一下最终解决方案吧，参考了<a href="http://www.catcoder.com/2017/07/28/bmap-myself-square-cannot-click/">这篇文章</a>。</p>
+
+<p>引入js：http://api.map.baidu.com/library/EventWrapper/1.2/src/EventWrapper.js</p>
+
+<p>使用：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BMapLib.EventWrapper.addDomListener(mySquare._div, "touchend", function(e){
+    //...点击操作
+});
+</code></pre></div></div>
+<p>tip：BMapLib是这个库的命名空间,BMap所有library都在bMapLib命名空间之下</p>
+
+<p>下面贴出我的代码:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//html
+&lt;div class="bdMap_wrap" id="bdMap_pic"&gt;&lt;/div&gt;//地图容器
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//封装的js：customizeOverlay.js
+/* 
+ * 定义自定义覆盖物的构造函数
+ * 参数：（你可以对应设置你自己需要传的参数）
+ * point：坐标点
+ * text：提示文字
+ * num：坐标点上的数字标号
+ */
+function customizeOverlay(point,text,num){
+    this._point=point;
+    this._text=text;
+    this._num=num;
+};
+// 继承API的BMap.Overlay 
+customizeOverlay.prototype = new BMap.Overlay();
+// 实现初始化方法  
+customizeOverlay.prototype.initialize = function (map) {    
+    // 保存map对象实例   
+    this._map = map;        
+    // 创建div元素，作为自定义覆盖物的容器   
+    let div = document.createElement("div");    
+    $(div).addClass('map_point_icon');//提前写好自定义覆盖的样式，然后这边用js创建dom
+    div.innerHTML=this._num;
+    let label = document.createElement("div");
+    $(label).addClass('label_box');
+    label.innerHTML=this._text;
+    div.appendChild(label);
+    // 将div添加到覆盖物容器中   
+    map.getPanes().markerPane.appendChild(div);
+    // 保存div实例   
+    this._div = div;
+    this._cwidth=this._div.clientWidth;
+    this._cheight=this._div.clientHeight;
+    // 需要将div元素作为方法的返回值，当调用该覆盖物的show、   
+    // hide方法，或者对覆盖物进行移除时，API都将操作此元素。   
+    return div;
+}
+// 实现绘制方法   
+customizeOverlay.prototype.draw = function () {    
+    // 根据地理坐标转换为像素坐标，并设置给容器    
+    let position = this._map.pointToOverlayPixel(this._point);      
+    this._div.style.left = position.x - this._cwidth/2 + "px";    
+    this._div.style.top = position.y - this._cheight + "px";    
+}
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//页面调用，html文件底部
+
+//引入需要的js
+//...
+&lt;script type="text/javascript" src="http://api.map.baidu.com/library/EventWrapper/1.2/src/EventWrapper.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="customizeOverlay.js"&gt;&lt;/script&gt;
+//...
+
+let map = new BMap.Map("bdMap_pic");//创建实例
+let point = new BMap.Point(121.486705,31.245197); // 创建点坐标   
+map.centerAndZoom(point, 11);// 初始化地图，设置中心点坐标和地图级别
+map.setMapStyle({style:'light'});//设置地图主题
+map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放
+map.setMinZoom(9);
+map.setMaxZoom(18);
+let pointData=[//用来测试的point，实际开发会从后台读取
+    {
+        name:'豫园',
+        value1:121.498981,
+        value2:31.232772
+    },
+    {
+        name:'静安寺',
+        value1:121.451697,
+        value2:31.229792
+    },
+    {
+        name:'上海大宁剧院',
+        value1:121.463457,
+        value2:31.290447
+    }
+];
+//遍历pointData数组，添加多个自定义覆盖物
+pointData.forEach((item,index)=&gt;{
+    let mySquare=new customizeOverlay(new BMap.Point(item.value1,item.value2), item.name, index+1);
+    map.addOverlay(mySquare);
+    BMapLib.EventWrapper.addDomListener(mySquare._div, "touchend", function(e){
+        //事件处理
+    });
+});
+</code></pre></div></div>
+
+<p>以上。</p>
+
+<p>需要再说明一点的是另一个问题：除了点击事件之外，我发现每次放大缩小地图的时候，覆盖都会先偏移一下才能回到正确的位置。</p>
+
+<p>在封装draw事件时，因为是移动端，所以为了让我自定义的图片的底部中间位置对准point，无法通过确切的px值来计算，所以我使用了自定义图片的clientWidth和clientHeight。
+但由于每次放大缩小地图时都会触发draw事件，而重新绘制开始clientWidth和clientHeight会变成0，所以位置会出现偏差。</p>
+
+<p>解决方法就是上面代码写的那样，在初始化方法里面定义clientWidth和clientHeight，然后在draw函数里面引用，这样就可以保证不用每次draw时都需要重新监听覆盖物的宽高。</p>
+
+<p>17 May 2018</p>
+:ET

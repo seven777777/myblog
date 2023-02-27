@@ -5,13 +5,10 @@ title: 生活相关博文
 <div>
     <h1 class="module-title">life</h1>
     {% for post in site.posts %}
-        {% assign type = category %}
-        {% if post.category == 'life' %}
-            <div class="artical_wrap">
-                <span class="time">{{ post.date | date: "%Y年%m月%d日" }}</span>
-                <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-            </div>
-        {% endif %}
+    {% assign type = category %}
+    {% if post.category == 'life' %}
+    {% include postItem.html post=post %}
+    {% endif %}
     {% endfor %}
 
     {% include copyright.html %}

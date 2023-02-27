@@ -4,13 +4,10 @@ layout: default
 <div>
     <h1 class="module-title">work</h1>
     {% for post in site.posts %}
-        {% assign type = category %}
-        {% if post.category == 'work' %}
-            <div class="artical_wrap">
-                <span class="time">{{ post.date | date: "%Y年%m月%d日" }}</span>
-                <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-            </div>
-        {% endif %}
+    {% assign type = category %}
+    {% if post.category == 'work' %}
+    {% include postItem.html post=post %}
+    {% endif %}
     {% endfor %}
 
     {% include copyright.html %}

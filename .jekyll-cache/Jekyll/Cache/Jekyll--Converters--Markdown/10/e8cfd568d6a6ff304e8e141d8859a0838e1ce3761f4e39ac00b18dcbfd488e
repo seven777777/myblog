@@ -1,0 +1,57 @@
+I"�<h2 id="入口页设置">入口页设置</h2>
+<h3 id="情景一小程序初始化页面">情景一：小程序初始化页面</h3>
+<p>根目录下的app.json文件中，控制pages数组，设置在第一行的页面就是默认启动页面</p>
+
+<p>例如下面的设置中，home页就是启动页面，想要修改启动页，只需要改变排列顺序即可。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//app.json
+{
+    "pages":[
+        "pages/home/home",
+        "pages/login/login",
+        //...
+    ],
+    "window":{
+        //...
+    },
+    //...
+}
+</code></pre></div></div>
+<h3 id="情景二开发不同页面时希望不要每一次刷新都回到初始页">情景二：开发不同页面时希望不要每一次刷新都回到初始页</h3>
+<p>可以在微信开发工具中进行设置</p>
+
+<p>步骤如下：
+<img src="https://seven777777.github.io/myblog/images/post/xcx01.png" alt="image" />
+<img src="https://seven777777.github.io/myblog/images/post/xcx02.png" alt="image" />
+<img src="https://seven777777.github.io/myblog/images/post/xcx03.png" alt="image" /></p>
+
+<blockquote>
+  <p>tip:此处的可视化修改都可以对应到项目的<code class="language-plaintext highlighter-rouge">project.config.json</code>文件内的设置，该编译设置对应的就是如下：</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//project.config.json
+{
+    //...
+    "condition": {
+        //...
+        "miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 1,
+					"name": "test",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				//...
+			]
+		}		
+    }
+}
+</code></pre></div></div>
+<h2 id="事件绑定">事件绑定</h2>
+<p>bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。</p>
+
+<p>使用capture-前缀阻止事件的冒泡和捕获</p>
+
+<p>10 Aug 2018</p>
+:ET

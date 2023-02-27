@@ -96,29 +96,7 @@
 
     <div class="postlist-wrap layout-block">
         {% for post in paginator.posts %}
-        <div class="postlist-block">
-            <div class="flex_align">
-                {% assign time = post.time %}
-                <div class="timeago tag-time cn" title="{{ time | replace: '.', '-' | replace: ' ', 'T' }}+08:00">{{
-                    time }}</div>
-                <a class="postlist-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-            </div>
-            <ul class="postlist-subDes">
-                <li class="mr_5">
-                    <i class="iconfont iconrili mr_5"></i>
-                    {{ post.date | date: "%Y年%m月%d日" }}
-                </li>
-            </ul>
-            <div class="postlist-tag-wrap">
-                <i class="iconfont iconbiaoqian mr_5"></i>
-                <ul class="flex_align">
-                    {% for tag in post.tags %}
-                    <li class="postlist-tag"><a href="{{ site.baseurl }}/list?tag={{tag}}">{{tag}}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <p class="postlist-excerpt">{{ post.excerpt }}</p>
-        </div>
+        {% include postItem.html post=post %}
         {% endfor %}
     </div>
 

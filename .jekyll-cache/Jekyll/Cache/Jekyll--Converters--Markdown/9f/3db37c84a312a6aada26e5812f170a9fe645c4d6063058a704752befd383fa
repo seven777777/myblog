@@ -1,0 +1,112 @@
+I"�<p>webpack在手动配置开发环境时，需要实时在网页中看到代码的更改，又不想要每次修改代码都手动<code class="language-plaintext highlighter-rouge">npm run build</code>一下，webpack提供三种解决方案，在此记录一下。</p>
+<ul>
+  <li>观察者模式</li>
+  <li>webpack-dev-server</li>
+  <li>webpack-dev-middleware</li>
+</ul>
+
+<h2 id="观察者模式">观察者模式</h2>
+<p>在package.json文件中添加一个用于启动webpack观察者模式的npm script脚本</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//package.json
+{
+    //...
+    "script":{
+        //...
+        "watch":"webpack --watch",
+        "build":"webpack"
+    }
+    //...
+}
+</code></pre></div></div>
+<p>之后使用<code class="language-plaintext highlighter-rouge">npm run watch</code>就可以观察文件了</p>
+
+<p>缺点是：修改之后需要手动刷新浏览器才能看到更改的代码</p>
+
+<h2 id="webpack-dev-server常用">webpack-dev-server(常用)</h2>
+<p><code class="language-plaintext highlighter-rouge">webpack-dev-server</code>提供了一个简单的web服务器，并能够实时重新加载。</p>
+
+<p>首先安装：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save-dev webpack-dev-server
+</code></pre></div></div>
+<p>其次修改配置文件，告诉开发服务器（dev server），在哪里查找文件：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//webpack.config.js
+{
+    //...
+    devtool:'inline-source-map',
+    devServer:{
+        contentBase:'./dist'
+    },
+    //...
+}
+</code></pre></div></div>
+<p>在package.json文件中添加一个script脚本</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//package.json
+{
+    //...
+    "script":{
+        //...
+        "watch":"webpack --watch",
+        "build":"webpack",
+        "start":"webpack-dev-server --open",
+    }
+    //...
+}
+</code></pre></div></div>
+<p>运行<code class="language-plaintext highlighter-rouge">npm run start</code>即可。浏览器可以自动加载页面，并在修改之后自动重新编译</p>
+
+<h2 id="webpack-dev-middleware">webpack-dev-middleware</h2>
+<p>首先安装<code class="language-plaintext highlighter-rouge">express</code>和<code class="language-plaintext highlighter-rouge">webpack-dev-middleware</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save-dev express webpack-dev-middleware
+</code></pre></div></div>
+<p>其次对 webpack 的配置文件做一些调整，以确保中间件(middleware)功能能够正确启用</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//webpack.config.js
+{
+    //...
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
+    }
+    //...
+}
+</code></pre></div></div>
+<p>下一步就是设置自定义的 express 服务,在项目根目录新建server.js文件</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//server.js
+const express = require('express');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+
+
+const app = express();
+const config = require('./webpack.config.js');
+const compiler = webpack(config);
+
+
+app.use(webpackDevMiddleware(compiler,{
+    publicPath: config.output.publicPath
+}));
+app.listen(3000,function(){
+    console.log('Example app listening on port 3000!\n');
+})
+</code></pre></div></div>
+<p>下一步,在package.json文件中添加一个script脚本</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//package.json
+{
+    //...
+    "script":{
+        //...
+        "watch":"webpack --watch",
+        "build":"webpack",
+        "start":"webpack-dev-server --open",
+        "server": "node server.js"
+    }
+    //...
+}
+</code></pre></div></div>
+<p>运行<code class="language-plaintext highlighter-rouge">npm run server</code>即可。使用此链接查看：http://localhost:3000</p>
+
+<p>25 May 2018</p>
+:ET

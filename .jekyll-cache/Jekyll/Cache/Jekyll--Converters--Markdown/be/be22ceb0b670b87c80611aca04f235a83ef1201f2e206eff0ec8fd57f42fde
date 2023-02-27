@@ -1,0 +1,165 @@
+I"i<h3 id="文本溢出省略号">文本溢出省略号</h3>
+<h4 id="单行省略">单行省略</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.div{
+    //...
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+</code></pre></div></div>
+<h4 id="多行省略">多行省略</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.div{
+    //...
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+}
+</code></pre></div></div>
+<h3 id="flex布局相关">flex布局相关</h3>
+<blockquote>
+  <p>因为是纯干货，这里就不对flex 的属性做过多介绍，如果不了解的，可以直接百度，会有很多不错的教程</p>
+</blockquote>
+
+<h4 id="垂直居中">垂直居中</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.fatherBox{
+    display:flex;
+    align-items:center;
+    align-content:center;//若有多行则添加该属性，否则该属性无效
+}
+</code></pre></div></div>
+<h4 id="水平居中">水平居中</h4>
+<p>利用水平居中可以实现日常开发中经常会遇到列表排列问题,比如一等比例放三个商品</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.fatherBox{
+    display:flex;
+    justify-content:center;//居中，适用于只有一个子元素时
+    //两端对齐，项目之间的间隔都相等
+    //justify-content:space-between;
+    //每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+    //justify-content:space-around;
+}
+</code></pre></div></div>
+<h4 id="垂直一侧定宽一侧自适应布局">垂直一侧定宽一侧自适应布局</h4>
+<p><img src="https://seven777777.github.io/myblog/images/post/flex-img.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//html
+&lt;div class="fatherBox"&gt;
+  &lt;div class="chindrenBox"&gt;&lt;/div&gt;
+  &lt;div class="chindrenBox"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//css
+.fatherBox{
+  display: -webkit-box;
+  height: 400px;
+  width: 300px;
+  -webkit-box-orient:vertical;//默认为水平排列，所以需要设置为垂直排列
+  background:gray;
+  
+}
+.chindrenBox:first-child{
+  height:40px;
+  background:green;
+}
+.chindrenBox:last-child{
+  display: -webkit-box;
+  -webkit-box-flex: 1;
+  background: pink;
+}
+</code></pre></div></div>
+<p>tip:</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />上方绿色盒子高度固定</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />父级盒子高度固定</li>
+</ul>
+
+<h4 id="水平一侧定宽一侧自适应布局">水平一侧定宽一侧自适应布局</h4>
+<p><img src="https://seven777777.github.io/myblog/images/post/flex-img2.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//html
+&lt;div class="fatherBox"&gt;
+  &lt;div class="chindrenBox"&gt;&lt;/div&gt;
+  &lt;div class="chindrenBox"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//css
+.fatherBox{
+  display: -webkit-box;
+/*   -webkit-box-orient:horizontal; *///默认就是水平排列，可以不加此属性
+  background:gray;
+  height:100px;
+}
+.chindrenBox:first-child{
+  display: -webkit-box;
+  width:80px;
+  background: orange;
+}
+.chindrenBox:last-child{
+  display: -webkit-box;
+  -webkit-box-flex: 1;
+  background: pink;
+}
+</code></pre></div></div>
+<h4 id="水平等比分配">水平等比分配</h4>
+<p><img src="https://seven777777.github.io/myblog/images/post/flex-img3.png" alt="image" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//html
+&lt;div class="fatherBox"&gt;
+  &lt;div class="chindrenBox"&gt;&lt;/div&gt;
+  &lt;div class="chindrenBox"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//css
+.fatherBox{
+  display: -webkit-box;
+/*   -webkit-box-orient:horizontal; *///默认就是水平排列，可以不加此属性
+  background:gray;
+  height:100px;
+}
+.chindrenBox{
+  display: -webkit-box;
+  -webkit-box-flex: 1;
+  width:1px;
+  background:green;
+}
+.chindrenBox:first-child{
+  background: orange;
+}
+.chindrenBox:last-child{
+  background: pink;
+}
+</code></pre></div></div>
+<p>但若两者内容长度不同时，会出现bug，如下图：
+<img src="https://seven777777.github.io/myblog/images/post/flex-img4.png" alt="image" />
+此时需要对两个都加上相同的任意宽度，如<code class="language-plaintext highlighter-rouge">width:1px;</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//css
+.fatherBox{
+  display: -webkit-box;
+/*   -webkit-box-orient:horizontal; *///默认就是水平排列，可以不加此属性
+  background:gray;
+  height:100px;
+}
+.chindrenBox{
+  display: -webkit-box;
+  -webkit-box-flex: 1;
+  width:1px;
+  background:green;
+}
+.chindrenBox:first-child{
+  background: orange;
+}
+.chindrenBox:last-child{
+  background: pink;
+}
+</code></pre></div></div>
+
+<p>20 Jun 2018</p>
+:ET
