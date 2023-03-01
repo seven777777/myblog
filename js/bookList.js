@@ -2,7 +2,7 @@
  * @Author: seven.zhang
  * @Date: 2020-12-02 17:27:38
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2023-02-06 16:54:19
+ * @Last Modified time: 2023-03-01 10:06:27
  */
 const bookData = {
     2017: [
@@ -951,7 +951,7 @@ const bookData = {
                 {
                     name: '毛泽东思想和中国特色社会主义理论体系',
                     author: '徐涛',
-                    type: '教材',
+                    type: '政治',
                     star: '4',
                     kind: '非虚构'
                 },
@@ -982,7 +982,7 @@ const bookData = {
                 {
                     name: '思想道德与法治',
                     author: '徐涛',
-                    type: '教材',
+                    type: '政治',
                     star: '4',
                     kind: '非虚构'
                 }
@@ -993,50 +993,57 @@ const bookData = {
             book: []
         }
     ],
-    2023: [
-        {
-            month: '1月',
-            book: [
-                {
-                    name: '三体：地球往事',
-                    author: '刘慈欣',
-                    type: '科幻',
-                    star: '4',
-                    kind: '虚构'
-                },
-                {
-                    name: '三体：黑暗森林',
-                    author: '刘慈欣',
-                    type: '科幻',
-                    star: '5',
-                    kind: '虚构'
-                }
-            ]
-        },
-        {
-            month: '2月',
-            book: [
-                {
-                    name: '三体：死神永生',
-                    author: '刘慈欣',
-                    type: '科幻',
-                    star: '5',
-                    kind: '虚构'
-                }
-            ]
-        }
-        // {
-        //     month: '3月',
-        //     book: [
-        //         {
-        //             name: '三体：黑暗森林',
-        //             author: '',
-        //             type: '数学',
-        //             star: '',
-        //             kind: '非虚构'
-        //         }
-        //     ]
-        // },
+    // 2023: [
+    //     {
+    //         month: '1月',
+    //         book: [
+    //             {
+    //                 name: '三体：地球往事',
+    //                 author: '刘慈欣',
+    //                 type: '科幻',
+    //                 star: '4',
+    //                 kind: '虚构'
+    //             },
+    //             {
+    //                 name: '三体：黑暗森林',
+    //                 author: '刘慈欣',
+    //                 type: '科幻',
+    //                 star: '5',
+    //                 kind: '虚构'
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         month: '2月',
+    //         book: [
+    //             {
+    //                 name: '三体：死神永生',
+    //                 author: '刘慈欣',
+    //                 type: '科幻',
+    //                 star: '5',
+    //                 kind: '虚构'
+    //             },
+    //             {
+    //                 name: '小径分叉的花园',
+    //                 author: '博尔赫斯',
+    //                 type: '科幻短篇集',
+    //                 star: '4',
+    //                 kind: '虚构'
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         month: '3月',
+    //         book: [
+    //             {
+    //                 name: '三体：黑暗森林',
+    //                 author: '',
+    //                 type: '数学',
+    //                 star: '',
+    //                 kind: '非虚构'
+    //             }
+    //         ]
+    //     },
         // {
         //     month: '4月',
         //     book: [
