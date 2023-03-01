@@ -71,11 +71,22 @@
     </div>
 </div>
 
+<!-- {% for tag in site.tags %}
+    {{tag | first}} {{tag | last | size}}
+    {% endfor %} -->
+
 <!-- <div class="content-wrap">
-    {% include copyright.html %}
-</div> -->
+        {% include copyright.html %}
+    </div> -->
 
 <div class="content-wrap mt30 p_20">
+    <ul class="flex_align" style="flex-wrap:wrap">
+        {% for tag in site.tags %}
+        <li class="postlist-tag"><a href="{{ site.baseurl }}/list?tag={{tag | first}}">{{tag | first}} {{tag | last |
+                size}}</a>
+        </li>
+        {% endfor %}
+    </ul>
     {% include copyright.html %}
     <!-- <section>
         <h4>Recent Posts</h4>
