@@ -1,0 +1,78 @@
+I"�	<p>随着前端开发技术的不断发展，scss 和 js 之前的壁垒逐渐打破，而双方的变量互用也极大地便利了我们的开发。</p>
+
+<h2 id="js-中使用-scss-变量">js 中使用 scss 变量</h2>
+
+<p>开发过程中 js 中使用 scss 中的变量的场景会多一些，如一些色值的使用。</p>
+
+<p>现在的常规的做法就是:</p>
+
+<ul>
+  <li>样式文件命名为：xxx.module.scss</li>
+  <li>将 js 需要使用的变量导出</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:export {
+    key: $var;
+}
+</code></pre></div></div>
+
+<p>使用时直接 import 即可</p>
+
+<h2 id="scss-中使用-js-变量">scss 中使用 js 变量</h2>
+
+<h3 id="常规场景">常规场景</h3>
+
+<p>其实这个场景在 vue 开发中已经司空见惯了，就是直接利用 v-bind 在 dom 中根据 js 变量条件绑定 class 或是 style</p>
+
+<p>示例：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div :class="{className:showClass}" :style="{'width':width}"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+//...
+data(){
+    return {
+        showClass:true,
+        width: '100px'
+    }
+}
+&lt;/script&gt;
+</code></pre></div></div>
+
+<h3 id="特殊场景">特殊场景</h3>
+
+<p>本文主要是记录一些特殊场景下的解决思路</p>
+
+<blockquote>
+  <p>场景：针对动态生成的 dom，无法直接在 dom 上进行绑定操作</p>
+</blockquote>
+
+<p>主要利用 css 的变量属性，在根元素进行赋值，从而动态生成的子元素可以使用改变量</p>
+
+<p>示例：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 根据label的长度动态设置生成的内部元素的偏移量
+&lt;div class="select-with-label" :style="{ '--select-range-left': label?.length * 14 + 20 + 'px' }" &gt;&lt;/div&gt;
+
+&lt;script&gt;
+//...
+data(){
+    return {
+        label: '名称'
+    }
+}
+&lt;/script&gt;
+
+&lt;style lang="scss"&gt;
+.select-with-label {
+    &lt;!-- 该属性为动态生成的dom的class类名 --&gt;
+    :deep(.el-select__tags) {
+        left: var(--select-range-left);
+    }
+}
+&lt;/style&gt;
+
+</code></pre></div></div>
+
+<p>其实挺简单的，原理也是普通场景的原理，只不过做了个中转。因为我自己在遇到这个场景时，乍一下没想到解决方案，搜索看到这个思路时，颇有一点恍然大悟的感觉，所以在此记录一下，也给有相同需求的同学提供一下思路。</p>
+:ET

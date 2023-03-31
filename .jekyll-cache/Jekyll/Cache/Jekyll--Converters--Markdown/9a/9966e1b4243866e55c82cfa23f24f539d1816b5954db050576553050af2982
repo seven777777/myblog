@@ -1,0 +1,41 @@
+I"�<p>随着前端开发技术的不断发展，scss 和 js 之前的壁垒逐渐打破，而双方的变量互用也极大地便利了我们的开发。</p>
+
+<h2 id="js-中使用-scss-变量">js 中使用 scss 变量</h2>
+
+<p>开发过程中 js 中使用 scss 中的变量的场景会多一些，如一些色值的使用。</p>
+
+<p>现在的常规的做法就是:</p>
+
+<ul>
+  <li>样式文件命名为：xxx.module.scss</li>
+  <li>将 js 需要使用的变量导出</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:export {
+    key: $var;
+}
+</code></pre></div></div>
+
+<p>使用时直接 import 即可</p>
+
+<h2 id="scss-中使用-js-变量">scss 中使用 js 变量</h2>
+
+<h3 id="常规场景">常规场景</h3>
+
+<p>其实这个场景在 vue 开发中已经司空见惯了，就是直接利用 v-bind 在 dom 中根据 js 变量条件绑定 class 或是 style</p>
+
+<p>示例：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div :class="{className:showClass}" :style="{'width':width}"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+//...
+data(){
+    return {
+        showClass:true,
+        width: '100px'
+    }
+}
+&lt;/script&gt;
+</code></pre></div></div>
+:ET
