@@ -1,0 +1,67 @@
+I"�<style>
+.chartbox{
+    width: 100%;
+    height:650px;
+    margin:20px 0;
+}
+.chartbox img{
+    width:100%;
+    height:auto;
+}
+.txtAroundImg{
+    display: inline-block !important;
+    margin: 0 5px !important;
+    padding: 5px;
+    border: 1px dashed #e5e5e5;
+}
+</style>
+
+<div id="book-chart" class="chartbox"></div>
+<p>本想着今年就没有读书小结了，2022年像囫囵吞下的一个枣，还没察觉就已经过去了。回过头看，发现脑中一片空白，阅读也停摆了一年。</p>
+
+<p>不过转念一想，这一年的备考中学习看的书，也算是一种特定品类的阅读吧。于是把这一年学的科目书罗列了一遍，也算是 2022 年的不完全阅读小结了。</p>
+
+<p>谈一点这一年学习的感想吧：</p>
+
+<p>早中期，也就是大概三月到九月，甚至到十月的中旬，这个阶段的学习其实是有些松懈的，并不是行为上的松懈，而是思想上的。每天不紧不慢的给自己安排学习任务，几乎没有娱乐时间，但也乐得充实。后期开始感觉吃力，并且感觉到压力巨大，且随着考试日期的逐渐接近，有指数型上升趋势。突然意识到，前期只是被自己编织的学习假象蒙蔽了，那每天的按部就班，虽说打下了一些基础，但其实收效甚微。因此在后期做模拟题时，才发现好多知识点掌握的非常薄弱。</p>
+
+<p>于是对比想到了自己以往的阅读，其实也像是我前期的这种学习风格，并不走心。如果要是给每次的阅读都出一次模拟卷的话，我想我应该每次都是不及格的。这就像之前每次决心要写读后感，但是提笔却又是大脑一片空白。</p>
+
+<p>也许我还没有真正明白阅读的意义。</p>
+
+<p>除此之外，这一年的 0 阅读也值得反思。我希望阅读就像呼吸一样自然而然地发生，而不是变成繁忙状态下可以随意剔除的一个备选。阅读不应该是刻意的。</p>
+
+<p>2023，阅读计划继续！或许，新的一年会有新的阅读成长。</p>
+
+<script type="text/javascript" src="http://localhost:4001/myblog/js/echarts.min-4.8.0.js"></script>
+
+<script type="text/javascript" src="http://localhost:4001/myblog/js/bookList.js"></script>
+
+<script type="text/javascript" src="http://localhost:4001/myblog/js/chartsCommon.js"></script>
+
+<script type="text/javascript">
+
+if (window.innerWidth < 600) {
+    var img2020 = 'http://localhost:4001/myblog/images/post/2021-12-30-read-summary-2021/pic-chart.png';
+
+    setChartImg('book-chart',img2020)
+}
+else {
+    var charts = [];
+    
+    var myChart = echarts.init(document.getElementById('book-chart'));
+    var baseData = bookData['2022']
+    let opt = getReadSummaryChartOpt(baseData,{
+        title: '2023年度读书统计',
+        colors: ['#cf7500','#a4b787','#f8e4b7','#797a7e','#79a3b1'],
+        bgColor: '#231903',
+        txtColor: '#bbbbbb'
+    })
+    myChart.setOption(opt);
+    charts.push(myChart)
+    setResize(charts)
+}
+
+</script>
+
+:ET
