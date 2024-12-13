@@ -1,0 +1,13 @@
+<blockquote class="seriesNote">
+    <h4>系列博文：{{ page.series }}</h4>
+    <ul>
+        {% for post in site.posts reversed %} {% if post.series == page.series %} {% if page.url != post.url %}
+        <li class="series-not-self">
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% else %}
+        <li class="series-self">{{ post.title }}</li>
+
+        {% endif %} {% endif %} {% endfor %}
+    </ul>
+</blockquote>

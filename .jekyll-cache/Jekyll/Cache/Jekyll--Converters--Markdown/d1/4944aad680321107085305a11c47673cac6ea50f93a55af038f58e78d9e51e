@@ -1,4 +1,4 @@
-I"�<p>实现思路：</p>
+I"e<p>实现思路：</p>
 
 <p>渐变背景色+与背景色相同的边框虚点线+<code class="language-plaintext highlighter-rouge">background-origin</code>设置背景图定位</p>
 
@@ -7,7 +7,7 @@
 
 <p>代码：</p>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nt">--</span><span class="err">虚点线元素容器</span><span class="nt">--</span><span class="o">&gt;</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nt">--虚点线元素容器--</span><span class="o">&gt;</span>
 <span class="nt">body</span> <span class="p">{</span>
     <span class="nl">background-color</span><span class="p">:</span> <span class="m">#636465</span><span class="p">;</span>
     <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>

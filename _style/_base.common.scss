@@ -262,7 +262,7 @@ footer {
                 flex: 1;
                 padding: 20px;
                 display: block;
-                transition: all .5s;
+                transition: all 0.5s;
                 display: flex;
                 align-items: center;
 
@@ -347,7 +347,7 @@ footer {
     padding: 30px 50px;
     margin-top: 20px;
 
-    p>img {
+    p > img {
         display: block;
         margin: 10px auto;
         max-width: 100%;
@@ -356,7 +356,6 @@ footer {
 }
 
 // ========  default页面 end  ========
-
 
 // ========  post布局相关 start  ========
 .module_wrap {
@@ -411,10 +410,10 @@ footer {
     p {
         // display: flex;
         // align-items: center;
-        text-indent: 2em
+        text-indent: 2em;
     }
 
-    ul>li {
+    ul > li {
         &:not(.postlist-tag) {
             list-style: circle;
             margin-left: 2em;
@@ -433,7 +432,7 @@ footer {
         }
     }
 
-    p>a {
+    p > a {
         font-style: italic;
         color: $clr-contrast-darkest;
     }
@@ -481,7 +480,6 @@ footer {
     margin-bottom: 20px;
     padding-bottom: 10px;
     // border-bottom: 1px dashed $clr-primary;
-
 }
 
 .postlist-title {
@@ -511,7 +509,7 @@ footer {
 }
 
 .postlist-tag {
-    @include base_btn($clr-contrast-darkest, small)
+    @include base_btn($clr-contrast-darkest, small);
 }
 
 .postlist-excerpt {
@@ -542,12 +540,11 @@ footer {
     }
 
     .paginationItem-notallowed {
-        @include base_btn($clr-def-dark, normal, false)
+        @include base_btn($clr-def-dark, normal, false);
     }
 }
 
 // ========  post布局相关 end  ========
-
 
 // ========  category布局相关 start  ========
 .artical_wrap {
@@ -625,7 +622,6 @@ blockquote {
             color: $clr-contrast-darkest;
         }
     }
-
 }
 
 .blockquote-desc {
@@ -638,8 +634,6 @@ blockquote {
 .cn blockquote p {
     text-indent: 0;
 }
-
-
 
 code {
     //   border: dashed 1px $clr-primary;
@@ -656,7 +650,7 @@ code {
     line-height: 1.8;
 }
 
-pre>code {
+pre > code {
     display: block;
     padding: 10px 15px;
     margin: 10px 0;
@@ -666,19 +660,19 @@ pre>code {
     white-space: inherit;
 }
 
-p>code {
+p > code {
     margin: 0 5px;
 }
 
-h1>code {
+h1 > code {
     color: $clr-h1;
 }
 
-h2>code,
-h3>code,
-h4>code,
-h5>code,
-h6>code {
+h2 > code,
+h3 > code,
+h4 > code,
+h5 > code,
+h6 > code {
     color: $clr-h3-6;
 }
 

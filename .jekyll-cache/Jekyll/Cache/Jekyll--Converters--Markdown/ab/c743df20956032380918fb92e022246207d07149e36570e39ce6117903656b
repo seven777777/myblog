@@ -1,15 +1,15 @@
-I"�<p>相信大家开发过程中都曾遇到过以下这种类型的数据：</p>
+I"C<p>相信大家开发过程中都曾遇到过以下这种类型的数据：</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">dataList</span><span class="p">:[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">dataList:</span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="err">name</span><span class="p">:</span><span class="err">'名称</span><span class="mi">1</span><span class="err">'</span><span class="p">,</span><span class="w">
-        </span><span class="err">children</span><span class="p">:[</span><span class="w">
+        </span><span class="err">name:'名称</span><span class="mi">1</span><span class="err">'</span><span class="p">,</span><span class="w">
+        </span><span class="err">children:</span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="err">name</span><span class="p">:</span><span class="err">'名称</span><span class="mi">1-1</span><span class="err">'</span><span class="w">
-                </span><span class="err">children</span><span class="p">:[</span><span class="w">
+                </span><span class="err">name:'名称</span><span class="mi">1-1</span><span class="err">'</span><span class="w">
+                </span><span class="err">children:</span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="err">name</span><span class="p">:</span><span class="err">'名称</span><span class="mi">1-1-1</span><span class="err">'</span><span class="p">,</span><span class="w">
-                        </span><span class="err">children</span><span class="p">:[</span><span class="w">
+                        </span><span class="err">name:'名称</span><span class="mi">1-1-1</span><span class="err">'</span><span class="p">,</span><span class="w">
+                        </span><span class="err">children:</span><span class="p">[</span><span class="w">
                             </span><span class="err">//...</span><span class="w">
                         </span><span class="p">]</span><span class="w">
                     </span><span class="p">}</span><span class="w">
