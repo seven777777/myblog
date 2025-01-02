@@ -2,7 +2,7 @@
  * @Author: seven.zhang
  * @Date: 2020-12-02 17:09:02
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2023-02-06 15:41:10
+ * @Last Modified time: 2024-12-17 16:29:53
  */
 var baseColors = ['#81b214', '#FF8700', '#FFa540', '#fadcac', '#ffbd73']
 var baseBgColor = '#206a5d'
@@ -27,6 +27,8 @@ var baseTxtColor = '#ffbd73'
 function getReadSummaryChartOpt(baseData = [], chartData = {}) {
     let { title, colors = baseColors, bgColor = baseBgColor, txtColor = baseTxtColor } = chartData
 
+    const showYear = title.split('年')[0]
+
     let itemStyle = {
         star5: {
             color: colors[0]
@@ -39,32 +41,35 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
         },
         star2: {
             color: colors[3]
+        },
+        star1: {
+            color: colors[4]
         }
     }
 
     let allBookList = []
-    baseData.forEach((item) => {
+    baseData.forEach(item => {
         allBookList = [...allBookList, ...item.book]
     })
 
     // 旭日图
-    let kindList = Array.from(new Set(allBookList.map((item) => item.kind)))
+    let kindList = Array.from(new Set(allBookList.map(item => item.kind)))
 
-    let setList = (list) => {
-        let typeList = Array.from(new Set(list.map((item) => item.type)))
+    let setList = list => {
+        let typeList = Array.from(new Set(list.map(item => item.type)))
 
         let resList = typeList.map((item, index) => {
-            let childrenlist = list.filter((e) => e.type == item).sort((a, b) => b.star - a.star)
-            let starList = Array.from(new Set(childrenlist.map((item) => item.star)))
+            let childrenlist = list.filter(e => e.type == item).sort((a, b) => b.star - a.star)
+            let starList = Array.from(new Set(childrenlist.map(item => item.star)))
             return {
                 name: item,
                 itemStyle: {
                     color: colors[index]
                 },
-                children: starList.map((star) => {
+                children: starList.map(star => {
                     return {
                         name: star + '☆',
-                        children: childrenlist.filter((ss) => ss.star == star)
+                        children: childrenlist.filter(ss => ss.star == star)
                     }
                 })
             }
@@ -74,7 +79,7 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
     }
 
     let sunburstData = kindList.map((kind, i) => {
-        let mylist = allBookList.filter((e) => e.kind == kind)
+        let mylist = allBookList.filter(e => e.kind == kind)
         return {
             name: kind,
             itemStyle: {
@@ -105,6 +110,9 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
                         case '2☆':
                             bookScoreId = 3
                             return itemStyle.star2
+                        case '1☆':
+                            bookScoreId = 4
+                            return itemStyle.star1
                     }
                 })(block[star].name)
 
@@ -152,18 +160,18 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
     }
 
     // 饼图
-    let pieData = Array.from(new Set(allBookList.map((item) => item.star)))
+    let pieData = Array.from(new Set(allBookList.map(item => item.star)))
         .sort((a, b) => b - a)
-        .map((star) => {
+        .map(star => {
             return {
                 name: star + '☆',
-                value: allBookList.filter((e) => e.star == star).length
+                value: allBookList.filter(e => e.star == star).length
             }
         })
 
     // 柱状图
-    let barXData = baseData.map((item) => item.month)
-    let barData = baseData.map((item) => item.book.length)
+    let barXData = baseData.map(item => item.month)
+    let barData = baseData.map(item => item.book.length)
     const barMaxData = [...barData].sort((a, b) => b - a)[0]
 
     // 年度对比
@@ -335,7 +343,7 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
                 }
             },
             {
-                data: barData.map((item) => {
+                data: barData.map(item => {
                     if (item == barMaxData) {
                         return {
                             value: item,
@@ -356,7 +364,18 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
                 }
             },
             {
-                data: compareData,
+                data: compareData.map((item, i) => {
+                    if (compareXData[i] == showYear) {
+                        return {
+                            value: item,
+                            itemStyle: {
+                                color: colors[0]
+                            }
+                        }
+                    } else {
+                        return item
+                    }
+                }),
                 type: 'bar',
                 barMaxWidth: 12,
                 xAxisIndex: 1,

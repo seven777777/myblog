@@ -2,7 +2,7 @@
  * @Author: seven.zhang
  * @Date: 2020-12-02 17:27:38
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2024-12-13 16:54:08
+ * @Last Modified time: 2025-01-02 11:24:48
  */
 const bookData = {
     2017: [
@@ -1165,63 +1165,109 @@ const bookData = {
             month: '12月',
             book: []
         }
+    ],
+    2024: [
+        {
+            month: '1月',
+            book: []
+        },
+        {
+            month: '2月',
+            book: []
+        },
+        {
+            month: '3月',
+            book: [
+                {
+                    name: '我们生活在巨大的差距里',
+                    author: '余华',
+                    type: '杂文集',
+                    star: '3',
+                    kind: '非虚构'
+                },
+                {
+                    name: '豆子芝麻茶',
+                    author: '杨本芬',
+                    type: '散文集',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '敏捷实践指南',
+                    author: '项目管理协会',
+                    type: '技术',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '4月',
+            book: [
+                {
+                    name: '太白金星有点烦',
+                    author: '马伯庸',
+                    type: '小说',
+                    star: '5',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '5月',
+            book: [
+                {
+                    name: 'PMBOK第六版',
+                    author: '项目管理协会',
+                    type: '技术',
+                    star: '4',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '6月',
+            book: []
+        },
+        {
+            month: '7月',
+            book: []
+        },
+        {
+            month: '8月',
+            book: []
+        },
+        {
+            month: '9月',
+            book: [
+                {
+                    name: '献给阿尔吉侬的花束',
+                    author: '丹尼尔·凯斯',
+                    type: '科幻',
+                    star: '4',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '10月',
+            book: [
+                {
+                    name: '平面国',
+                    author: '埃德温·A·艾勃特',
+                    type: '科幻',
+                    star: '4',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '11月',
+            book: []
+        },
+        {
+            month: '12月',
+            book: []
+        }
     ]
-    // 2024: [
-    //     {
-    //         month: '1月',
-    //         book: [
-    //             // {
-    //             //     name: '三体：地球往事',
-    //             //     author: '刘慈欣',
-    //             //     type: '科幻',
-    //             //     star: '4',
-    //             //     kind: '虚构'
-    //             // },
-    //         ]
-    //     },
-    //     {
-    //         month: '2月',
-    //         book: []
-    //     },
-    //     {
-    //         month: '3月',
-    //         book: []
-    //     },
-    //     {
-    //         month: '4月',
-    //         book: []
-    //     },
-    //     {
-    //         month: '5月',
-    //         book: []
-    //     },
-    //     {
-    //         month: '6月',
-    //         book: []
-    //     },
-    //     {
-    //         month: '7月',
-    //         book: []
-    //     },
-    //     {
-    //         month: '8月',
-    //         book: []
-    //     },
-    //     {
-    //         month: '9月',
-    //         book: []
-    //     },
-    //     {
-    //         month: '10月',
-    //         book: []
-    //     },
-    //     {
-    //         month: '11月',
-    //         book: []
-    //     },
-    //     {
-    //         month: '12月',
-    //         book: []
-    //     }
-    // ]
 }
