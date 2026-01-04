@@ -2,7 +2,7 @@
  * @Author: seven.zhang
  * @Date: 2020-12-02 17:27:38
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2025-01-02 11:24:48
+ * @Last Modified time: 2026-01-04 09:51:04
  */
 const bookData = {
     2017: [
@@ -1268,6 +1268,278 @@ const bookData = {
         {
             month: '12月',
             book: []
+        }
+    ],
+    2025: [
+        {
+            month: '1月',
+            book: [
+                {
+                    name: '宋朝人的日常生活',
+                    author: '侯印国',
+                    type: '历史',
+                    star: '3',
+                    kind: '非虚构'
+                },
+                {
+                    name: '超越音符',
+                    author: '林俊杰',
+                    type: '人物自传',
+                    star: '3',
+                    kind: '非虚构'
+                },
+                {
+                    name: '克林索尔的最后夏天',
+                    author: '赫尔曼•黑塞',
+                    type: '中篇小说',
+                    star: '3',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '2月',
+            book: [
+                {
+                    name: '强者破局',
+                    author: '冯唐',
+                    type: '历史',
+                    star: '3',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '3月',
+            book: [
+                {
+                    name: '愤怒的葡萄',
+                    author: '约翰•斯坦贝克',
+                    type: '长篇小说',
+                    star: '5',
+                    kind: '虚构'
+                },
+                {
+                    name: '山谷微风',
+                    author: '余华',
+                    type: '散文集',
+                    star: '3',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '4月',
+            book: [
+                {
+                    name: '坍缩',
+                    author: '刘慈欣',
+                    type: '中短篇科幻小说',
+                    star: '4',
+                    kind: '虚构'
+                },
+                {
+                    name: '小林生活禅',
+                    author: '林帝浣',
+                    type: '漫画',
+                    star: '2',
+                    kind: '非虚构'
+                },
+                {
+                    name: '长安的荔枝',
+                    author: '马伯庸',
+                    type: '小说',
+                    star: '4',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '5月',
+            book: [
+                {
+                    name: '人类重启',
+                    author: '亚历山大·温斯坦',
+                    type: '科幻短片小说集',
+                    star: '3',
+                    kind: '虚构'
+                },
+                {
+                    name: '晴耕雨读，得闲饮茶',
+                    author: '季羡林等',
+                    type: '散文集',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '我本芬芳',
+                    author: '杨本芬',
+                    type: '半自传体小说',
+                    star: '3',
+                    kind: '虚构'
+                },
+                {
+                    name: '时间从来不语，却回答了所有问题',
+                    author: '季羡林',
+                    type: '散文集',
+                    star: '3',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '6月',
+            book: [
+                {
+                    name: '梦的解析',
+                    author: '西格蒙德·弗洛伊德',
+                    type: '心理学理论',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '食南之徒',
+                    author: '马伯庸',
+                    type: '小说',
+                    star: '3',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '7月',
+            book: [
+                {
+                    name: '小城与不确定性的墙',
+                    author: '村上春树',
+                    type: '长篇小说',
+                    star: '5',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '8月',
+            book: [
+                {
+                    name: '一只猫的人间观察',
+                    author: '寐语者',
+                    type: '治愈系文学',
+                    star: '3',
+                    kind: '非虚构'
+                }
+            ]
+        },
+        {
+            month: '9月',
+            book: [
+                {
+                    name: '生死疲劳',
+                    author: '莫言',
+                    type: '长篇小说',
+                    star: '4',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '10月',
+            book: [
+                {
+                    name: '庆祝无意义',
+                    author: '米兰·昆德拉',
+                    type: '长篇小说',
+                    star: '4',
+                    kind: '虚构'
+                },
+                {
+                    name: '林家铺子',
+                    author: '矛盾',
+                    type: '短篇小说',
+                    star: '4',
+                    kind: '虚构'
+                },
+                {
+                    name: '不生锈的人生',
+                    author: '石井哲代',
+                    type: '日本体回忆录',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '带上她的眼睛',
+                    author: '刘慈欣',
+                    type: '短篇科幻小说作品集',
+                    star: '4',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '11月',
+            book: [
+                {
+                    name: '一间只属于自己的房间',
+                    author: '弗吉尼亚·伍尔夫基',
+                    type: '散文体论著',
+                    star: '3',
+                    kind: '非虚构'
+                },
+                {
+                    name: '悉达多',
+                    author: '赫尔曼·黑塞',
+                    type: '中篇小说',
+                    star: '5',
+                    kind: '虚构'
+                }
+            ]
+        },
+        {
+            month: '12月',
+            book: [
+                {
+                    name: '哲学家的最后一课',
+                    author: '朱锐',
+                    type: '哲学',
+                    star: '4',
+                    kind: '非虚构'
+                },
+                {
+                    name: '独居冰岛的一年',
+                    author: '嘉倩',
+                    type: '生活随笔',
+                    star: '3',
+                    kind: '非虚构'
+                },
+                {
+                    name: '人生',
+                    author: '路遥',
+                    type: '小说',
+                    star: '4',
+                    kind: '虚构'
+                },
+                {
+                    name: '一生中最高兴的一天',
+                    author: '路遥',
+                    type: '中篇小说集',
+                    star: '3',
+                    kind: '虚构'
+                },
+                {
+                    name: '月牙儿',
+                    author: '老舍',
+                    type: '中篇小说',
+                    star: '4',
+                    kind: '虚构'
+                },
+                {
+                    name: '我的遥远的清平湾',
+                    author: '史铁生',
+                    type: '短篇自传体小说',
+                    star: '4',
+                    kind: '虚构'
+                }
+            ]
         }
     ]
 }
