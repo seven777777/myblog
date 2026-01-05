@@ -2,7 +2,7 @@
  * @Author: seven.zhang
  * @Date: 2020-12-02 17:09:02
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2024-12-17 16:29:53
+ * @Last Modified time: 2026-01-05 11:03:37
  */
 var baseColors = ['#81b214', '#FF8700', '#FFa540', '#fadcac', '#ffbd73']
 var baseBgColor = '#206a5d'
@@ -259,6 +259,7 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
         },
         series: [
             {
+                name: 'main',
                 type: 'sunburst',
                 center: ['50%', '48%'],
                 data: sunburstData,
@@ -325,6 +326,7 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
                 ]
             },
             {
+                name: 'star',
                 type: 'pie',
                 center: [120, 100],
                 radius: [25, 35],
@@ -343,6 +345,7 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
                 }
             },
             {
+                name: 'month',
                 data: barData.map(item => {
                     if (item == barMaxData) {
                         return {
@@ -364,6 +367,7 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
                 }
             },
             {
+                name: 'year',
                 data: compareData.map((item, i) => {
                     if (compareXData[i] == showYear) {
                         return {
@@ -412,4 +416,59 @@ function setChartImg(id, imgUrl) {
     var container = document.getElementById(id)
     container.style.height = 'auto'
     container.appendChild(a)
+}
+
+function monthBookHighlight(chart, baseData) {
+    const myOption = chart.getOption()
+    const seriesData = chart.getOption().series[0].data
+    chart.on('mouseover', { seriesName: 'month' }, function (params) {
+        const books = (baseData.find(e => e.month === params.name)?.book ?? []).map(e => e.name)
+        const newData = modifyNodeStyles(seriesData, books)
+        const newOption = chart.getOption()
+        newOption.series[0].data = newData
+        chart.setOption(newOption)
+    })
+    chart.on('mouseout', { seriesName: 'month' }, function () {
+        chart.setOption(myOption)
+    })
+}
+
+function modifyNodeStyles(data, targetNames) {
+    function traverse(node) {
+        if (targetNames.includes(node.name)) {
+            // 为目标节点添加高亮样式
+            node.itemStyle = {
+                ...(node.itemStyle ?? {}),
+                opacity: 1
+            }
+            node.label = {
+                ...(node.label ?? {}),
+                opacity: 1
+            }
+        } else {
+            node.itemStyle = {
+                ...(node.itemStyle ?? {}),
+                opacity: 0.4
+            }
+            node.label = {
+                ...(node.label ?? {}),
+                opacity: 0.4
+            }
+        }
+
+        if (node.children) {
+            node.children.forEach(traverse)
+            node.itemStyle = {
+                ...(node.itemStyle ?? {}),
+                opacity: 0.4
+            }
+            node.label = {
+                ...(node.label ?? {}),
+                opacity: 0.4
+            }
+        }
+    }
+
+    data.forEach(traverse)
+    return data
 }
