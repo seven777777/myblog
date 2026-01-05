@@ -74,12 +74,16 @@ else {
     opt.series[0].center = ['50%','60%']
     myChart.setOption(opt);
     charts.push(myChart)
+    // 设置月份统计hover高亮交互
+    monthBookHighlight(myChart,baseData)
 
     var myChart2 = echarts.init(document.getElementById('book-chart2'));
-    var baseData = bookData['2019']
-    let opt2 = getReadSummaryChartOpt(baseData,{title:'2019年度读书统计'})
+    var baseData2 = bookData['2019']
+    let opt2 = getReadSummaryChartOpt(baseData2,{title:'2019年度读书统计'})
     myChart2.setOption(opt2);
     charts.push(myChart2)
+    // 设置月份统计hover高亮交互
+    monthBookHighlight(myChart2,baseData2)
 
     setResize(charts)
 }
