@@ -2,7 +2,7 @@
  * @Author: seven.zhang
  * @Date: 2020-12-02 17:09:02
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2026-01-05 11:03:37
+ * @Last Modified time: 2026-01-05 13:26:38
  */
 var baseColors = ['#81b214', '#FF8700', '#FFa540', '#fadcac', '#ffbd73']
 var baseBgColor = '#206a5d'
@@ -68,7 +68,7 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
                 },
                 children: starList.map(star => {
                     return {
-                        name: star + '☆',
+                        name: formatStar(star),
                         children: childrenlist.filter(ss => ss.star == star)
                     }
                 })
@@ -164,7 +164,7 @@ function getReadSummaryChartOpt(baseData = [], chartData = {}) {
         .sort((a, b) => b - a)
         .map(star => {
             return {
-                name: star + '☆',
+                name: formatStar(star),
                 value: allBookList.filter(e => e.star == star).length
             }
         })
@@ -422,7 +422,7 @@ function monthBookHighlight(chart, baseData) {
     const myOption = chart.getOption()
     const seriesData = chart.getOption().series[0].data
     chart.on('mouseover', { seriesName: 'month' }, function (params) {
-        const books = (baseData.find(e => e.month === params.name)?.book ?? []).map(e => e.name)
+        const books = baseData.find(e => e.month === params.name)?.book ?? []
         const newData = modifyNodeStyles(seriesData, books)
         const newOption = chart.getOption()
         newOption.series[0].data = newData
@@ -433,42 +433,39 @@ function monthBookHighlight(chart, baseData) {
     })
 }
 
-function modifyNodeStyles(data, targetNames) {
-    function traverse(node) {
-        if (targetNames.includes(node.name)) {
-            // 为目标节点添加高亮样式
-            node.itemStyle = {
-                ...(node.itemStyle ?? {}),
-                opacity: 1
-            }
-            node.label = {
-                ...(node.label ?? {}),
-                opacity: 1
-            }
-        } else {
-            node.itemStyle = {
-                ...(node.itemStyle ?? {}),
-                opacity: 0.4
-            }
-            node.label = {
-                ...(node.label ?? {}),
-                opacity: 0.4
-            }
-        }
+function modifyNodeStyles(data, targetBooks) {
+    const targetNames = Array.from(
+        new Set(
+            targetBooks.reduce((res, cur) => {
+                return [...res, cur.name, cur.type, cur.kind, `${cur.type}-${formatStar(cur.star)}`]
+            }, [])
+        )
+    )
+
+    function traverse(node, parentName = '') {
+        const keyName = node.name.includes('☆') ? `${parentName}-${node.name}` : node.name
+        sunburstNodeHlSet(node, targetNames.includes(keyName))
 
         if (node.children) {
-            node.children.forEach(traverse)
-            node.itemStyle = {
-                ...(node.itemStyle ?? {}),
-                opacity: 0.4
-            }
-            node.label = {
-                ...(node.label ?? {}),
-                opacity: 0.4
-            }
+            node.children.forEach(e => traverse(e, node.name))
         }
     }
 
     data.forEach(traverse)
     return data
+}
+
+function sunburstNodeHlSet(node, isHighlight = true) {
+    node.itemStyle = {
+        ...(node.itemStyle ?? {}),
+        opacity: isHighlight ? 1 : 0.4
+    }
+    node.label = {
+        ...(node.label ?? {}),
+        opacity: isHighlight ? 1 : 0.4
+    }
+}
+
+function formatStar(star) {
+    return star + '☆'
 }
