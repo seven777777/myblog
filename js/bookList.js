@@ -2,7 +2,7 @@
  * @Author: seven.zhang
  * @Date: 2020-12-02 17:27:38
  * @Last Modified by: seven.zhang
- * @Last Modified time: 2026-01-04 09:51:04
+ * @Last Modified time: 2026-01-05 13:44:11
  */
 const bookData = {
     2017: [
@@ -1334,7 +1334,7 @@ const bookData = {
                 {
                     name: '坍缩',
                     author: '刘慈欣',
-                    type: '中短篇科幻小说',
+                    type: '科幻',
                     star: '4',
                     kind: '虚构'
                 },
@@ -1348,7 +1348,7 @@ const bookData = {
                 {
                     name: '长安的荔枝',
                     author: '马伯庸',
-                    type: '小说',
+                    type: '中篇小说',
                     star: '4',
                     kind: '虚构'
                 }
@@ -1360,7 +1360,7 @@ const bookData = {
                 {
                     name: '人类重启',
                     author: '亚历山大·温斯坦',
-                    type: '科幻短片小说集',
+                    type: '科幻',
                     star: '3',
                     kind: '虚构'
                 },
@@ -1400,7 +1400,7 @@ const bookData = {
                 {
                     name: '食南之徒',
                     author: '马伯庸',
-                    type: '小说',
+                    type: '长篇小说',
                     star: '3',
                     kind: '虚构'
                 }
@@ -1469,7 +1469,7 @@ const bookData = {
                 {
                     name: '带上她的眼睛',
                     author: '刘慈欣',
-                    type: '短篇科幻小说作品集',
+                    type: '科幻',
                     star: '4',
                     kind: '虚构'
                 }
@@ -1514,7 +1514,7 @@ const bookData = {
                 {
                     name: '人生',
                     author: '路遥',
-                    type: '小说',
+                    type: '中篇小说',
                     star: '4',
                     kind: '虚构'
                 },
@@ -1535,7 +1535,7 @@ const bookData = {
                 {
                     name: '我的遥远的清平湾',
                     author: '史铁生',
-                    type: '短篇自传体小说',
+                    type: '半自传体小说',
                     star: '4',
                     kind: '虚构'
                 }
